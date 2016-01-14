@@ -1,5 +1,6 @@
-#include "mainwindow.hpp"
+#include <QMainWindow>
 #include <QApplication>
+#include <QIcon>
 
 int main(int argc, char *argv[])
 {
@@ -8,6 +9,7 @@ int main(int argc, char *argv[])
 
     WINDOW.resize(860, 640);
     WINDOW.setWindowTitle("NIMP App");
+    WINDOW.setWindowIcon(QIcon("icon.png"));
 
     WINDOW.show();
 
