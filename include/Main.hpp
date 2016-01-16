@@ -2,7 +2,5 @@
 
 #include "Global.hpp"
 
+#include "Splitter.hpp"
 #include "SplitWidget.hpp"
-
-extern QApplication APPLICATION;
-extern QMainWindow WINDOW;
