@@ -1,15 +1,8 @@
 #include "include/Splitwidget.hpp"
 
-SplitWidget::SplitWidget(QWidget* parent) : QFrame{parent}, component{nullptr}, menuBar{nullptr}
+SplitWidget::SplitWidget(QWidget* parent) : QWidget{parent}, menuBar{nullptr}
 {
-    setFrameStyle(QFrame::Panel);
-    setLineWidth(1);
     setMinimumSize(40, 40);
-}
-
-void SplitWidget::setComponent(QWidget *component)
-{
-    this->component = component;
 }
 
 void SplitWidget::setMenuBar(QMenuBar *menuBar)

@@ -1,22 +1,22 @@
-#include <include/Main.hpp>
+#include "include/Main.hpp"
 
 int main(int argc, char *argv[]) {
 
-    QApplication APPLICATION(argc, argv);
-    QMainWindow WINDOW;
-    QSplitter* SPLITTER{new QSplitter{}};
-    SplitWidget* L1{new SplitWidget{SPLITTER}};
-    QLabel* Label1{new QLabel{"NIMPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", L1}};
-    QLabel* Label2{new QLabel{"NIMP2bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", SPLITTER}};
+    QApplication* APPLICATION{new QApplication{argc, argv}};
+    QMainWindow* WINDOW{new QMainWindow{}};
+    QLabel* Label1{new QLabel{"NIMPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}};
+    QLabel* Label2{new QLabel{"NIMP2bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"}};
 
-    WINDOW.resize(860, 640);
-    WINDOW.setWindowTitle("NIMP");
-    WINDOW.setWindowIcon(QIcon("icon.png"));
-    WINDOW.setCentralWidget(SPLITTER);
-    SPLITTER->setChildrenCollapsible(false);
-    SPLITTER->setHandleWidth(1);
+    WINDOW->resize(860, 640);
+    WINDOW->setWindowTitle("NIMP");
+    WINDOW->setWindowIcon(QIcon("icon.png"));
+    WINDOW->setCentralWidget(Splitter::getInstance());
+    Splitter::getInstance()->addWidget(Label1);
+    Splitter::getInstance()->addWidget(Label2);
 
-    WINDOW.show();
+    WINDOW->setStyleSheet("QSplitter::handle{background: black;}");
 
-    return APPLICATION.exec();
+    WINDOW->show();
+
+    return APPLICATION->exec();
 }

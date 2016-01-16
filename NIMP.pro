@@ -15,9 +15,11 @@ CONFIG += c++11
 QMAKE_CXXFLAGS += -std=c++11
 
 SOURCES += src/Main.cpp \
-    src/Splitwidget.cpp
+    src/Splitwidget.cpp \
+    src/Splitter.cpp
 
 HEADERS  += \
     include/Global.hpp \
     include/Main.hpp \
-    include/Splitwidget.hpp
+    include/Splitwidget.hpp \
+    include/Splitter.hpp
