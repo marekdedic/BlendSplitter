@@ -23,3 +23,6 @@ HEADERS  += \
     include/Main.hpp \
     include/Splitwidget.hpp \
     include/Splitter.hpp
+
+RESOURCES += \
+    images.qrc

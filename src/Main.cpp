@@ -9,7 +9,7 @@ int main(int argc, char *argv[]) {
 
     WINDOW->resize(860, 640);
     WINDOW->setWindowTitle("NIMP");
-    WINDOW->setWindowIcon(QIcon("icon.png"));
+    WINDOW->setWindowIcon(QIcon(":/icons/app_icon"));
     WINDOW->setCentralWidget(Splitter::getInstance());
     Splitter::getInstance()->addWidget(Label1);
     Splitter::getInstance()->addWidget(Label2);
