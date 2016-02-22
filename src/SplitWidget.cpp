@@ -1,4 +1,4 @@
-#include "include/Splitwidget.hpp"
+#include "include/SplitWidget.hpp"
 
 SplitWidget::SplitWidget(QWidget* parent) : QWidget{parent}, menuBar{nullptr}
 {

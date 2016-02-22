@@ -15,14 +15,14 @@ CONFIG += c++11
 QMAKE_CXXFLAGS += -std=c++11
 
 SOURCES += src/Main.cpp \
-    src/Splitwidget.cpp \
-    src/Splitter.cpp
+    src/Splitter.cpp \
+    src/SplitWidget.cpp
 
 HEADERS  += \
     include/Global.hpp \
     include/Main.hpp \
-    include/Splitwidget.hpp \
-    include/Splitter.hpp
+    include/Splitter.hpp \
+    include/SplitWidget.hpp
 
 RESOURCES += \
     images.qrc
