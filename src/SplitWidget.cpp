@@ -1,7 +1,10 @@
 #include "include/SplitWidget.hpp"
 
-SplitWidget::SplitWidget(QWidget* parent) : QWidget{parent}, menuBar{nullptr}
+#include "include/Expander.hpp"
+
+SplitWidget::SplitWidget(QWidget* widget, QWidget* parent) : QWidget{parent}, widget{widget}, expander{new Expander{":/UI/Splitter_expander", this}}, menuBar{nullptr}
 {
+    widget->setParent(this);
     setMinimumSize(40, 40);
 }
 
