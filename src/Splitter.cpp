@@ -19,6 +19,5 @@ Splitter* Splitter::getInstance()
 
 void Splitter::addWidget(QWidget* widget)
 {
-    SplitWidget* decorator{new SplitWidget{getInstance()}};
-    widget->setParent(decorator);
+    SplitWidget* decorator{new SplitWidget{widget, getInstance()}};
 }

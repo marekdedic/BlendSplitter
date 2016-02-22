@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QSplitter>
 #include <QLabel>
+#include <QPixmap>
 
 extern QApplication* APPLICATION;
 extern QMainWindow* WINDOW;
