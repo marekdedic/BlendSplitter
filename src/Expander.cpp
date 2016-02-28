@@ -3,6 +3,16 @@
 Expander::Expander(QString filename, SplitWidget* parent) : QLabel(parent), pixmap{new QPixmap{filename}}
 {
     setPixmap(*pixmap);
-    move(parent->width(), 0);
-    //setGeometry(50, 50, 50, 50);
+    reposition();
+}
+
+void Expander::reposition()
+{
+    move(parentWidget()->width() - 128, 0);
+}
+
+void Expander::paintEvent(QPaintEvent * event)
+{
+    reposition();
+    QLabel::paintEvent(event);
 }
