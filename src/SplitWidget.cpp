@@ -12,3 +12,8 @@ void SplitWidget::setMenuBar(QMenuBar *menuBar)
 {
     this->menuBar = menuBar;
 }
+
+void SplitWidget::resizeEvent(QResizeEvent*)
+{
+    expander->reposition();
+}
