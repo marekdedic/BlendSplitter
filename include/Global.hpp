@@ -5,6 +5,9 @@
 #include <QSplitter>
 #include <QLabel>
 #include <QPixmap>
+#include <QMouseEvent>
+
+#include <iostream>
 
 extern QApplication* APPLICATION;
 extern QMainWindow* WINDOW;
