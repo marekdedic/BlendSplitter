@@ -8,6 +8,7 @@
 #include <QMouseEvent>
 
 #include <iostream>
+#include <typeinfo>
 
 extern QApplication* APPLICATION;
 extern QMainWindow* WINDOW;
