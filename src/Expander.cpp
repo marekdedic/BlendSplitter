@@ -29,19 +29,27 @@ void Expander::mouseReleaseEvent(QMouseEvent* event)
     {
         //std::cerr << "Release at: " << event->x() << ", " << event->y() << std::endl;
         pressed = false;
-        if(event->x() < 0 and event->y() > 0 and (-event->x()) > event->y())
+        QLabel* inserted{new QLabel{"Inserted"}};
+        try
         {
-                QLabel* inserted{new QLabel{"Inserted"}};
-                try
-                {
-                    Splitter* parentSplitter = dynamic_cast<Splitter*>(parentWidget()->parentWidget());
-                    parentSplitter->insertWidget(parentSplitter->indexOf(parentWidget()) + 1, inserted);
-                }
-                catch(std::bad_cast& exception)
-                {
-                    std::cerr << exception.what() << " caused by having an expander not properly inside a Splitter." << std::endl;
-                    // TODO: move to main, terminate application, probably using own exception.
-                }
+            SplitWidget* parentSplitWidget{dynamic_cast<SplitWidget*>(parentWidget())};
+            Splitter* parentSplitter{dynamic_cast<Splitter*>(parentSplitWidget->parentWidget())};
+            if(parentSplitter->orientation() == Qt::Horizontal and event->x() < 0 and event->y() > 0 and (-event->x()) > event->y())
+            {
+                parentSplitter->insertWidget(parentSplitter->indexOf(parentSplitWidget) + 1, inserted);
+            }
+            else if(parentSplitter->orientation() == Qt::Horizontal and event->x() < 32 and event->y() > 0 and (-event->x()) < event->y())
+            {
+                Splitter* newSplitter{new Splitter{Qt::Vertical}};
+                parentSplitter->insertSplitter(parentSplitter->indexOf(parentSplitWidget), newSplitter);
+                newSplitter->addWidget(inserted);
+                newSplitter->addSplitWidget(parentSplitWidget);
+            }
+        }
+        catch(std::bad_cast& exception)
+        {
+            std::cerr << exception.what() << " caused by having an expander not properly inside a Splitter." << std::endl;
+            APPLICATION->exit(-1);
         }
     }
 }

@@ -1,31 +1,34 @@
 #include "include/Splitter.hpp"
 
-Splitter* Splitter::instance = nullptr;
-
-Splitter::Splitter(QWidget* parent) : QSplitter{parent}
+Splitter::Splitter(Qt::Orientation orientation) : QSplitter{orientation}
 {
     setChildrenCollapsible(false);
     setHandleWidth(1);
 }
 
-Splitter* Splitter::getInstance()
-{
-    if(instance == nullptr)
-    {
-        instance = new Splitter{};
-    }
-    return instance;
-}
-
 void Splitter::addWidget(QWidget* widget)
 {
-    SplitWidget* decorator{new SplitWidget{widget, getInstance()}};
-    QSplitter::addWidget(decorator);
+    insertWidget(-1, widget);
+}
+
+void Splitter::addSplitWidget(SplitWidget* widget)
+{
+    insertSplitWidget(-1, widget);
 }
 
 void Splitter::insertWidget(int index, QWidget* widget)
 {
     //std::cerr << "inserted" << std::endl;
-    SplitWidget* decorator{new SplitWidget{widget, getInstance()}};
+    SplitWidget* decorator{new SplitWidget{widget}};
     QSplitter::insertWidget(index, decorator);
+}
+
+void Splitter::insertSplitWidget(int index, SplitWidget* widget)
+{
+    QSplitter::insertWidget(index, widget);
+}
+
+void Splitter::insertSplitter(int index, Splitter* splitter)
+{
+    QSplitter::insertWidget(index, splitter);
 }

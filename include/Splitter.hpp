@@ -7,10 +7,10 @@
 class Splitter : public QSplitter
 {
 public:
-    Splitter(QWidget* parent = 0);
-    static Splitter* getInstance();
+    Splitter(Qt::Orientation orientation = Qt::Horizontal);
     void addWidget(QWidget* widget);
+    void addSplitWidget(SplitWidget* widget);
     void insertWidget(int index, QWidget* widget);
-private:
-    static Splitter* instance;
+    void insertSplitWidget(int index, SplitWidget* widget);
+    void insertSplitter(int index, Splitter* splitter);
 };
