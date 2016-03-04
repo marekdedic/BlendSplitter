@@ -10,5 +10,8 @@
 #include <iostream>
 #include <typeinfo>
 
+class Splitter;
+
 extern QApplication* APPLICATION;
 extern QMainWindow* WINDOW;
+extern Splitter* SPLITTER;
