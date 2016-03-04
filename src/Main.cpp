@@ -1,10 +1,15 @@
 #include "include/Main.hpp"
 
-int main(int argc, char *argv[]) {
+//TODO GLOBAL QAPP
+QApplication* APPLICATION{};
+QMainWindow* WINDOW{};
+Splitter* SPLITTER{};
 
-    QApplication* APPLICATION{new QApplication{argc, argv}};
-    QMainWindow* WINDOW{new QMainWindow{}};
-    Splitter* SPLITTER{new Splitter{}};
+int main(int argc, char** argv)
+{
+    APPLICATION = new QApplication{argc, argv};
+    WINDOW = new QMainWindow{};
+    SPLITTER = new Splitter{};
 
     WINDOW->setCentralWidget(SPLITTER);
 
