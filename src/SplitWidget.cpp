@@ -6,6 +6,7 @@ SplitWidget::SplitWidget(QWidget* widget) : QWidget{}, widget{widget}, expander{
 {
     widget->setParent(this);
     setMinimumSize(40, 40);
+    widget->installEventFilter(expander);
 }
 
 void SplitWidget::setMenuBar(QMenuBar *menuBar)

@@ -2,12 +2,15 @@
 
 #include "include/Splitter.hpp"
 
-Expander::Expander(QString filename, SplitWidget* parent) : QLabel(parent), pressed{false}, pixmap{new QPixmap{filename}}
+Expander::Expander(QString filename, SplitWidget* parent) : QLabel(parent), pixmap{new QPixmap{filename}}
 {
     *pixmap = pixmap->scaledToHeight(32, Qt::FastTransformation);
     setPixmap(*pixmap);
     resize(32, 32);
     reposition();
+    QPolygon mask;
+    mask << QPoint{0, 0} << QPoint{0, 3} << QPoint{29, 32} << QPoint{32, 32} << QPoint{32, 0};
+    setMask(QRegion{mask});
 }
 
 void Expander::reposition()
@@ -15,20 +18,30 @@ void Expander::reposition()
     move(parentWidget()->width() - width(), 0);
 }
 
+bool Expander::eventFilter(QObject*, QEvent* event)
+{
+    if(event->type() == QEvent::MouseButtonPress)
+    {
+        QMouseEvent* mouseEvent = dynamic_cast<QMouseEvent*>(event);
+        if(mask().contains(mouseEvent->pos() - geometry().topLeft()))
+        {
+            grabMouse();
+            mousePressEvent(mouseEvent);
+            return true;
+        }
+    }
+    return false;
+}
+
 void Expander::mousePressEvent(QMouseEvent* event)
 {
-    if(event->x() >= event->y())
-    {
-        pressed = true;
-    }
+    event->accept();    // No-op
 }
 
 void Expander::mouseReleaseEvent(QMouseEvent* event)
 {
-    if(pressed and event->button() == Qt::LeftButton)
+    if(event->button() == Qt::LeftButton)
     {
-        //std::cerr << "Release at: " << event->x() << ", " << event->y() << std::endl;
-        pressed = false;
         QLabel* inserted{new QLabel{"Inserted"}};
         try
         {
@@ -46,16 +59,20 @@ void Expander::mouseReleaseEvent(QMouseEvent* event)
             else if(parentSplitter->orientation() == Qt::Horizontal and event->x() < 32 and event->y() > 32 and (32 - event->x()) < event->y())
             {
                 Splitter* newSplitter{new Splitter{Qt::Vertical}};
+                QList<int> sizes{parentSplitter->sizes()};
                 parentSplitter->insertSplitter(parentSplitter->indexOf(parentSplitWidget), newSplitter);
                 newSplitter->addWidget(inserted);
                 newSplitter->addSplitWidget(parentSplitWidget);
+                parentSplitter->setSizes(sizes);
             }
             else if(parentSplitter->orientation() == Qt::Vertical and event->x() < 0 and event->y() > 0 and (32 - event->x()) > event->y())
             {
                 Splitter* newSplitter{new Splitter{Qt::Horizontal}};
+                QList<int> sizes{parentSplitter->sizes()};
                 parentSplitter->insertSplitter(parentSplitter->indexOf(parentSplitWidget), newSplitter);
                 newSplitter->addSplitWidget(parentSplitWidget);
                 newSplitter->addWidget(inserted);
+                parentSplitter->setSizes(sizes);
             }
             else if(parentSplitter->orientation() == Qt::Horizontal and event->x() > 32)
             {
@@ -77,6 +94,7 @@ void Expander::mouseReleaseEvent(QMouseEvent* event)
                     delete parentSplitter;
                 }
             }
+            releaseMouse();
         }
         catch(std::bad_cast& exception)
         {
