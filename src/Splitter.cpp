@@ -18,7 +18,6 @@ void Splitter::addSplitWidget(SplitWidget* widget)
 
 void Splitter::insertWidget(int index, QWidget* widget)
 {
-    //std::cerr << "inserted" << std::endl;
     SplitWidget* decorator{new SplitWidget{widget}};
     QSplitter::insertWidget(index, decorator);
 }

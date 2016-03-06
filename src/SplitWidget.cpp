@@ -5,7 +5,7 @@
 SplitWidget::SplitWidget(QWidget* widget) : QWidget{}, widget{widget}, expander{new Expander{":/UI/Splitter_expander", this}}, menuBar{nullptr}
 {
     widget->setParent(this);
-    setMinimumSize(40, 40);
+    setMinimumSize(32, 32);
     widget->installEventFilter(expander);
 }
 
