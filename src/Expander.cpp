@@ -126,7 +126,7 @@ void Expander::mouseReleaseEvent(QMouseEvent* event)
                 parentSplitter->setSizes(sizes1);
                 newSplitter->setSizes(sizes2);
             }
-            else if(parentSplitter->orientation() == Qt::Horizontal and event->x() > 32)
+            else if(parentSplitter->orientation() == Qt::Horizontal and event->x() > 32 and event->y() > 0 and event->y() < parentSplitWidget->height())
             {
                 delete parentSplitter->widget(parentSplitter->indexOf(parentSplitWidget) + 1);
                 if(parentSplitter->count() == 1 and parentSplitter != SPLITTER)
@@ -136,7 +136,7 @@ void Expander::mouseReleaseEvent(QMouseEvent* event)
                     delete parentSplitter;
                 }
             }
-            else if(parentSplitter->orientation() == Qt::Vertical and event->y() < 0)
+            else if(parentSplitter->orientation() == Qt::Vertical and event->y() < 0 and event->x() < 32 and -(event->x()) < parentSplitWidget->width() -32)
             {
                 delete parentSplitter->widget(parentSplitter->indexOf(parentSplitWidget) - 1);
                 if(parentSplitter->count() == 1 and parentSplitter != SPLITTER)
