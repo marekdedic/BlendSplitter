@@ -1,6 +1,5 @@
 #include "include/Main.hpp"
 
-//TODO GLOBAL QAPP
 QApplication* APPLICATION{};
 QMainWindow* WINDOW{};
 Splitter* SPLITTER{};
