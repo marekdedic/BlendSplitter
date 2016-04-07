@@ -16,5 +16,6 @@ protected slots:
     virtual void mousePressEvent(QMouseEvent* event);
     virtual void mouseReleaseEvent(QMouseEvent* event);
 private:
+    static int size;
     QPixmap* pixmap;
 };
