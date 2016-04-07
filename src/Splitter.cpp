@@ -1,6 +1,6 @@
 #include "include/Splitter.hpp"
 
-Splitter::Splitter(QWidget* defaultWidget, Qt::Orientation orientation) : QSplitter{orientation}, defaultWidget{defaultWidget}
+Splitter::Splitter(QWidget* (*defaultWidget) (), Qt::Orientation orientation) : QSplitter{orientation}, defaultWidget{defaultWidget}
 {
     setChildrenCollapsible(false);
     setHandleWidth(1);
@@ -8,7 +8,7 @@ Splitter::Splitter(QWidget* defaultWidget, Qt::Orientation orientation) : QSplit
 
 void Splitter::addWidget()
 {
-    addWidget(getDefaultWidget());
+    addWidget((*defaultWidget) ());
 }
 
 void Splitter::addWidget(QWidget* widget)
@@ -23,7 +23,7 @@ void Splitter::addSplitWidget(SplitWidget* widget)
 
 void Splitter::insertWidget(int index)
 {
-    insertWidget(index, getDefaultWidget());
+    insertWidget(index, (*defaultWidget) ());
 }
 
 void Splitter::insertWidget(int index, QWidget* widget)
@@ -40,10 +40,4 @@ void Splitter::insertSplitWidget(int index, SplitWidget* widget)
 void Splitter::insertSplitter(int index, Splitter* splitter)
 {
     QSplitter::insertWidget(index, splitter);
-}
-
-QWidget* Splitter::getDefaultWidget()
-{
-    //return new QWidget{*defaultWidget};
-    return new QLabel{"NONGENERATED"};
 }

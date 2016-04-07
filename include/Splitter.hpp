@@ -7,7 +7,7 @@
 class Splitter : public QSplitter
 {
 public:
-    Splitter(QWidget* defaultWidget = new QLabel{"Inserted widget"}, Qt::Orientation orientation = Qt::Horizontal);
+    Splitter(QWidget* (*defaultWidget) () = []()->QWidget* {return new QLabel{"Inserted widget"};}, Qt::Orientation orientation = Qt::Horizontal);
     void addWidget();
     void addWidget(QWidget* widget);
     void addSplitWidget(SplitWidget* widget);
@@ -15,6 +15,5 @@ public:
     void insertWidget(int index, QWidget* widget);
     void insertSplitWidget(int index, SplitWidget* widget);
     void insertSplitter(int index, Splitter* splitter);
-    QWidget* defaultWidget;
-    QWidget* getDefaultWidget();
+    QWidget* (*defaultWidget) ();
 };
