@@ -4,6 +4,8 @@
 
 #include "SplitWidget.hpp"
 
+#include "SplitterHandle.hpp"
+
 class Splitter : public QSplitter
 {
 public:
@@ -16,4 +18,6 @@ public:
     void insertSplitWidget(int index, SplitWidget* widget);
     void insertSplitter(int index, Splitter* splitter);
     QWidget* (*defaultWidget) ();
+protected:
+    virtual QSplitterHandle* createHandle();
 };

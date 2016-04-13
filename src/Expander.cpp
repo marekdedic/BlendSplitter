@@ -37,12 +37,20 @@ bool Expander::eventFilter(QObject*, QEvent* event)
 
 void Expander::mousePressEvent(QMouseEvent* event)
 {
-    event->accept();    // No-op
+    if(event->button() == Qt::LeftButton)
+    {
+        event->accept();    // No-op
+    }
+    else
+    {
+        releaseMouse();
+        event->ignore();    // Propagate event
+    }
 }
 
-void Expander::mouseReleaseEvent(QMouseEvent* event)
+void Expander::mouseMoveEvent(QMouseEvent *event)
 {
-    if(event->button() == Qt::LeftButton)
+    if(event->buttons() & Qt::LeftButton)
     {
         try
         {
@@ -65,6 +73,7 @@ void Expander::mouseReleaseEvent(QMouseEvent* event)
                 sizes.insert(index + 1, newSize - 1);
                 parentSplitter->insertWidget(index + 1);
                 parentSplitter->setSizes(sizes);
+                parentSplitter->handle(index + 1)->grabMouse();
             }
             else if(parentSplitter->orientation() == Qt::Vertical and event->x() < size and event->y() > size and (size - event->x()) < event->y())
             {
@@ -83,68 +92,74 @@ void Expander::mouseReleaseEvent(QMouseEvent* event)
                 sizes.insert(index, newSize - 1);
                 parentSplitter->insertWidget(index);
                 parentSplitter->setSizes(sizes);
+                parentSplitter->handle(index + 1)->grabMouse();
             }
             else if(parentSplitter->orientation() == Qt::Horizontal and event->x() < size and event->y() > size and (size - event->x()) < event->y())
             {
                 Splitter* newSplitter{new Splitter{parentSplitter->defaultWidget, Qt::Vertical}};
-                QList<int> sizes1{parentSplitter->sizes()};
-                QList<int> sizes2{};
-                if(event->y() + size < parentSplitWidget->height())
-                {
-                    sizes2.append(event->y());
-                    sizes2.append(parentSplitWidget->height() - event->y() - 1);
-                }
-                else
-                {
-                    sizes2.append(parentSplitWidget->height() - size - 1);
-                    sizes2.append(size);
-                }
+                QList<int> sizes{parentSplitter->sizes()};
                 parentSplitter->insertSplitter(parentSplitter->indexOf(parentSplitWidget), newSplitter);
                 newSplitter->addWidget();
                 newSplitter->addSplitWidget(parentSplitWidget);
-                parentSplitter->setSizes(sizes1);
-                newSplitter->setSizes(sizes2);
+                parentSplitter->setSizes(sizes);
+                newSplitter->handle(1)->grabMouse();
             }
             else if(parentSplitter->orientation() == Qt::Vertical and event->x() < 0 and event->y() > 0 and (size - event->x()) > event->y())
             {
                 Splitter* newSplitter{new Splitter{parentSplitter->defaultWidget, Qt::Horizontal}};
-                QList<int> sizes1{parentSplitter->sizes()};
-                QList<int> sizes2{};
-                if(-(event->x()) + (2 * size) < parentSplitWidget->width())
-                {
-                    sizes2.append(parentSplitWidget->width() + event->x() - size - 1);
-                    sizes2.append(-(event->x()) + size);
-                }
-                else
-                {
-                    sizes2.append(size);
-                    sizes2.append(parentSplitWidget->width() - size - 1);
-                }
+                QList<int> sizes{parentSplitter->sizes()};
                 parentSplitter->insertSplitter(parentSplitter->indexOf(parentSplitWidget), newSplitter);
                 newSplitter->addSplitWidget(parentSplitWidget);
                 newSplitter->addWidget();
-                parentSplitter->setSizes(sizes1);
-                newSplitter->setSizes(sizes2);
+                parentSplitter->setSizes(sizes);
+                newSplitter->handle(1)->grabMouse();
             }
-            else if(parentSplitter->orientation() == Qt::Horizontal and event->x() > size and event->y() > 0 and event->y() < parentSplitWidget->height())
+        }
+        catch(std::bad_cast& exception)
+        {
+            std::cerr << exception.what() << " caused by having an expander not properly inside a SplitWidget inside a Splitter." << std::endl;
+            APPLICATION->exit(-1);
+        }
+    }
+}
+
+void Expander::mouseReleaseEvent(QMouseEvent* event)
+{
+    if(event->button() == Qt::LeftButton)
+    {
+        try
+        {
+            SplitWidget* parentSplitWidget{dynamic_cast<SplitWidget*>(parentWidget())};
+            Splitter* parentSplitter{dynamic_cast<Splitter*>(parentSplitWidget->parentWidget())};
+            if(parentSplitter->orientation() == Qt::Horizontal and event->x() > size and event->y() > 0 and event->y() < parentSplitWidget->height())
             {
-                delete parentSplitter->widget(parentSplitter->indexOf(parentSplitWidget) + 1);
+                QList<int> sizes{parentSplitter->sizes()};
+                int index{parentSplitter->indexOf(parentSplitWidget)};
+                sizes[index] += sizes[index + 1] + 1;
+                sizes.removeAt(index + 1);
+                delete parentSplitter->widget(index + 1);
                 if(parentSplitter->count() == 1 and parentSplitter != SPLITTER)
                 {
                     Splitter* newParent{dynamic_cast<Splitter*>(parentSplitter->parentWidget())};
                     newParent->insertSplitWidget(newParent->indexOf(parentSplitter), parentSplitWidget);
                     delete parentSplitter;
                 }
+                parentSplitter->setSizes(sizes);
             }
             else if(parentSplitter->orientation() == Qt::Vertical and event->y() < 0 and event->x() < size and -(event->x()) < parentSplitWidget->width() - size)
             {
-                delete parentSplitter->widget(parentSplitter->indexOf(parentSplitWidget) - 1);
+                QList<int> sizes{parentSplitter->sizes()};
+                int index{parentSplitter->indexOf(parentSplitWidget)};
+                sizes[index] += sizes[index - 1] + 1;
+                sizes.removeAt(index - 1);
+                delete parentSplitter->widget(index - 1);
                 if(parentSplitter->count() == 1 and parentSplitter != SPLITTER)
                 {
                     Splitter* newParent{dynamic_cast<Splitter*>(parentSplitter->parentWidget())};
                     newParent->insertSplitWidget(newParent->indexOf(parentSplitter), parentSplitWidget);
                     delete parentSplitter;
                 }
+                parentSplitter->setSizes(sizes);
             }
             releaseMouse();
         }

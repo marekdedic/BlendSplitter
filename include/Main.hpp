@@ -4,4 +4,5 @@
 
 #include "Expander.hpp"
 #include "Splitter.hpp"
+#include "SplitterHandle.hpp"
 #include "SplitWidget.hpp"

@@ -41,3 +41,8 @@ void Splitter::insertSplitter(int index, Splitter* splitter)
 {
     QSplitter::insertWidget(index, splitter);
 }
+
+QSplitterHandle* Splitter::createHandle()
+{
+    return new SplitterHandle(orientation(), this);
+}
