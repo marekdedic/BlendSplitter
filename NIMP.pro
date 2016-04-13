@@ -18,7 +18,8 @@ SOURCES += src/Main.cpp \
     src/Splitter.cpp \
     src/SplitWidget.cpp \
     src/Expander.cpp \
-    src/SplitterHandle.cpp
+    src/SplitterHandle.cpp \
+    src/Overlay.cpp
 
 HEADERS  += \
     include/Global.hpp \
@@ -26,7 +27,8 @@ HEADERS  += \
     include/Splitter.hpp \
     include/SplitWidget.hpp \
     include/Expander.hpp \
-    include/SplitterHandle.hpp
+    include/SplitterHandle.hpp \
+    include/Overlay.hpp
 
 RESOURCES += \
     images.qrc

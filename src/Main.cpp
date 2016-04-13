@@ -21,7 +21,7 @@ int main(int argc, char** argv)
     SPLITTER->addWidget(Label1);
     SPLITTER->addWidget(Label2);
 
-    WINDOW->setStyleSheet("QSplitter::handle{background: black;}");
+    //WINDOW->setStyleSheet("QSplitter::handle{background: black;}");
 
     WINDOW->show();
 

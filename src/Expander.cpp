@@ -4,7 +4,7 @@
 
 int Expander::size = 32;
 
-Expander::Expander(QString filename, SplitWidget* parent) : QLabel(parent), pixmap{new QPixmap{filename}}
+Expander::Expander(QString filename, SplitWidget* parent) : QLabel(parent), pixmap{new QPixmap{filename}}, overlay{nullptr}
 {
     *pixmap = pixmap->scaledToHeight(size, Qt::FastTransformation);
     setPixmap(*pixmap);
@@ -18,21 +18,7 @@ Expander::Expander(QString filename, SplitWidget* parent) : QLabel(parent), pixm
 void Expander::reposition()
 {
     move(parentWidget()->width() - width(), 0);
-}
-
-bool Expander::eventFilter(QObject*, QEvent* event)
-{
-    if(event->type() == QEvent::MouseButtonPress)
-    {
-        QMouseEvent* mouseEvent = dynamic_cast<QMouseEvent*>(event);
-        if(mask().contains(mouseEvent->pos() - geometry().topLeft()))
-        {
-            grabMouse();
-            mousePressEvent(mouseEvent);
-            return true;
-        }
-    }
-    return false;
+    raise();
 }
 
 void Expander::mousePressEvent(QMouseEvent* event)
@@ -111,8 +97,30 @@ void Expander::mouseMoveEvent(QMouseEvent *event)
                 parentSplitter->insertSplitter(parentSplitter->indexOf(parentSplitWidget), newSplitter);
                 newSplitter->addSplitWidget(parentSplitWidget);
                 newSplitter->addWidget();
-                parentSplitter->setSizes(sizes);
+                 parentSplitter->setSizes(sizes);
                 newSplitter->handle(1)->grabMouse();
+            }
+
+            if(parentSplitter->orientation() == Qt::Horizontal and event->x() > size and event->y() > 0 and event->y() < parentSplitWidget->height())
+            {
+                if(overlay == nullptr)
+                {
+                    overlay = new Overlay{parentSplitter->widget(parentSplitter->indexOf(parentSplitWidget) + 1)};
+                    overlay->show();
+                }
+            }
+            else if(parentSplitter->orientation() == Qt::Vertical and event->y() < 0 and event->x() < size and -(event->x()) < parentSplitWidget->width() - size)
+            {
+                if(overlay == nullptr)
+                {
+                    overlay = new Overlay{parentSplitter->widget(parentSplitter->indexOf(parentSplitWidget) - 1)};
+                    overlay->show();
+                }
+            }
+            else if(overlay != nullptr)
+            {
+                delete overlay;
+                overlay = nullptr;
             }
         }
         catch(std::bad_cast& exception)
@@ -144,6 +152,7 @@ void Expander::mouseReleaseEvent(QMouseEvent* event)
                     newParent->insertSplitWidget(newParent->indexOf(parentSplitter), parentSplitWidget);
                     delete parentSplitter;
                 }
+                overlay = nullptr;
                 parentSplitter->setSizes(sizes);
             }
             else if(parentSplitter->orientation() == Qt::Vertical and event->y() < 0 and event->x() < size and -(event->x()) < parentSplitWidget->width() - size)
@@ -159,6 +168,7 @@ void Expander::mouseReleaseEvent(QMouseEvent* event)
                     newParent->insertSplitWidget(newParent->indexOf(parentSplitter), parentSplitWidget);
                     delete parentSplitter;
                 }
+                overlay = nullptr;
                 parentSplitter->setSizes(sizes);
             }
             releaseMouse();
