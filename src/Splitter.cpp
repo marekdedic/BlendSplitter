@@ -4,6 +4,7 @@ Splitter::Splitter(QWidget* (*defaultWidget) (), Qt::Orientation orientation) : 
 {
     setChildrenCollapsible(false);
     setHandleWidth(1);
+    setStyleSheet("QSplitter::handle{background: black;}");
 }
 
 void Splitter::addWidget()

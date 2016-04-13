@@ -3,11 +3,11 @@
 #include "Global.hpp"
 
 #include "SplitWidget.hpp"
-
 #include "SplitterHandle.hpp"
 
 class Splitter : public QSplitter
 {
+    Q_OBJECT
 public:
     Splitter(QWidget* (*defaultWidget) () = []()->QWidget* {return new QLabel{"Inserted widget"};}, Qt::Orientation orientation = Qt::Horizontal);
     void addWidget();
