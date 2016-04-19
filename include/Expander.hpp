@@ -2,18 +2,18 @@
 
 #include "Global.hpp"
 
-#include "SplitWidget.hpp"
+#include "SplitterWidgetDecorator.hpp"
 
 #include "Overlay.hpp"
 
-class SplitWidget;
+class SplitterWidgetDecorator;
 
 class Expander : public QLabel
 {
     Q_OBJECT
 public:
     static int size;
-    Expander(QString filename, SplitWidget* parent);
+    Expander(QString filename, SplitterWidgetDecorator* parent);
     void reposition();
 protected slots:
     virtual void mousePressEvent(QMouseEvent* event);

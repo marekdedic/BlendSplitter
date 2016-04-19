@@ -6,11 +6,11 @@ class Overlay;
 
 class Expander;
 
-class SplitWidget : public QWidget
+class SplitterWidgetDecorator : public QWidget
 {
     Q_OBJECT
 public:
-    SplitWidget(QWidget* widget);
+    SplitterWidgetDecorator(QWidget* widget);
 protected slots:
     virtual void resizeEvent(QResizeEvent*);
 private:
