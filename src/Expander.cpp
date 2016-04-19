@@ -2,9 +2,9 @@
 
 #include "include/Splitter.hpp"
 
-int Expander::size = 32;
+int Expander::size = 64;
 
-Expander::Expander(QString filename, SplitWidget* parent) : QLabel(parent), pixmap{new QPixmap{filename}}, overlay{nullptr}
+Expander::Expander(QString filename, SplitterWidgetDecorator* parent) : QLabel(parent), pixmap{new QPixmap{filename}}, overlay{nullptr}
 {
     *pixmap = pixmap->scaledToHeight(size, Qt::FastTransformation);
     setPixmap(*pixmap);
@@ -40,7 +40,7 @@ void Expander::mouseMoveEvent(QMouseEvent *event)
     {
         try
         {
-            SplitWidget* parentSplitWidget{dynamic_cast<SplitWidget*>(parentWidget())};
+            SplitterWidgetDecorator* parentSplitWidget{dynamic_cast<SplitterWidgetDecorator*>(parentWidget())};
             Splitter* parentSplitter{dynamic_cast<Splitter*>(parentSplitWidget->parentWidget())};
             if(parentSplitter->orientation() == Qt::Horizontal and event->x() < 0 and event->y() > 0 and (size - event->x()) > event->y())
             {
@@ -97,7 +97,7 @@ void Expander::mouseMoveEvent(QMouseEvent *event)
                 parentSplitter->insertSplitter(parentSplitter->indexOf(parentSplitWidget), newSplitter);
                 newSplitter->addSplitWidget(parentSplitWidget);
                 newSplitter->addWidget();
-                 parentSplitter->setSizes(sizes);
+                parentSplitter->setSizes(sizes);
                 newSplitter->handle(1)->grabMouse();
             }
 
@@ -115,6 +115,7 @@ void Expander::mouseMoveEvent(QMouseEvent *event)
                 {
                     overlay = new Overlay{parentSplitter->widget(parentSplitter->indexOf(parentSplitWidget) - 1)};
                     overlay->show();
+                    //overlay->setParent(this);
                 }
             }
             else if(overlay != nullptr)
@@ -137,39 +138,31 @@ void Expander::mouseReleaseEvent(QMouseEvent* event)
     {
         try
         {
-            SplitWidget* parentSplitWidget{dynamic_cast<SplitWidget*>(parentWidget())};
+            SplitterWidgetDecorator* parentSplitWidget{dynamic_cast<SplitterWidgetDecorator*>(parentWidget())};
             Splitter* parentSplitter{dynamic_cast<Splitter*>(parentSplitWidget->parentWidget())};
             if(parentSplitter->orientation() == Qt::Horizontal and event->x() > size and event->y() > 0 and event->y() < parentSplitWidget->height())
             {
-                QList<int> sizes{parentSplitter->sizes()};
                 int index{parentSplitter->indexOf(parentSplitWidget)};
-                sizes[index] += sizes[index + 1] + 1;
-                sizes.removeAt(index + 1);
                 delete parentSplitter->widget(index + 1);
                 if(parentSplitter->count() == 1 and parentSplitter != SPLITTER)
                 {
-                    Splitter* newParent{dynamic_cast<Splitter*>(parentSplitter->parentWidget())};
-                    newParent->insertSplitWidget(newParent->indexOf(parentSplitter), parentSplitWidget);
-                    delete parentSplitter;
+                    Splitter* newParent{dynamic_cast<Splitter*>(parentSplitter->parentWidget()->parentWidget())};
+                    newParent->insertDecoratedWidget(newParent->indexOf(parentSplitter->parentWidget()), parentSplitWidget);
+                    delete parentSplitter->parentWidget();
                 }
                 overlay = nullptr;
-                parentSplitter->setSizes(sizes);
             }
             else if(parentSplitter->orientation() == Qt::Vertical and event->y() < 0 and event->x() < size and -(event->x()) < parentSplitWidget->width() - size)
             {
-                QList<int> sizes{parentSplitter->sizes()};
                 int index{parentSplitter->indexOf(parentSplitWidget)};
-                sizes[index] += sizes[index - 1] + 1;
-                sizes.removeAt(index - 1);
                 delete parentSplitter->widget(index - 1);
                 if(parentSplitter->count() == 1 and parentSplitter != SPLITTER)
                 {
-                    Splitter* newParent{dynamic_cast<Splitter*>(parentSplitter->parentWidget())};
-                    newParent->insertSplitWidget(newParent->indexOf(parentSplitter), parentSplitWidget);
-                    delete parentSplitter;
+                    Splitter* newParent{dynamic_cast<Splitter*>(parentSplitter->parentWidget()->parentWidget())};
+                    newParent->insertDecoratedWidget(newParent->indexOf(parentSplitter->parentWidget()), parentSplitWidget);
+                    delete parentSplitter->parentWidget();
                 }
                 overlay = nullptr;
-                parentSplitter->setSizes(sizes);
             }
             releaseMouse();
         }

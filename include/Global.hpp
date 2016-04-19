@@ -6,6 +6,7 @@
 #include <QLabel>
 #include <QPixmap>
 #include <QMouseEvent>
+#include <QBoxLayout>
 
 #include <iostream>
 #include <typeinfo>

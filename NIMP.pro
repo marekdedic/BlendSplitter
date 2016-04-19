@@ -16,19 +16,21 @@ QMAKE_CXXFLAGS += -std=c++11 -Wnon-virtual-dtor -Winit-self -Wredundant-decls -W
 
 SOURCES += src/Main.cpp \
     src/Splitter.cpp \
-    src/SplitWidget.cpp \
     src/Expander.cpp \
     src/SplitterHandle.cpp \
-    src/Overlay.cpp
+    src/Overlay.cpp \
+    src/SplitterWidgetDecorator.cpp \
+    src/SplitterDecorator.cpp
 
 HEADERS  += \
     include/Global.hpp \
     include/Main.hpp \
     include/Splitter.hpp \
-    include/SplitWidget.hpp \
     include/Expander.hpp \
     include/SplitterHandle.hpp \
-    include/Overlay.hpp
+    include/SplitterWidgetDecorator.hpp \
+    include/Overlay.hpp \
+    include/SplitterDecorator.hpp
 
 RESOURCES += \
     images.qrc

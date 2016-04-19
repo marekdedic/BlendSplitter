@@ -1,6 +1,6 @@
 #include "include/Splitter.hpp"
 
-Splitter::Splitter(QWidget* (*defaultWidget) (), Qt::Orientation orientation) : QSplitter{orientation}, defaultWidget{defaultWidget}
+Splitter::Splitter(QWidget* (*defaultWidget) (), Qt::Orientation orientation) : QSplitter{orientation, nullptr}, defaultWidget{defaultWidget}
 {
     setChildrenCollapsible(false);
     setHandleWidth(1);
@@ -17,9 +17,9 @@ void Splitter::addWidget(QWidget* widget)
     insertWidget(-1, widget);
 }
 
-void Splitter::addSplitWidget(SplitWidget* widget)
+void Splitter::addSplitWidget(SplitterWidgetDecorator* widget)
 {
-    insertSplitWidget(-1, widget);
+    insertDecoratedWidget(-1, widget);
 }
 
 void Splitter::insertWidget(int index)
@@ -29,18 +29,19 @@ void Splitter::insertWidget(int index)
 
 void Splitter::insertWidget(int index, QWidget* widget)
 {
-    SplitWidget* decorator{new SplitWidget{widget}};
+    SplitterWidgetDecorator* decorator{new SplitterWidgetDecorator{widget}};
     QSplitter::insertWidget(index, decorator);
 }
 
-void Splitter::insertSplitWidget(int index, SplitWidget* widget)
+void Splitter::insertDecoratedWidget(int index, SplitterWidgetDecorator* widget)
 {
     QSplitter::insertWidget(index, widget);
 }
 
 void Splitter::insertSplitter(int index, Splitter* splitter)
 {
-    QSplitter::insertWidget(index, splitter);
+    SplitterDecorator* decorator{new SplitterDecorator{splitter}};
+    QSplitter::insertWidget(index, decorator);
 }
 
 QSplitterHandle* Splitter::createHandle()
