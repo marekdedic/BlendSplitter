@@ -10,7 +10,11 @@ class SplitterDecorator : public QFrame
 {
     Q_OBJECT
 public:
+    SplitterDecorator() = default;
     SplitterDecorator(Splitter* splitter);
+    SplitterDecorator(const SplitterDecorator& other);
 private:
     Splitter* splitter;
 };
+
+Q_DECLARE_METATYPE(SplitterDecorator);
