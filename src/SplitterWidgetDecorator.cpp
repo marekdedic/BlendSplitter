@@ -5,7 +5,10 @@
 
 SplitterWidgetDecorator::SplitterWidgetDecorator(QWidget* widget) : QWidget{}, widget{widget}, expander{new Expander{":/UI/Splitter_expander", this}}
 {
-    widget->setParent(this);
+    QHBoxLayout *layout = new QHBoxLayout{};
+    layout->addWidget(widget);
+    layout->setMargin(0);
+    setLayout(layout);
     setMinimumSize(Expander::size, Expander::size);
 }
 
