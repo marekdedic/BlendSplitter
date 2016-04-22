@@ -94,7 +94,7 @@ void Expander::mouseMoveEvent(QMouseEvent *event)
             QList<int> sizes{parentSplitter->sizes()};
             parentSplitter->insertSplitter(parentSplitter->indexOf(parentSplitWidget), newSplitter);
             newSplitter->addWidget();
-            newSplitter->addSplitWidget(parentSplitWidget);
+            newSplitter->addDecoratedWidget(parentSplitWidget);
             parentSplitter->setSizes(sizes);
             newSplitter->handle(1)->grabMouse();
         }
@@ -103,7 +103,7 @@ void Expander::mouseMoveEvent(QMouseEvent *event)
             Splitter* newSplitter{new Splitter{parentSplitter->defaultWidget, Qt::Horizontal}};
             QList<int> sizes{parentSplitter->sizes()};
             parentSplitter->insertSplitter(parentSplitter->indexOf(parentSplitWidget), newSplitter);
-            newSplitter->addSplitWidget(parentSplitWidget);
+            newSplitter->addDecoratedWidget(parentSplitWidget);
             newSplitter->addWidget();
             parentSplitter->setSizes(sizes);
             newSplitter->handle(1)->grabMouse();
