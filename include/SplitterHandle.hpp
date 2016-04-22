@@ -2,6 +2,8 @@
 
 #include "Global.hpp"
 
+class Splitter;
+
 class SplitterHandle : public QSplitterHandle
 {
     Q_OBJECT

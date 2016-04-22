@@ -1,5 +1,11 @@
 #pragma once
 
+#ifdef QTSPLITTER_LIBRARY
+    #define QTSPLITTER_EXPORT Q_DECL_EXPORT
+#else
+    #define QTSPLITTER_EXPORT Q_DECL_IMPORT
+#endif
+
 #include "Global.hpp"
 
 #include "Expander.hpp"
@@ -8,7 +14,7 @@
 #include "SplitterHandle.hpp"
 #include "SplitterWidgetDecorator.hpp"
 
-class Splitter : public QSplitter
+class QTSPLITTER_EXPORT Splitter : public QSplitter
 {
     Q_OBJECT
 public:
