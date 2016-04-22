@@ -1,4 +1,4 @@
-#include "include/SplitterDecorator.hpp"
+#include "include/QtSplitter/SplitterDecorator.hpp"
 
 #include "include/Splitter.hpp"
 

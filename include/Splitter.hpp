@@ -6,13 +6,13 @@
     #define QTSPLITTER_EXPORT Q_DECL_IMPORT
 #endif
 
-#include "Global.hpp"
+#include "QtSplitter/Global.hpp"
 
-#include "Expander.hpp"
-#include "Overlay.hpp"
-#include "SplitterDecorator.hpp"
-#include "SplitterHandle.hpp"
-#include "SplitterWidgetDecorator.hpp"
+#include "QtSplitter/Expander.hpp"
+#include "QtSplitter/Overlay.hpp"
+#include "QtSplitter/SplitterDecorator.hpp"
+#include "QtSplitter/SplitterHandle.hpp"
+#include "QtSplitter/SplitterWidgetDecorator.hpp"
 
 class QTSPLITTER_EXPORT Splitter : public QSplitter
 {

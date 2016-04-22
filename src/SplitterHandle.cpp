@@ -1,4 +1,4 @@
-#include "include/SplitterHandle.hpp"
+#include "include/QtSplitter/SplitterHandle.hpp"
 
 SplitterHandle::SplitterHandle(Qt::Orientation orientation, QSplitter* parent) : QSplitterHandle(orientation, parent) {}
 
