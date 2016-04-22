@@ -14,7 +14,6 @@ public:
 protected slots:
     virtual void resizeEvent(QResizeEvent*);
 private:
-    friend Expander;
     QWidget* widget;
     Expander* expander;
 };

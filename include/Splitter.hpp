@@ -13,10 +13,11 @@ public:
     Splitter(QWidget* (*defaultWidget) () = []()->QWidget* {return new QLabel{"Inserted widget"};}, Qt::Orientation orientation = Qt::Horizontal);
     void addWidget();
     void addWidget(QWidget* widget);
-    void addSplitWidget(SplitterWidgetDecorator* widget);
     void insertWidget(int index);
     void insertWidget(int index, QWidget* widget);
+    void addDecoratedWidget(SplitterWidgetDecorator* widget);
     void insertDecoratedWidget(int index, SplitterWidgetDecorator* widget);
+    void addSplitter(Splitter* splitter);
     void insertSplitter(int index, Splitter* splitter);
     QWidget* (*defaultWidget) ();
 protected:

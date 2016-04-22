@@ -17,11 +17,6 @@ void Splitter::addWidget(QWidget* widget)
     insertWidget(-1, widget);
 }
 
-void Splitter::addSplitWidget(SplitterWidgetDecorator* widget)
-{
-    insertDecoratedWidget(-1, widget);
-}
-
 void Splitter::insertWidget(int index)
 {
     insertWidget(index, (*defaultWidget) ());
@@ -33,9 +28,19 @@ void Splitter::insertWidget(int index, QWidget* widget)
     QSplitter::insertWidget(index, decorator);
 }
 
+void Splitter::addDecoratedWidget(SplitterWidgetDecorator* widget)
+{
+    insertDecoratedWidget(-1, widget);
+}
+
 void Splitter::insertDecoratedWidget(int index, SplitterWidgetDecorator* widget)
 {
     QSplitter::insertWidget(index, widget);
+}
+
+void Splitter::addSplitter(Splitter *splitter)
+{
+    insertSplitter(-1, splitter);
 }
 
 void Splitter::insertSplitter(int index, Splitter* splitter)
