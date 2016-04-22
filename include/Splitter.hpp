@@ -2,9 +2,11 @@
 
 #include "Global.hpp"
 
-#include "SplitterWidgetDecorator.hpp"
-#include "SplitterHandle.hpp"
+#include "Expander.hpp"
+#include "Overlay.hpp"
 #include "SplitterDecorator.hpp"
+#include "SplitterHandle.hpp"
+#include "SplitterWidgetDecorator.hpp"
 
 class Splitter : public QSplitter
 {

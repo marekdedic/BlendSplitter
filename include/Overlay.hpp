@@ -2,12 +2,13 @@
 
 #include "Global.hpp"
 
-#include "SplitterWidgetDecorator.hpp"
+class Expander;
 
 class Overlay : public QLabel
 {
-public:
-    Overlay(QWidget* parent);
 private:
+    friend Expander;
+    Overlay() = delete;
+    Overlay(QWidget* parent);
     void reposition();
 };
