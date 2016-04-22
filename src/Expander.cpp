@@ -42,13 +42,13 @@ void Expander::mouseMoveEvent(QMouseEvent *event)
         if(parentSplitWidget == 0)
         {
             std::cerr << "Bad cast caused by having an expander not properly inside a SplitWidget inside a Splitter." << std::endl;
-            APPLICATION->exit(-1);
+            qApp->exit(-1);
         }
         Splitter* parentSplitter{qobject_cast<Splitter*>(parentSplitWidget->parentWidget())};
         if(parentSplitter == 0)
         {
             std::cerr << "Bad cast caused by having an expander not properly inside a SplitWidget inside a Splitter." << std::endl;
-            APPLICATION->exit(-1);
+            qApp->exit(-1);
         }
         if(parentSplitter->orientation() == Qt::Horizontal and event->x() < 0 and event->y() > 0 and (size - event->x()) > event->y())
         {
@@ -140,13 +140,13 @@ void Expander::mouseReleaseEvent(QMouseEvent* event)
         if(parentSplitWidget == 0)
         {
             std::cerr << "Bad cast caused by having an expander not properly inside a SplitWidget inside a Splitter." << std::endl;
-            APPLICATION->exit(-1);
+            qApp->exit(-1);
         }
         Splitter* parentSplitter{qobject_cast<Splitter*>(parentSplitWidget->parentWidget())};
         if(parentSplitter == 0)
         {
             std::cerr << "Bad cast caused by having an expander not properly inside a SplitWidget inside a Splitter." << std::endl;
-            APPLICATION->exit(-1);
+            qApp->exit(-1);
         }
         if(parentSplitter->orientation() == Qt::Horizontal and event->x() > size and event->y() > 0 and event->y() < parentSplitWidget->height())
         {
@@ -161,7 +161,7 @@ void Expander::mouseReleaseEvent(QMouseEvent* event)
                 if(newParent == 0)
                 {
                     std::cerr << "Bad cast caused by having an expander not properly inside a SplitWidget inside a Splitter." << std::endl;
-                    APPLICATION->exit(-1);
+                    qApp->exit(-1);
                 }
                 newParent->insertDecoratedWidget(newParent->indexOf(parentSplitter->parentWidget()), parentSplitWidget);
                 delete parentSplitter->parentWidget();
@@ -185,7 +185,7 @@ void Expander::mouseReleaseEvent(QMouseEvent* event)
                 if(newParent == 0)
                 {
                     std::cerr << "Bad cast caused by having an expander not properly inside a SplitWidget inside a Splitter." << std::endl;
-                    APPLICATION->exit(-1);
+                    qApp->exit(-1);
                 }
                 newParent->insertDecoratedWidget(newParent->indexOf(parentSplitter->parentWidget()), parentSplitWidget);
                 delete parentSplitter->parentWidget();

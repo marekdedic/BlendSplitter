@@ -1,12 +1,11 @@
 #include "include/Main.hpp"
 
-QApplication* APPLICATION{};
 QMainWindow* WINDOW{};
 Splitter* SPLITTER{};
 
 int main(int argc, char** argv)
 {
-    APPLICATION = new QApplication{argc, argv};
+    new QApplication{argc, argv};
     WINDOW = new QMainWindow{};
     SPLITTER = new Splitter{};
 
@@ -25,5 +24,5 @@ int main(int argc, char** argv)
 
     WINDOW->show();
 
-    return APPLICATION->exec();
+    return qApp->exec();
 }
