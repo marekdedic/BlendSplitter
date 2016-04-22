@@ -1,8 +1,0 @@
-<RCC>
-    <qresource prefix="/icons">
-        <file alias="app_icon">resources/icon.png</file>
-    </qresource>
-    <qresource prefix="/UI">
-        <file alias="Splitter_expander">resources/expander.png</file>
-    </qresource>
-</RCC>
