@@ -2,19 +2,17 @@
 
 #include "Global.hpp"
 
-class Overlay;
-
 class Expander;
 
 class SplitterWidgetDecorator : public QWidget
 {
     Q_OBJECT
-public:
+private:
+    friend Splitter;
+    QWidget* widget;
+    Expander* expander;
     SplitterWidgetDecorator() = delete;
     SplitterWidgetDecorator(QWidget* widget);
 protected slots:
     virtual void resizeEvent(QResizeEvent*);
-private:
-    QWidget* widget;
-    Expander* expander;
 };

@@ -1,10 +1,6 @@
 #pragma once
 
 #include "Global.hpp"
-#include "Splitter.hpp"
-#include "Expander.hpp"
-
-class Overlay;
 
 class SplitterDecorator : public QWidget
 {

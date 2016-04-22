@@ -1,5 +1,7 @@
 #include "include/SplitterDecorator.hpp"
 
+#include "include/Splitter.hpp"
+
 SplitterDecorator::SplitterDecorator(Splitter* splitter) : QWidget{}, splitter{splitter}
 {
     QHBoxLayout *layout = new QHBoxLayout{};
