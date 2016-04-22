@@ -33,7 +33,4 @@ HEADERS  += \
     include/QtSplitter/SplitterHandle.hpp \
     include/QtSplitter/SplitterWidgetDecorator.hpp
 
-RESOURCES += \
-    images.qrc
-
 DEFINES += QTSPLITTER_LIBRARY
