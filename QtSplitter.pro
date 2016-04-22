@@ -8,13 +8,15 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = NIMP
+TARGET = QtSplitter
+
+TEMPLATE = lib
 
 CONFIG += c++11
 
 QMAKE_CXXFLAGS += -std=c++11 -Wnon-virtual-dtor -Winit-self -Wredundant-decls -Wcast-align -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Wmain -std=c++11 -Wfatal-errors -Wextra -Wall
 
-SOURCES += src/Main.cpp \
+SOURCES += \
     src/Splitter.cpp \
     src/Expander.cpp \
     src/SplitterHandle.cpp \
@@ -23,14 +25,15 @@ SOURCES += src/Main.cpp \
     src/SplitterDecorator.cpp
 
 HEADERS  += \
-    include/Global.hpp \
-    include/Main.hpp \
     include/Splitter.hpp \
     include/Expander.hpp \
     include/SplitterHandle.hpp \
     include/SplitterWidgetDecorator.hpp \
     include/Overlay.hpp \
-    include/SplitterDecorator.hpp
+    include/SplitterDecorator.hpp \
+    include/Global.hpp
 
 RESOURCES += \
     images.qrc
+
+DEFINES += QTSPLITTER_LIBRARY

@@ -2,6 +2,8 @@
 
 #include "Global.hpp"
 
+class Splitter;
+
 class SplitterDecorator : public QWidget
 {
     Q_OBJECT
