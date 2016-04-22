@@ -1,4 +1,4 @@
-#include "include/Expander.hpp"
+#include "include/QtSplitter/Expander.hpp"
 
 #include "include/Splitter.hpp"
 

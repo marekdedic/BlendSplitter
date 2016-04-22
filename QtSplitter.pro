@@ -26,12 +26,12 @@ SOURCES += \
 
 HEADERS  += \
     include/Splitter.hpp \
-    include/Expander.hpp \
-    include/SplitterHandle.hpp \
-    include/SplitterWidgetDecorator.hpp \
-    include/Overlay.hpp \
-    include/SplitterDecorator.hpp \
-    include/Global.hpp
+    include/QtSplitter/Expander.hpp \
+    include/QtSplitter/Global.hpp \
+    include/QtSplitter/Overlay.hpp \
+    include/QtSplitter/SplitterDecorator.hpp \
+    include/QtSplitter/SplitterHandle.hpp \
+    include/QtSplitter/SplitterWidgetDecorator.hpp
 
 RESOURCES += \
     images.qrc
