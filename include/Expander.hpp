@@ -13,6 +13,7 @@ class Expander : public QLabel
     Q_OBJECT
 public:
     static int size;
+    Expander() = delete;
     Expander(QString filename, SplitterWidgetDecorator* parent);
     void reposition();
 protected slots:

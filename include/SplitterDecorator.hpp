@@ -6,7 +6,7 @@
 
 class Overlay;
 
-class SplitterDecorator : public QFrame
+class SplitterDecorator : public QWidget
 {
     Q_OBJECT
 public:

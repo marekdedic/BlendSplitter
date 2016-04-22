@@ -7,6 +7,14 @@ Splitter::Splitter(QWidget* (*defaultWidget) (), Qt::Orientation orientation) : 
     setStyleSheet("QSplitter::handle{background: black;}");
 }
 
+Splitter::Splitter(const Splitter& other) : Splitter(other.defaultWidget, other.orientation()) {}
+
+Splitter& Splitter::operator=(const Splitter& other)
+{
+    defaultWidget = other.defaultWidget;
+    return *this;
+}
+
 void Splitter::addWidget()
 {
     addWidget((*defaultWidget) ());

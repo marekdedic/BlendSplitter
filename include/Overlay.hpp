@@ -8,5 +8,6 @@ class Overlay : public QLabel
 {
 public:
     Overlay(QWidget* parent);
+private:
     void reposition();
 };
