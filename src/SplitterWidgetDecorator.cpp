@@ -2,7 +2,7 @@
 
 #include "include/QtSplitter/Expander.hpp"
 
-SplitterWidgetDecorator::SplitterWidgetDecorator(QWidget* widget) : QWidget{}, widget{widget}, expander{new Expander{":/UI/Splitter_expander", this}}
+SplitterWidgetDecorator::SplitterWidgetDecorator(QWidget* widget) : QWidget{}, widget{widget}, expander{new Expander{this}}
 {
     QHBoxLayout *layout = new QHBoxLayout{};
     layout->addWidget(widget);
