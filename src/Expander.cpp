@@ -3,8 +3,9 @@
 #include "include/Splitter.hpp"
 
 int Expander::size = 32;
+QString Expander::image = ":/UI/QtSplitter_expander";
 
-Expander::Expander(QString filename, SplitterWidgetDecorator* parent) : QLabel(parent), pixmap{new QPixmap{filename}}, overlay{nullptr}
+Expander::Expander(SplitterWidgetDecorator* parent) : QLabel(parent), pixmap{new QPixmap{image}}, overlay{nullptr}
 {
     *pixmap = pixmap->scaledToHeight(size, Qt::FastTransformation);
     setPixmap(*pixmap);
