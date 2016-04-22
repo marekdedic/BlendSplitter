@@ -10,6 +10,7 @@ class SplitterWidgetDecorator : public QWidget
 {
     Q_OBJECT
 public:
+    SplitterWidgetDecorator() = delete;
     SplitterWidgetDecorator(QWidget* widget);
 protected slots:
     virtual void resizeEvent(QResizeEvent*);
