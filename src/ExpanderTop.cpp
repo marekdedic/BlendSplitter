@@ -4,15 +4,8 @@
 #include "include/QtSplitter/Overlay.hpp"
 #include "include/QtSplitter/SplitterWidgetDecorator.hpp"
 
-int ExpanderTop::size = 32;
-QString ExpanderTop::image = ":/UI/QtSplitter_expander";
-
-ExpanderTop::ExpanderTop(SplitterWidgetDecorator* parent) : QLabel(parent), pixmap{new QPixmap{image}}, overlay{nullptr}
+ExpanderTop::ExpanderTop(SplitterWidgetDecorator* parent) : Expander(parent)
 {
-    *pixmap = pixmap->scaledToHeight(size, Qt::FastTransformation);
-    setPixmap(*pixmap);
-    resize(size, size);
-    reposition();
     QPolygon mask;
     mask << QPoint{0, 0} << QPoint{0, size/10} << QPoint{size * 9 / 10, size} << QPoint{size, size} << QPoint{size, 0};
     setMask(QRegion{mask});
@@ -21,20 +14,7 @@ ExpanderTop::ExpanderTop(SplitterWidgetDecorator* parent) : QLabel(parent), pixm
 void ExpanderTop::reposition()
 {
     move(parentWidget()->width() - width(), 0);
-    raise();
-}
-
-void ExpanderTop::mousePressEvent(QMouseEvent* event)
-{
-    if(event->button() == Qt::LeftButton)
-    {
-        event->accept();    // No-op
-    }
-    else
-    {
-        releaseMouse();
-        event->ignore();    // Propagate event
-    }
+    Expander::reposition();
 }
 
 void ExpanderTop::mouseMoveEvent(QMouseEvent *event)
