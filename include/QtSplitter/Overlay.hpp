@@ -2,12 +2,12 @@
 
 #include "Global.hpp"
 
-class Expander;
+class ExpanderTop;
 
 class Overlay : public QLabel
 {
 private:
-    friend Expander;
+    friend ExpanderTop;
     Overlay() = delete;
     Overlay(QWidget* parent);
     void reposition();
