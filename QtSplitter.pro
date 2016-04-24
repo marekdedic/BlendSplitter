@@ -18,6 +18,7 @@ QMAKE_CXXFLAGS += -std=c++11 -Wnon-virtual-dtor -Winit-self -Wredundant-decls -W
 
 SOURCES += \
     src/Expander.cpp \
+    src/ExpanderBottom.cpp \
     src/ExpanderTop.cpp \
     src/Splitter.cpp \
     src/SplitterHandle.cpp \
@@ -26,9 +27,10 @@ SOURCES += \
     src/SplitterDecorator.cpp
 
 HEADERS  += \
-    include/QtSplitter/Expander.hpp \
-    include/QtSplitter/ExpanderTop.hpp \
     include/Splitter.hpp \
+    include/QtSplitter/Expander.hpp \
+    include/QtSplitter/ExpanderBottom.hpp \
+    include/QtSplitter/ExpanderTop.hpp \
     include/QtSplitter/Global.hpp \
     include/QtSplitter/Overlay.hpp \
     include/QtSplitter/SplitterDecorator.hpp \
