@@ -8,11 +8,8 @@
 
 #include "QtSplitter/Global.hpp"
 
-#include "QtSplitter/Expander.hpp"
-#include "QtSplitter/Overlay.hpp"
-#include "QtSplitter/SplitterDecorator.hpp"
-#include "QtSplitter/SplitterHandle.hpp"
-#include "QtSplitter/SplitterWidgetDecorator.hpp"
+class ExpanderTop;
+class SplitterWidgetDecorator;
 
 class QTSPLITTER_EXPORT Splitter : public QSplitter
 {
@@ -28,7 +25,7 @@ public:
     void addSplitter(Splitter* splitter);
     void insertSplitter(int index, Splitter* splitter);
 protected:
-    friend Expander;
+    friend ExpanderTop;
     QWidget* (*defaultWidget) ();
     virtual QSplitterHandle* createHandle();
     void addDecoratedWidget(SplitterWidgetDecorator* widget);

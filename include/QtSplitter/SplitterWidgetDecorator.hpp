@@ -3,7 +3,7 @@
 #include "Global.hpp"
 
 class Splitter;
-class Expander;
+class ExpanderTop;
 
 class SplitterWidgetDecorator : public QWidget
 {
@@ -11,7 +11,7 @@ class SplitterWidgetDecorator : public QWidget
 private:
     friend Splitter;
     QWidget* widget;
-    Expander* expander;
+    ExpanderTop* expander;
     SplitterWidgetDecorator() = delete;
     SplitterWidgetDecorator(QWidget* widget);
 protected slots:

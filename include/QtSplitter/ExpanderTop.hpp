@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Global.hpp"
-/*
+
 class Overlay;
 class SplitterWidgetDecorator;
 
@@ -21,4 +21,4 @@ protected slots:
     virtual void mousePressEvent(QMouseEvent* event);
     virtual void mouseMoveEvent(QMouseEvent* event);
     virtual void mouseReleaseEvent(QMouseEvent* event);
-};*/
+};

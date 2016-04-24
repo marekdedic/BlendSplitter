@@ -1,5 +1,9 @@
 #include "include/Splitter.hpp"
 
+#include "include/QtSplitter/SplitterDecorator.hpp"
+#include "include/QtSplitter/SplitterHandle.hpp"
+#include "include/QtSplitter/SplitterWidgetDecorator.hpp"
+
 Splitter::Splitter(QWidget* (*defaultWidget) (), Qt::Orientation orientation) : QSplitter{orientation, nullptr}, defaultWidget{defaultWidget}
 {
     setChildrenCollapsible(false);

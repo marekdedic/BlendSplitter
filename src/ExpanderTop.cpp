@@ -3,7 +3,7 @@
 #include "include/Splitter.hpp"
 #include "include/QtSplitter/Overlay.hpp"
 #include "include/QtSplitter/SplitterWidgetDecorator.hpp"
-/*
+
 int ExpanderTop::size = 32;
 QString ExpanderTop::image = ":/UI/QtSplitter_expander";
 
@@ -201,4 +201,4 @@ void ExpanderTop::mouseReleaseEvent(QMouseEvent* event)
         }
         releaseMouse();
     }
-}*/
+}

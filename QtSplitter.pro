@@ -18,19 +18,21 @@ QMAKE_CXXFLAGS += -std=c++11 -Wnon-virtual-dtor -Winit-self -Wredundant-decls -W
 
 SOURCES += \
     src/Splitter.cpp \
-    src/Expander.cpp \
     src/SplitterHandle.cpp \
     src/Overlay.cpp \
     src/SplitterWidgetDecorator.cpp \
-    src/SplitterDecorator.cpp
+    src/SplitterDecorator.cpp \
+    src/ExpanderTop.cpp \
+    src/Expander.cpp
 
 HEADERS  += \
     include/Splitter.hpp \
-    include/QtSplitter/Expander.hpp \
     include/QtSplitter/Global.hpp \
     include/QtSplitter/Overlay.hpp \
     include/QtSplitter/SplitterDecorator.hpp \
     include/QtSplitter/SplitterHandle.hpp \
-    include/QtSplitter/SplitterWidgetDecorator.hpp
+    include/QtSplitter/SplitterWidgetDecorator.hpp \
+    include/QtSplitter/ExpanderTop.hpp \
+    include/QtSplitter/Expander.hpp
 
 DEFINES += QTSPLITTER_LIBRARY
