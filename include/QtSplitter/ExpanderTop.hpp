@@ -2,23 +2,18 @@
 
 #include "Global.hpp"
 
-class Overlay;
+#include "Expander.hpp"
 class SplitterWidgetDecorator;
 
-class ExpanderTop : public QLabel
+class ExpanderTop : public Expander
 {
     Q_OBJECT
 private:
     friend SplitterWidgetDecorator;
-    static int size;
-    static QString image;
-    QPixmap* pixmap;
-    Overlay* overlay;
     ExpanderTop() = delete;
     ExpanderTop(SplitterWidgetDecorator* parent);
-    void reposition();
+    virtual void reposition();
 protected slots:
-    virtual void mousePressEvent(QMouseEvent* event);
     virtual void mouseMoveEvent(QMouseEvent* event);
     virtual void mouseReleaseEvent(QMouseEvent* event);
 };

@@ -1,24 +1,24 @@
 #pragma once
 
 #include "Global.hpp"
-/*
+
 class Overlay;
 class SplitterWidgetDecorator;
 
-class ExpanderTop : public QLabel
+class Expander : public QLabel
 {
     Q_OBJECT
-private:
+protected:
     friend SplitterWidgetDecorator;
     static int size;
     static QString image;
     QPixmap* pixmap;
     Overlay* overlay;
-    ExpanderTop() = delete;
-    ExpanderTop(SplitterWidgetDecorator* parent);
-    void reposition();
+    Expander() = delete;
+    Expander(SplitterWidgetDecorator* parent);
+    virtual void reposition();
 protected slots:
     virtual void mousePressEvent(QMouseEvent* event);
-    virtual void mouseMoveEvent(QMouseEvent* event);
-    virtual void mouseReleaseEvent(QMouseEvent* event);
-};*/
+    virtual void mouseMoveEvent(QMouseEvent* event) = 0;
+    virtual void mouseReleaseEvent(QMouseEvent* event) = 0;
+};
