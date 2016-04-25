@@ -8,6 +8,7 @@
 
 #include "QtSplitter/Global.hpp"
 
+class Expander;
 class ExpanderBottom;
 class ExpanderTop;
 class SplitterWidgetDecorator;
@@ -26,6 +27,7 @@ public:
     void addSplitter(Splitter* splitter);
     void insertSplitter(int index, Splitter* splitter);
 protected:
+    friend Expander;
     friend ExpanderBottom;
     friend ExpanderTop;
     QWidget* (*defaultWidget) ();
