@@ -3,19 +3,19 @@
 #include "Global.hpp"
 
 class Overlay;
-class SplitterWidgetDecorator;
+class WidgetDecorator;
 
 class Expander : public QLabel
 {
     Q_OBJECT
 protected:
-    friend SplitterWidgetDecorator;
+    friend WidgetDecorator;
     static int size;
     static QString image;
     QPixmap* pixmap;
     Overlay* overlay;
     Expander() = delete;
-    Expander(SplitterWidgetDecorator* parent);
+    Expander(WidgetDecorator* parent);
     virtual void reposition();
 protected slots:
     virtual void mousePressEvent(QMouseEvent* event);

@@ -3,15 +3,15 @@
 #include "Global.hpp"
 
 #include "Expander.hpp"
-class SplitterWidgetDecorator;
+class WidgetDecorator;
 
-class ExpanderBottom : public Expander
+class ExpanderTop : public Expander
 {
     Q_OBJECT
 private:
-    friend SplitterWidgetDecorator;
-    ExpanderBottom() = delete;
-    ExpanderBottom(SplitterWidgetDecorator* parent);
+    friend WidgetDecorator;
+    ExpanderTop() = delete;
+    ExpanderTop(WidgetDecorator* parent);
     virtual void reposition();
 protected slots:
     virtual void mouseMoveEvent(QMouseEvent* event);

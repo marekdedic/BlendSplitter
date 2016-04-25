@@ -1,4 +1,4 @@
-#include "include/QtSplitter/Overlay.hpp"
+#include "include/BlendSplitter/Overlay.hpp"
 
 Overlay::Overlay(QWidget* parent) : QLabel(parent)
 {
