@@ -76,19 +76,19 @@ void ExpanderBottom::mouseMoveEvent(QMouseEvent *event)
             parentSplitter->setSizes(sizes);
             newSplitter->handle(1)->grabMouse();
         }
-        /*if(parentSplitter->orientation() == Qt::Horizontal and event->x() > size and event->y() > 0 and event->y() < parentSplitWidget->height())
+        if(parentSplitter->orientation() == Qt::Horizontal and event->x() < 0 and event->y() < size and (size - event->y()) < parentSplitWidget->height())
         {
-            if(overlay == nullptr)
+            if(overlay == nullptr and parentSplitter->indexOf(parentSplitWidget) > 0)
             {
-                overlay = new Overlay{parentSplitter->widget(parentSplitter->indexOf(parentSplitWidget) + 1)};
+                overlay = new Overlay{parentSplitter->widget(parentSplitter->indexOf(parentSplitWidget) - 1)};
                 overlay->show();
             }
         }
-        else if(parentSplitter->orientation() == Qt::Vertical and event->y() < 0 and event->x() < size and -(event->x()) < parentSplitWidget->width() - size)
+        else if(parentSplitter->orientation() == Qt::Vertical and event->x() > 0 and event->y() > size and event->x() < parentSplitWidget->width())
         {
-            if(overlay == nullptr)
+            if(overlay == nullptr and parentSplitter->indexOf(parentSplitWidget) + 1 < parentSplitter->count())
             {
-                overlay = new Overlay{parentSplitter->widget(parentSplitter->indexOf(parentSplitWidget) - 1)};
+                overlay = new Overlay{parentSplitter->widget(parentSplitter->indexOf(parentSplitWidget) + 1)};
                 overlay->show();
             }
         }
@@ -96,7 +96,7 @@ void ExpanderBottom::mouseMoveEvent(QMouseEvent *event)
         {
             delete overlay;
             overlay = nullptr;
-        }*/
+        }
     }
 }
 
