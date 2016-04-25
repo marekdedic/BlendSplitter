@@ -48,23 +48,13 @@ void ExpanderBottom::mouseMoveEvent(QMouseEvent *event)
         }
         else if(parentSplitter->orientation() == Qt::Vertical and event->x() > 0 and event->y() < 0 and (event->x()) < size - event->y())
         {
-            std::cerr << "Trigger" << std::endl;
-            /*QList<int> sizes{parentSplitter->sizes()};
+            QList<int> sizes{parentSplitter->sizes()};
             int index{parentSplitter->indexOf(parentSplitWidget)};
-            int newSize;
-            if(event->y() + size < sizes[index])
-            {
-                newSize = event->y();
-            }
-            else
-            {
-                newSize = sizes[index] - size;
-            }
-            sizes[index] -= newSize;
-            sizes.insert(index, newSize - 1);
-            parentSplitter->insertWidget(index);
+            sizes[index] -= size + 1;
+            sizes.insert(index + 1, size);
+            parentSplitter->insertWidget(index + 1);
             parentSplitter->setSizes(sizes);
-            parentSplitter->handle(index + 1)->grabMouse();*/
+            parentSplitter->handle(index + 1)->grabMouse();
         }
         else if(parentSplitter->orientation() == Qt::Horizontal and event->x() < size and event->y() > size and (size - event->x()) < event->y())
         {

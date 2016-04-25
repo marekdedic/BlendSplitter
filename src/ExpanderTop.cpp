@@ -47,17 +47,8 @@ void ExpanderTop::mouseMoveEvent(QMouseEvent *event)
         {
             QList<int> sizes{parentSplitter->sizes()};
             int index{parentSplitter->indexOf(parentSplitWidget)};
-            int newSize;
-            if(event->y() + size < sizes[index])
-            {
-                newSize = event->y();
-            }
-            else
-            {
-                newSize = sizes[index] - size;
-            }
-            sizes[index] -= newSize;
-            sizes.insert(index, newSize - 1);
+            sizes[index] -= size + 1;
+            sizes.insert(index, size);
             parentSplitter->insertWidget(index);
             parentSplitter->setSizes(sizes);
             parentSplitter->handle(index + 1)->grabMouse();
