@@ -6,7 +6,12 @@
     #define BLENDSPLITTER_EXPORT Q_DECL_IMPORT
 #endif
 
-#include "BlendSplitter/Global.hpp"
+#include <iostream>
+#include <QApplication>
+#include <QSplitter>
+#include <QLabel>
+#include <QMouseEvent>
+#include <QHBoxLayout>
 
 class Expander;
 class ExpanderBottom;
