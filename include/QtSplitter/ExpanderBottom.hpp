@@ -15,5 +15,4 @@ private:
     virtual void reposition();
 protected slots:
     virtual void mouseMoveEvent(QMouseEvent* event);
-    virtual void mouseReleaseEvent(QMouseEvent* event);
 };
