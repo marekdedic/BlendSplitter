@@ -116,13 +116,13 @@ void ExpanderBottom::mouseReleaseEvent(QMouseEvent* event)
             std::cerr << "Bad cast caused by having an expander not properly inside a SplitWidget inside a Splitter." << std::endl;
             qApp->exit(-1);
         }
-        if(parentSplitter->orientation() == Qt::Horizontal and event->x() > size and event->y() > 0 and event->y() < parentSplitWidget->height())
+        if(parentSplitter->orientation() == Qt::Horizontal and event->x() < 0 and event->y() < size and (size - event->y()) < parentSplitWidget->height())
         {
             QList<int> sizes{parentSplitter->sizes()};
             int index{parentSplitter->indexOf(parentSplitWidget)};
-            sizes[index] += sizes[index + 1] + 1;
-            sizes.removeAt(index + 1);
-            delete parentSplitter->widget(index + 1);
+            sizes[index] += sizes[index - 1] + 1;
+            sizes.removeAt(index - 1);
+            delete parentSplitter->widget(index - 1);
             if(parentSplitter->count() == 1 and parentSplitter->parentWidget()->inherits("SplitterDecorator"))
             {
                 Splitter* newParent{qobject_cast<Splitter*>(parentSplitter->parentWidget()->parentWidget())};
@@ -142,13 +142,13 @@ void ExpanderBottom::mouseReleaseEvent(QMouseEvent* event)
             }
             overlay = nullptr;
         }
-        else if(parentSplitter->orientation() == Qt::Vertical and event->y() < 0 and event->x() < size and -(event->x()) < parentSplitWidget->width() - size)
+        else if(parentSplitter->orientation() == Qt::Vertical and event->x() > 0 and event->y() > size and event->x() < parentSplitWidget->width())
         {
             QList<int> sizes{parentSplitter->sizes()};
             int index{parentSplitter->indexOf(parentSplitWidget)};
-            sizes[index] += sizes[index - 1] + 1;
-            sizes.removeAt(index - 1);
-            delete parentSplitter->widget(index - 1);
+            sizes[index] += sizes[index + 1] + 1;
+            sizes.removeAt(index + 1);
+            delete parentSplitter->widget(index + 1);
             if(parentSplitter->count() == 1 and parentSplitter->parentWidget()->inherits("SplitterDecorator"))
             {
                 Splitter* newParent{qobject_cast<Splitter*>(parentSplitter->parentWidget()->parentWidget())};
