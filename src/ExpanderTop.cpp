@@ -139,7 +139,7 @@ void ExpanderTop::mouseReleaseEvent(QMouseEvent* event)
             }
             overlay = nullptr;
         }
-        else if(parentSplitter->orientation() == Qt::Vertical and event->y() < 0 and event->x() < size and -(event->x()) < parentSplitWidget->width() - size)
+        else if(parentSplitter->orientation() == Qt::Vertical and event->y() < 0 and event->x() < size and (size - event->x()) < parentSplitWidget->width())
         {
             QList<int> sizes{parentSplitter->sizes()};
             int index{parentSplitter->indexOf(parentSplitWidget)};
