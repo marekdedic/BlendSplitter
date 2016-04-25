@@ -1,8 +1,8 @@
-#include "include/QtSplitter/SplitterDecorator.hpp"
+#include "include/BlendSplitter/SplitterDecorator.hpp"
 
-#include "include/Splitter.hpp"
+#include "include/BlendSplitter.hpp"
 
-SplitterDecorator::SplitterDecorator(Splitter* splitter) : QWidget{}, splitter{splitter}
+SplitterDecorator::SplitterDecorator(BlendSplitter* splitter) : QWidget{}, splitter{splitter}
 {
     QHBoxLayout *layout = new QHBoxLayout{};
     layout->addWidget(splitter);
@@ -10,4 +10,4 @@ SplitterDecorator::SplitterDecorator(Splitter* splitter) : QWidget{}, splitter{s
     setLayout(layout);
 }
 
-SplitterDecorator::SplitterDecorator(const SplitterDecorator& other) : SplitterDecorator(new Splitter{*(other.splitter)}) {}
+SplitterDecorator::SplitterDecorator(const SplitterDecorator& other) : SplitterDecorator(new BlendSplitter{*(other.splitter)}) {}

@@ -2,20 +2,20 @@
 
 #include "Global.hpp"
 
-class Splitter;
+class BlendSplitter;
 class ExpanderBottom;
 class ExpanderTop;
 
-class SplitterWidgetDecorator : public QWidget
+class WidgetDecorator : public QWidget
 {
     Q_OBJECT
 private:
-    friend Splitter;
+    friend BlendSplitter;
     QWidget* widget;
     ExpanderBottom* expanderBottom;
     ExpanderTop* expanderTop;
-    SplitterWidgetDecorator() = delete;
-    SplitterWidgetDecorator(QWidget* widget);
+    WidgetDecorator() = delete;
+    WidgetDecorator(QWidget* widget);
 protected slots:
     virtual void resizeEvent(QResizeEvent*);
 };

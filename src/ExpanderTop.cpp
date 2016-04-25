@@ -1,10 +1,10 @@
-#include "include/QtSplitter/ExpanderTop.hpp"
+#include "include/BlendSplitter/ExpanderTop.hpp"
 
-#include "include/Splitter.hpp"
-#include "include/QtSplitter/Overlay.hpp"
-#include "include/QtSplitter/SplitterWidgetDecorator.hpp"
+#include "include/BlendSplitter.hpp"
+#include "include/BlendSplitter/Overlay.hpp"
+#include "include/BlendSplitter/WidgetDecorator.hpp"
 
-ExpanderTop::ExpanderTop(SplitterWidgetDecorator* parent) : Expander(parent)
+ExpanderTop::ExpanderTop(WidgetDecorator* parent) : Expander(parent)
 {
     QPolygon mask;
     mask << QPoint{0, 0} << QPoint{0, size/10} << QPoint{size * 9 / 10, size} << QPoint{size, size} << QPoint{size, 0};
@@ -21,13 +21,13 @@ void ExpanderTop::mouseMoveEvent(QMouseEvent *event)
 {
     if(event->buttons() & Qt::LeftButton)
     {
-        SplitterWidgetDecorator* parentSplitWidget{qobject_cast<SplitterWidgetDecorator*>(parentWidget())};
+        WidgetDecorator* parentSplitWidget{qobject_cast<WidgetDecorator*>(parentWidget())};
         if(parentSplitWidget == 0)
         {
             std::cerr << "Bad cast caused by having an expander not properly inside a SplitWidget inside a Splitter." << std::endl;
             qApp->exit(-1);
         }
-        Splitter* parentSplitter{qobject_cast<Splitter*>(parentSplitWidget->parentWidget())};
+        BlendSplitter* parentSplitter{qobject_cast<BlendSplitter*>(parentSplitWidget->parentWidget())};
         if(parentSplitter == 0)
         {
             std::cerr << "Bad cast caused by having an expander not properly inside a SplitWidget inside a Splitter." << std::endl;
@@ -55,7 +55,7 @@ void ExpanderTop::mouseMoveEvent(QMouseEvent *event)
         }
         else if(parentSplitter->orientation() == Qt::Horizontal and event->x() < size and event->y() > size and (size - event->x()) < event->y())
         {
-            Splitter* newSplitter{new Splitter{parentSplitter->defaultWidget, Qt::Vertical}};
+            BlendSplitter* newSplitter{new BlendSplitter{parentSplitter->defaultWidget, Qt::Vertical}};
             QList<int> sizes{parentSplitter->sizes()};
             parentSplitter->insertSplitter(parentSplitter->indexOf(parentSplitWidget), newSplitter);
             newSplitter->addWidget();
@@ -65,7 +65,7 @@ void ExpanderTop::mouseMoveEvent(QMouseEvent *event)
         }
         else if(parentSplitter->orientation() == Qt::Vertical and event->x() < 0 and event->y() > 0 and (size - event->x()) > event->y())
         {
-            Splitter* newSplitter{new Splitter{parentSplitter->defaultWidget, Qt::Horizontal}};
+            BlendSplitter* newSplitter{new BlendSplitter{parentSplitter->defaultWidget, Qt::Horizontal}};
             QList<int> sizes{parentSplitter->sizes()};
             parentSplitter->insertSplitter(parentSplitter->indexOf(parentSplitWidget), newSplitter);
             newSplitter->addDecoratedWidget(parentSplitWidget);
