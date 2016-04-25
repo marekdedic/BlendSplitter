@@ -36,28 +36,20 @@ void ExpanderBottom::mouseMoveEvent(QMouseEvent *event)
             std::cerr << "Bad cast caused by having an expander not properly inside a SplitWidget inside a Splitter." << std::endl;
             qApp->exit(-1);
         }
-        if(parentSplitter->orientation() == Qt::Horizontal and event->x() < 0 and event->y() > 0 and (size - event->x()) > event->y())
+        if(parentSplitter->orientation() == Qt::Horizontal and event->x() > size and event->y() < size and (event->x()) > size - event->y())
         {
             QList<int> sizes{parentSplitter->sizes()};
             int index{parentSplitter->indexOf(parentSplitWidget)};
-            int newSize;
-            if(-(event->x()) + (2 * size) < sizes[index])
-            {
-                newSize = -(event->x()) + size;
-            }
-            else
-            {
-                newSize = sizes[index] - size;
-            }
-            sizes[index] -= newSize;
-            sizes.insert(index + 1, newSize - 1);
-            parentSplitter->insertWidget(index + 1);
+            sizes.insert(index, size);
+            sizes[index + 1] -= size + 1;
+            parentSplitter->insertWidget(index);
             parentSplitter->setSizes(sizes);
             parentSplitter->handle(index + 1)->grabMouse();
         }
-        else if(parentSplitter->orientation() == Qt::Vertical and event->x() < size and event->y() > size and (size - event->x()) < event->y())
+        else if(parentSplitter->orientation() == Qt::Vertical and event->x() > 0 and event->y() < 0 and (event->x()) < size - event->y())
         {
-            QList<int> sizes{parentSplitter->sizes()};
+            std::cerr << "Trigger" << std::endl;
+            /*QList<int> sizes{parentSplitter->sizes()};
             int index{parentSplitter->indexOf(parentSplitWidget)};
             int newSize;
             if(event->y() + size < sizes[index])
@@ -72,29 +64,29 @@ void ExpanderBottom::mouseMoveEvent(QMouseEvent *event)
             sizes.insert(index, newSize - 1);
             parentSplitter->insertWidget(index);
             parentSplitter->setSizes(sizes);
-            parentSplitter->handle(index + 1)->grabMouse();
+            parentSplitter->handle(index + 1)->grabMouse();*/
         }
         else if(parentSplitter->orientation() == Qt::Horizontal and event->x() < size and event->y() > size and (size - event->x()) < event->y())
         {
-            Splitter* newSplitter{new Splitter{parentSplitter->defaultWidget, Qt::Vertical}};
+            /*Splitter* newSplitter{new Splitter{parentSplitter->defaultWidget, Qt::Vertical}};
             QList<int> sizes{parentSplitter->sizes()};
             parentSplitter->insertSplitter(parentSplitter->indexOf(parentSplitWidget), newSplitter);
             newSplitter->addWidget();
             newSplitter->addDecoratedWidget(parentSplitWidget);
             parentSplitter->setSizes(sizes);
-            newSplitter->handle(1)->grabMouse();
+            newSplitter->handle(1)->grabMouse();*/
         }
         else if(parentSplitter->orientation() == Qt::Vertical and event->x() < 0 and event->y() > 0 and (size - event->x()) > event->y())
         {
-            Splitter* newSplitter{new Splitter{parentSplitter->defaultWidget, Qt::Horizontal}};
+            /*Splitter* newSplitter{new Splitter{parentSplitter->defaultWidget, Qt::Horizontal}};
             QList<int> sizes{parentSplitter->sizes()};
             parentSplitter->insertSplitter(parentSplitter->indexOf(parentSplitWidget), newSplitter);
             newSplitter->addDecoratedWidget(parentSplitWidget);
             newSplitter->addWidget();
             parentSplitter->setSizes(sizes);
-            newSplitter->handle(1)->grabMouse();
+            newSplitter->handle(1)->grabMouse();*/
         }
-        if(parentSplitter->orientation() == Qt::Horizontal and event->x() > size and event->y() > 0 and event->y() < parentSplitWidget->height())
+        /*if(parentSplitter->orientation() == Qt::Horizontal and event->x() > size and event->y() > 0 and event->y() < parentSplitWidget->height())
         {
             if(overlay == nullptr)
             {
@@ -114,7 +106,7 @@ void ExpanderBottom::mouseMoveEvent(QMouseEvent *event)
         {
             delete overlay;
             overlay = nullptr;
-        }
+        }*/
     }
 }
 
