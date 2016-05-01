@@ -24,7 +24,9 @@ SOURCES += \
     src/SplitterHandle.cpp \
     src/Overlay.cpp \
     src/SplitterDecorator.cpp \
-    src/WidgetDecorator.cpp
+    src/WidgetDecorator.cpp \
+    src/Registry.cpp \
+    src/RegistryItem.cpp
 
 HEADERS  += \
     include/BlendSplitter.hpp \
@@ -35,6 +37,8 @@ HEADERS  += \
     include/BlendSplitter/Overlay.hpp \
     include/BlendSplitter/SplitterDecorator.hpp \
     include/BlendSplitter/SplitterHandle.hpp \
-    include/BlendSplitter/WidgetDecorator.hpp
+    include/BlendSplitter/WidgetDecorator.hpp \
+    include/Registry.hpp \
+    include/BlendSplitter/RegistryItem.hpp
 
 DEFINES += BLENDSPLITTER_LIBRARY

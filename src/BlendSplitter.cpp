@@ -1,27 +1,29 @@
 #include "include/BlendSplitter.hpp"
 
+#include "include/Registry.hpp"
+#include "include/BlendSplitter/RegistryItem.hpp"
 #include "include/BlendSplitter/SplitterDecorator.hpp"
 #include "include/BlendSplitter/SplitterHandle.hpp"
 #include "include/BlendSplitter/WidgetDecorator.hpp"
 
-BlendSplitter::BlendSplitter(QWidget* (*defaultWidget) (), Qt::Orientation orientation) : QSplitter{orientation, nullptr}, defaultWidget{defaultWidget}
+BlendSplitter::BlendSplitter(Qt::Orientation orientation) : QSplitter{orientation, nullptr}
 {
     setChildrenCollapsible(false);
     setHandleWidth(1);
     setStyleSheet("QSplitter::handle{background: black;}");
 }
 
-BlendSplitter::BlendSplitter(const BlendSplitter& other) : BlendSplitter(other.defaultWidget, other.orientation()) {}
+BlendSplitter::BlendSplitter(const BlendSplitter& other) : BlendSplitter(other.orientation()) {}
 
 BlendSplitter& BlendSplitter::operator=(const BlendSplitter& other)
 {
-    defaultWidget = other.defaultWidget;
+    //QSplitter::operator=(other);  // TODO
     return *this;
 }
 
 void BlendSplitter::addWidget()
 {
-    addWidget((*defaultWidget) ());
+    addWidget((*Registry::getRegistry()->getDefault()->widget) ());
 }
 
 void BlendSplitter::addWidget(QWidget* widget)
@@ -31,7 +33,7 @@ void BlendSplitter::addWidget(QWidget* widget)
 
 void BlendSplitter::insertWidget(int index)
 {
-    insertWidget(index, (*defaultWidget) ());
+    insertWidget(index, (*Registry::getRegistry()->getDefault()->widget) ());
 }
 
 void BlendSplitter::insertWidget(int index, QWidget* widget)

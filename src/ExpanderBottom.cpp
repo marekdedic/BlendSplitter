@@ -58,7 +58,7 @@ void ExpanderBottom::mouseMoveEvent(QMouseEvent *event)
         }
         else if(parentSplitter->orientation() == Qt::Horizontal and event->x() > 0 and event->y() < 0 and event->x() < (size - event->y()))
         {
-            BlendSplitter* newSplitter{new BlendSplitter{parentSplitter->defaultWidget, Qt::Vertical}};
+            BlendSplitter* newSplitter{new BlendSplitter{Qt::Vertical}};
             QList<int> sizes{parentSplitter->sizes()};
             parentSplitter->insertSplitter(parentSplitter->indexOf(parentSplitWidget), newSplitter);
             newSplitter->addDecoratedWidget(parentSplitWidget);
@@ -68,7 +68,7 @@ void ExpanderBottom::mouseMoveEvent(QMouseEvent *event)
         }
         else if(parentSplitter->orientation() == Qt::Vertical and event->x() > size and event->y() < size and event->x() > (size - event->y()))
         {
-            BlendSplitter* newSplitter{new BlendSplitter{parentSplitter->defaultWidget, Qt::Horizontal}};
+            BlendSplitter* newSplitter{new BlendSplitter{Qt::Horizontal}};
             QList<int> sizes{parentSplitter->sizes()};
             parentSplitter->insertSplitter(parentSplitter->indexOf(parentSplitWidget), newSplitter);
             newSplitter->addWidget();
