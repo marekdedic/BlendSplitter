@@ -1,7 +1,7 @@
 #include "include/BlendSplitter.hpp"
 
-#include "include/Registry.hpp"
-#include "include/BlendSplitter/RegistryItem.hpp"
+#include "include/WidgetRegistry.hpp"
+#include "include/RegistryItem.hpp"
 #include "include/BlendSplitter/SplitterDecorator.hpp"
 #include "include/BlendSplitter/SplitterHandle.hpp"
 #include "include/BlendSplitter/WidgetDecorator.hpp"
@@ -23,7 +23,7 @@ BlendSplitter& BlendSplitter::operator=(const BlendSplitter& other)
 
 void BlendSplitter::addWidget()
 {
-    addWidget((*Registry::getRegistry()->getDefault()->widget) ());
+    addWidget((*WidgetRegistry::getRegistry()->getDefault()->widget) ());
 }
 
 void BlendSplitter::addWidget(QWidget* widget)
@@ -33,7 +33,7 @@ void BlendSplitter::addWidget(QWidget* widget)
 
 void BlendSplitter::insertWidget(int index)
 {
-    insertWidget(index, (*Registry::getRegistry()->getDefault()->widget) ());
+    insertWidget(index, (*WidgetRegistry::getRegistry()->getDefault()->widget) ());
 }
 
 void BlendSplitter::insertWidget(int index, QWidget* widget)

@@ -18,6 +18,8 @@ QMAKE_CXXFLAGS += -std=c++11 -Wnon-virtual-dtor -Winit-self -Wredundant-decls -W
 
 SOURCES += \
     src/BlendSplitter.cpp \
+    src/RegistryItem.cpp \
+    src/WidgetRegistry.cpp \
     src/Expander.cpp \
     src/ExpanderBottom.cpp \
     src/ExpanderTop.cpp \
@@ -25,11 +27,11 @@ SOURCES += \
     src/Overlay.cpp \
     src/SplitterDecorator.cpp \
     src/WidgetDecorator.cpp \
-    src/Registry.cpp \
-    src/RegistryItem.cpp
 
 HEADERS  += \
     include/BlendSplitter.hpp \
+    include/RegistryItem.hpp \
+    include/WidgetRegistry.hpp \
     include/BlendSplitter/Expander.hpp \
     include/BlendSplitter/ExpanderBottom.hpp \
     include/BlendSplitter/ExpanderTop.hpp \
@@ -37,8 +39,6 @@ HEADERS  += \
     include/BlendSplitter/Overlay.hpp \
     include/BlendSplitter/SplitterDecorator.hpp \
     include/BlendSplitter/SplitterHandle.hpp \
-    include/BlendSplitter/WidgetDecorator.hpp \
-    include/Registry.hpp \
-    include/BlendSplitter/RegistryItem.hpp
+    include/BlendSplitter/WidgetDecorator.hpp
 
 DEFINES += BLENDSPLITTER_LIBRARY
