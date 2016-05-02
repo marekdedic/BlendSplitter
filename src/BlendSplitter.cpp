@@ -13,14 +13,6 @@ BlendSplitter::BlendSplitter(Qt::Orientation orientation) : QSplitter{orientatio
     setStyleSheet("QSplitter::handle{background: black;}");
 }
 
-BlendSplitter::BlendSplitter(const BlendSplitter& other) : BlendSplitter(other.orientation()) {}
-
-BlendSplitter& BlendSplitter::operator=(const BlendSplitter& other)
-{
-    //QSplitter::operator=(other);  // TODO
-    return *this;
-}
-
 void BlendSplitter::addWidget()
 {
     addWidget((*WidgetRegistry::getRegistry()->getDefault()->widget) ());
