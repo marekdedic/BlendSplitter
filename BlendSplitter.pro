@@ -25,6 +25,7 @@ SOURCES += \
     src/ExpanderTop.cpp \
     src/SplitterHandle.cpp \
     src/Overlay.cpp \
+    src/BlendSplitter/SplitterCombo.cpp \
     src/SplitterDecorator.cpp \
     src/WidgetDecorator.cpp \
 
@@ -37,6 +38,7 @@ HEADERS  += \
     include/BlendSplitter/ExpanderTop.hpp \
     include/BlendSplitter/Global.hpp \
     include/BlendSplitter/Overlay.hpp \
+    include/BlendSplitter/SplitterCombo.hpp \
     include/BlendSplitter/SplitterDecorator.hpp \
     include/BlendSplitter/SplitterHandle.hpp \
     include/BlendSplitter/WidgetDecorator.hpp
