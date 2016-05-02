@@ -19,8 +19,8 @@ class BLENDSPLITTER_EXPORT BlendSplitter : public QSplitter
     Q_OBJECT
 public:
     BlendSplitter(Qt::Orientation orientation = Qt::Horizontal);
-    BlendSplitter(const BlendSplitter& other);
-    BlendSplitter& operator=(const BlendSplitter& other);
+    BlendSplitter(const BlendSplitter& other) = delete;
+    BlendSplitter& operator=(const BlendSplitter& other) = delete;
     void addWidget();
     void addWidget(QWidget* widget);
     void insertWidget(int index);
