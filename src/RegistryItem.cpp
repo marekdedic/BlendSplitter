@@ -1,6 +1,6 @@
-#include "include/BlendSplitter/RegistryItem.hpp"
+#include "include/RegistryItem.hpp"
 
-RegistryItem::RegistryItem(QWidget* (*widget) ()) : widget{widget}
+RegistryItem::RegistryItem(QString name, QWidget* (*widget) ()) : name{name}, widget{widget}
 {
 
 }

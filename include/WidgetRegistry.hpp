@@ -10,14 +10,16 @@
 
 class RegistryItem;
 
-class BLENDSPLITTER_EXPORT Registry
+class BLENDSPLITTER_EXPORT WidgetRegistry
 {
 public:
-    static Registry* getRegistry();
-    RegistryItem* operator[](const int i) const;
+    static WidgetRegistry* getRegistry();
+    RegistryItem* item(const int i) const;
     RegistryItem* getDefault();
+    int size();
 private:
-    Registry() = default;
-    static Registry* theRegistry;
+    WidgetRegistry() = default;
+    static WidgetRegistry* theRegistry;
     QList<RegistryItem*> widgetList;
+    int defaultWidget;
 };
