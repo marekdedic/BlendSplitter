@@ -18,7 +18,7 @@ class BLENDSPLITTER_EXPORT BlendSplitter : public QSplitter
 {
     Q_OBJECT
 public:
-    BlendSplitter(Qt::Orientation orientation = Qt::Horizontal);
+    BlendSplitter(QWidget* (*defaultWidget) () = []()->QWidget* {return new QLabel{"Inserted widget"};}, Qt::Orientation orientation = Qt::Horizontal);
     BlendSplitter(const BlendSplitter& other) = delete;
     BlendSplitter& operator=(const BlendSplitter& other) = delete;
     void addWidget();
@@ -31,6 +31,7 @@ protected:
     friend Expander;
     friend ExpanderBottom;
     friend ExpanderTop;
+    QWidget* (*defaultWidget) ();
     virtual QSplitterHandle* createHandle();
     void addDecoratedWidget(WidgetDecorator* widget);
     void insertDecoratedWidget(int index, WidgetDecorator* widget);

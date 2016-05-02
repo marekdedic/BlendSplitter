@@ -6,7 +6,7 @@
 #include "include/BlendSplitter/SplitterHandle.hpp"
 #include "include/BlendSplitter/WidgetDecorator.hpp"
 
-BlendSplitter::BlendSplitter(Qt::Orientation orientation) : QSplitter{orientation, nullptr}
+BlendSplitter::BlendSplitter(QWidget* (*defaultWidget) (), Qt::Orientation orientation) : QSplitter{orientation, nullptr}, defaultWidget{defaultWidget}
 {
     setChildrenCollapsible(false);
     setHandleWidth(1);
@@ -15,7 +15,7 @@ BlendSplitter::BlendSplitter(Qt::Orientation orientation) : QSplitter{orientatio
 
 void BlendSplitter::addWidget()
 {
-    addWidget((*WidgetRegistry::getRegistry()->getDefault()->widget) ());
+    addWidget((*defaultWidget) ());
 }
 
 void BlendSplitter::addWidget(QWidget* widget)
@@ -25,7 +25,7 @@ void BlendSplitter::addWidget(QWidget* widget)
 
 void BlendSplitter::insertWidget(int index)
 {
-    insertWidget(index, (*WidgetRegistry::getRegistry()->getDefault()->widget) ());
+    insertWidget(index, (*defaultWidget) ());
 }
 
 void BlendSplitter::insertWidget(int index, QWidget* widget)
