@@ -7,7 +7,8 @@
 #endif
 
 #include <QSplitter>
-#include <QLabel>
+
+#include "SwitchingWidget.hpp"
 
 class Expander;
 class ExpanderBottom;
@@ -18,7 +19,7 @@ class BLENDSPLITTER_EXPORT BlendSplitter : public QSplitter
 {
     Q_OBJECT
 public:
-    BlendSplitter(QWidget* (*defaultWidget) () = []()->QWidget* {return new QLabel{"Inserted widget"};}, Qt::Orientation orientation = Qt::Horizontal);
+    BlendSplitter(QWidget* (*defaultWidget) () = []()->QWidget* {return new SwitchingWidget{};}, Qt::Orientation orientation = Qt::Horizontal);
     BlendSplitter(const BlendSplitter& other) = delete;
     BlendSplitter& operator=(const BlendSplitter& other) = delete;
     void addWidget();
