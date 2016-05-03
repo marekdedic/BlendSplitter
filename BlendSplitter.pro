@@ -28,6 +28,7 @@ SOURCES += \
     src/BlendSplitter/SplitterCombo.cpp \
     src/SplitterDecorator.cpp \
     src/WidgetDecorator.cpp \
+    SwitchingWidget.cpp
 
 HEADERS  += \
     include/BlendSplitter.hpp \
@@ -41,6 +42,7 @@ HEADERS  += \
     include/BlendSplitter/SplitterCombo.hpp \
     include/BlendSplitter/SplitterDecorator.hpp \
     include/BlendSplitter/SplitterHandle.hpp \
-    include/BlendSplitter/WidgetDecorator.hpp
+    include/BlendSplitter/WidgetDecorator.hpp \
+    include/SwitchingWidget.hpp
 
 DEFINES += BLENDSPLITTER_LIBRARY

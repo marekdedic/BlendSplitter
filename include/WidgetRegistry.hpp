@@ -6,7 +6,7 @@
     #define BLENDSPLITTER_EXPORT Q_DECL_IMPORT
 #endif
 
-#include<QWidget>
+#include <QWidget>
 
 class RegistryItem;
 
