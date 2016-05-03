@@ -19,20 +19,21 @@ QMAKE_CXXFLAGS += -std=c++11 -Wnon-virtual-dtor -Winit-self -Wredundant-decls -W
 SOURCES += \
     src/BlendSplitter.cpp \
     src/RegistryItem.cpp \
+    src/SwitchingWidget.cpp \
     src/WidgetRegistry.cpp \
-    src/Expander.cpp \
-    src/ExpanderBottom.cpp \
-    src/ExpanderTop.cpp \
-    src/SplitterHandle.cpp \
-    src/Overlay.cpp \
+    src/BlendSplitter/Expander.cpp \
+    src/BlendSplitter/ExpanderBottom.cpp \
+    src/BlendSplitter/ExpanderTop.cpp \
+    src/BlendSplitter/Overlay.cpp \
     src/BlendSplitter/SplitterCombo.cpp \
-    src/SplitterDecorator.cpp \
-    src/WidgetDecorator.cpp \
-    SwitchingWidget.cpp
+    src/BlendSplitter/SplitterDecorator.cpp \
+    src/BlendSplitter/SplitterHandle.cpp \
+    src/BlendSplitter/WidgetDecorator.cpp
 
 HEADERS  += \
     include/BlendSplitter.hpp \
     include/RegistryItem.hpp \
+    include/SwitchingWidget.hpp \
     include/WidgetRegistry.hpp \
     include/BlendSplitter/Expander.hpp \
     include/BlendSplitter/ExpanderBottom.hpp \
@@ -42,7 +43,6 @@ HEADERS  += \
     include/BlendSplitter/SplitterCombo.hpp \
     include/BlendSplitter/SplitterDecorator.hpp \
     include/BlendSplitter/SplitterHandle.hpp \
-    include/BlendSplitter/WidgetDecorator.hpp \
-    include/SwitchingWidget.hpp
+    include/BlendSplitter/WidgetDecorator.hpp
 
 DEFINES += BLENDSPLITTER_LIBRARY
