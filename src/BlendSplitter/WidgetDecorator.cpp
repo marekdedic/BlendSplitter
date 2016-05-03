@@ -5,7 +5,7 @@
 
 WidgetDecorator::WidgetDecorator(QWidget* widget) : QWidget{}, widget{widget}, expanderBottom{new ExpanderBottom{this}}, expanderTop{new ExpanderTop{this}}
 {
-    QHBoxLayout *layout = new QHBoxLayout{};
+    QHBoxLayout* layout{new QHBoxLayout{}};
     layout->addWidget(widget);
     layout->setMargin(0);
     setLayout(layout);
