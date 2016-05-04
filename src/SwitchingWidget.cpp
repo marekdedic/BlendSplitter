@@ -8,7 +8,7 @@ SwitchingWidget::SwitchingWidget(QWidget* parent) : QSplitter(Qt::Vertical, pare
 {
     setChildrenCollapsible(true);
     setHandleWidth(1);
-    setStyleSheet("QSplitter::handle{background: black;}");
+    setStyleSheet("QSplitter::handle{background: grey;}");
     addWidget((*WidgetRegistry::getRegistry()->getDefault()->widget) ());
     addWidget(new SwitchingBar{});
 }

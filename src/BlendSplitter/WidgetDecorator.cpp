@@ -9,7 +9,7 @@ WidgetDecorator::WidgetDecorator(QWidget* widget) : QWidget{}, widget{widget}, e
     layout->addWidget(widget);
     layout->setMargin(0);
     setLayout(layout);
-    setMinimumSize(Expander::size, Expander::size);
+    setMinimumSize(2 * Expander::size, 2 * Expander::size);
 }
 
 void WidgetDecorator::resizeEvent(QResizeEvent*)

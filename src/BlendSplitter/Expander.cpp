@@ -4,7 +4,7 @@
 #include "include/BlendSplitter/Overlay.hpp"
 #include "include/BlendSplitter/WidgetDecorator.hpp"
 
-int Expander::size = 32;
+int Expander::size = 12;
 QString Expander::image = ":/UI/QtSplitter_expander";
 
 Expander::Expander(WidgetDecorator* parent) : QLabel(parent), pixmap{new QPixmap{image}}, overlay{nullptr}
