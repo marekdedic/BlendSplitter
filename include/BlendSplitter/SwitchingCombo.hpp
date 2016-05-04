@@ -2,9 +2,9 @@
 
 #include "Global.hpp"
 
-class SplitterCombo : public QComboBox
+class SwitchingCombo : public QComboBox
 {
     Q_OBJECT
 public:
-    SplitterCombo();
+    SwitchingCombo();
 };

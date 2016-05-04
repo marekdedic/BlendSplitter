@@ -1,9 +1,9 @@
-#include "include/BlendSplitter/SplitterCombo.hpp"
+#include "include/BlendSplitter/SwitchingCombo.hpp"
 
 #include "include/WidgetRegistry.hpp"
 #include "include/RegistryItem.hpp"
 
-SplitterCombo::SplitterCombo()
+SwitchingCombo::SwitchingCombo()
 {
     for(int i{0}; i < WidgetRegistry::getRegistry()->size(); i++)
     {

@@ -25,10 +25,10 @@ SOURCES += \
     src/BlendSplitter/ExpanderBottom.cpp \
     src/BlendSplitter/ExpanderTop.cpp \
     src/BlendSplitter/Overlay.cpp \
-    src/BlendSplitter/SplitterCombo.cpp \
     src/BlendSplitter/SplitterDecorator.cpp \
     src/BlendSplitter/SplitterHandle.cpp \
     src/BlendSplitter/SwitchingBar.cpp \
+    src/BlendSplitter/SwitchingCombo.cpp \
     src/BlendSplitter/WidgetDecorator.cpp
 
 HEADERS  += \
@@ -41,10 +41,10 @@ HEADERS  += \
     include/BlendSplitter/ExpanderTop.hpp \
     include/BlendSplitter/Global.hpp \
     include/BlendSplitter/Overlay.hpp \
-    include/BlendSplitter/SplitterCombo.hpp \
     include/BlendSplitter/SplitterDecorator.hpp \
     include/BlendSplitter/SplitterHandle.hpp \
     include/BlendSplitter/SwitchingBar.hpp \
+    include/BlendSplitter/SwitchingCombo.hpp \
     include/BlendSplitter/WidgetDecorator.hpp
 
 DEFINES += BLENDSPLITTER_LIBRARY

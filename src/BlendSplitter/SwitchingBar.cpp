@@ -1,6 +1,6 @@
 #include "include/BlendSplitter/SwitchingBar.hpp"
 
-#include "include/BlendSplitter/SplitterCombo.hpp"
+#include "include/BlendSplitter/SwitchingCombo.hpp"
 #include "include/BlendSplitter/Expander.hpp"
 
 int SwitchingBar::size = 48;
@@ -12,6 +12,6 @@ SwitchingBar::SwitchingBar(QWidget* parent) : QWidget(parent)
     setLayout(layout);
     setMinimumHeight(size);
     setMaximumHeight(size);
-    layout->addWidget(new SplitterCombo{});
+    layout->addWidget(new SwitchingCombo{});
     layout->addStretch();
 }
