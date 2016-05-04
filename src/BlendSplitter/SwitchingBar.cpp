@@ -3,7 +3,7 @@
 #include "include/BlendSplitter/SwitchingCombo.hpp"
 #include "include/BlendSplitter/Expander.hpp"
 
-int SwitchingBar::size = 48;
+int SwitchingBar::size = 36;
 
 SwitchingBar::SwitchingBar(QWidget* parent) : QWidget(parent)
 {
