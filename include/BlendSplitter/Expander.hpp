@@ -8,10 +8,11 @@ class WidgetDecorator;
 class Expander : public QLabel
 {
     Q_OBJECT
-protected:
-    friend WidgetDecorator;
+public:
     static int size;
     static QString image;
+protected:
+    friend WidgetDecorator;
     QPixmap* pixmap;
     Overlay* overlay;
     Expander() = delete;
