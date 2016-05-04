@@ -37,27 +37,27 @@ void Expander::mouseReleaseEvent(QMouseEvent* event)
 {
     if(event->button() == Qt::LeftButton and overlay != nullptr)
     {
-        WidgetDecorator* parentSplitWidget{qobject_cast<WidgetDecorator*>(parentWidget())};
-        if(parentSplitWidget == 0)
+        WidgetDecorator* parentDecorator{qobject_cast<WidgetDecorator*>(parentWidget())};
+        if(parentDecorator == 0)
         {
             std::cerr << "Bad cast caused by having an expander not properly inside a SplitWidget inside a Splitter." << std::endl;
             qApp->exit(-1);
         }
-        WidgetDecorator* overlaySplitWidget{qobject_cast<WidgetDecorator*>(overlay->parentWidget())};
-        if(overlaySplitWidget == 0)
+        WidgetDecorator* overlayDecorator{qobject_cast<WidgetDecorator*>(overlay->parentWidget())};
+        if(overlayDecorator == 0)
         {
             std::cerr << "Bad cast caused by having an expander not properly inside a SplitWidget inside a Splitter." << std::endl;
             qApp->exit(-1);
         }
-        BlendSplitter* parentSplitter{qobject_cast<BlendSplitter*>(overlaySplitWidget->parentWidget())};
+        BlendSplitter* parentSplitter{qobject_cast<BlendSplitter*>(overlayDecorator->parentWidget())};
         if(parentSplitter == 0)
         {
             std::cerr << "Bad cast caused by having an expander not properly inside a SplitWidget inside a Splitter." << std::endl;
             qApp->exit(-1);
         }
         QList<int> sizes{parentSplitter->sizes()};
-        int parentIndex{parentSplitter->indexOf(parentSplitWidget)};
-        int overlayIndex{parentSplitter->indexOf(overlaySplitWidget)};
+        int parentIndex{parentSplitter->indexOf(parentDecorator)};
+        int overlayIndex{parentSplitter->indexOf(overlayDecorator)};
         sizes[parentIndex] += sizes[overlayIndex] + 1;
         sizes.removeAt(overlayIndex);
         delete parentSplitter->widget(overlayIndex);
@@ -70,7 +70,7 @@ void Expander::mouseReleaseEvent(QMouseEvent* event)
                 qApp->exit(-1);
             }
             QList<int> sizes2{newParent->sizes()};
-            newParent->insertDecoratedWidget(newParent->indexOf(parentSplitter->parentWidget()), parentSplitWidget);
+            newParent->insertDecoratedWidget(newParent->indexOf(parentSplitter->parentWidget()), parentDecorator);
             delete parentSplitter->parentWidget();
             newParent->setSizes(sizes2);
         }
