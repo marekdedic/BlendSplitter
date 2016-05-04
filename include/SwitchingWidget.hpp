@@ -8,9 +8,15 @@
 
 #include <QSplitter>
 
+class SwitchingBar;
+
 class BLENDSPLITTER_EXPORT SwitchingWidget : public QSplitter
 {
     Q_OBJECT
 public:
     SwitchingWidget(QWidget* parent = nullptr);
+public slots:
+    void changeCurrentWidget(int index);
+private:
+    SwitchingBar* bar;
 };

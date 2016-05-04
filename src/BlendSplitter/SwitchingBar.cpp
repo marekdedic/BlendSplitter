@@ -5,13 +5,13 @@
 
 int SwitchingBar::size = 36;
 
-SwitchingBar::SwitchingBar(QWidget* parent) : QWidget(parent)
+SwitchingBar::SwitchingBar(QWidget* parent) : QWidget(parent), combo{new SwitchingCombo{}}
 {
     QHBoxLayout* layout{new QHBoxLayout{}};
     layout->setContentsMargins(Expander::size * 3 / 4, 0, 0, 0);
     setLayout(layout);
     setMinimumHeight(size);
     setMaximumHeight(size);
-    layout->addWidget(new SwitchingCombo{});
+    layout->addWidget(combo);
     layout->addStretch();
 }

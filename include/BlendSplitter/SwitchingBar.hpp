@@ -3,6 +3,7 @@
 #include "Global.hpp"
 
 class SwitchingWidget;
+class SwitchingCombo;
 
 class SwitchingBar : public QWidget
 {
@@ -12,4 +13,5 @@ public:
 protected:
     friend SwitchingWidget;
     SwitchingBar(QWidget* parent = nullptr);
+    SwitchingCombo* combo;
 };

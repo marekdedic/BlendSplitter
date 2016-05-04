@@ -7,6 +7,6 @@ SwitchingCombo::SwitchingCombo()
 {
     for(int i{0}; i < WidgetRegistry::getRegistry()->size(); i++)
     {
-        QComboBox::insertItem(-1, WidgetRegistry::getRegistry()->item(i)->name);
+        QComboBox::addItem(WidgetRegistry::getRegistry()->item(i)->name);
     }
 }
