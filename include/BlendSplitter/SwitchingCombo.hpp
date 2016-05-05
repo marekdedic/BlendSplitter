@@ -10,4 +10,6 @@ class SwitchingCombo : public QComboBox
 protected:
     friend SwitchingBar;
     SwitchingCombo();
+protected slots:
+    void repopulate();
 };

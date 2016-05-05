@@ -17,6 +17,9 @@ SwitchingWidget::SwitchingWidget(QWidget* parent) : QSplitter(Qt::Vertical, pare
 
 void SwitchingWidget::changeCurrentWidget(int index)
 {
-    delete widget(0);
-    insertWidget(0, (*WidgetRegistry::getRegistry()->item(index)->widget) ());
+    if(index >= 0)
+    {
+        delete widget(0);
+        insertWidget(0, (*WidgetRegistry::getRegistry()->item(index)->widget) ());
+    }
 }
