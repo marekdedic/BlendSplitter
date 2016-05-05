@@ -8,10 +8,13 @@
 
 #include <QLabel>
 
+class SwitchingBar;
+
 class BLENDSPLITTER_EXPORT RegistryItem
 {
 public:
-    RegistryItem(QString name = "Default", QWidget* (*widget) () = []()->QWidget* {return new QLabel{"Inserted widget from Registry"};});
+    RegistryItem(QString name = "Default", QWidget* (*widget) () = []()->QWidget* {return new QLabel{"Default Widget"};}, void (*populateBar) (SwitchingBar*) = [](SwitchingBar*)->void {});
     QString name;
     QWidget* (*widget) ();
+    void (*populateBar) (SwitchingBar*);
 };
