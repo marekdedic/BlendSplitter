@@ -8,7 +8,9 @@
 
 #include <QSplitter>
 
+#include "RegistryItem.hpp"
 #include "SwitchingWidget.hpp"
+#include "WidgetRegistry.hpp"
 
 class Expander;
 class ExpanderBottom;
