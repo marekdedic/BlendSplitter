@@ -15,16 +15,23 @@ class BLENDSPLITTER_EXPORT WidgetRegistry : public QObject
     Q_OBJECT
 public:
     static WidgetRegistry* getRegistry();
-    RegistryItem* item(const int i) const;
-    RegistryItem* getDefault();
+    RegistryItem* item(int i) const;
+    int indexOf(RegistryItem* item) const;
+    const RegistryItem* getDefault();
+    void setDefault(RegistryItem* item);
+    void setDefault(int index = 0);
     void addItem(RegistryItem* item);
-    void addItem(QString name = "Default", QWidget* (*widget) () = []()->QWidget* {return new QLabel{"Inserted widget"};});
-    int size();
+    void addItem(QString name = "Default", QWidget* (*widget) () = []()->QWidget* {return new QLabel{"Default widget"};});
+    void insertItem(int index, RegistryItem* item);
+    void insertItem(int index, QString name = "Default", QWidget* (*widget) () = []()->QWidget* {return new QLabel{"Default widget"};});
+    void removeItem(RegistryItem* item);
+    void removeItem(int index);
+    int size() const;
 signals:
     void registryChanged();
 private:
     WidgetRegistry() = default;
     static WidgetRegistry* theRegistry;
-    QList<RegistryItem*> widgetList;
-    RegistryItem* defaultWidget;
+    QList<RegistryItem*> list;
+    RegistryItem* defaultItem;
 };
