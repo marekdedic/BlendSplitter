@@ -9,6 +9,7 @@
 #include <QLabel>
 
 class RegistryItem;
+class SwitchingBar;
 
 class BLENDSPLITTER_EXPORT WidgetRegistry : public QObject
 {
@@ -21,9 +22,9 @@ public:
     void setDefault(RegistryItem* item);
     void setDefault(int index = 0);
     void addItem(RegistryItem* item);
-    void addItem(QString name = "Default", QWidget* (*widget) () = []()->QWidget* {return new QLabel{"Default widget"};});
+    void addItem(QString name = "Default", QWidget* (*widget) () = []()->QWidget* {return new QLabel{"Default widget"};}, void (*populateBar) (SwitchingBar*) = [](SwitchingBar*)->void {});
     void insertItem(int index, RegistryItem* item);
-    void insertItem(int index, QString name = "Default", QWidget* (*widget) () = []()->QWidget* {return new QLabel{"Default widget"};});
+    void insertItem(int index, QString name = "Default", QWidget* (*widget) () = []()->QWidget* {return new QLabel{"Default widget"};}, void (*populateBar) (SwitchingBar*) = [](SwitchingBar*)->void {});
     void removeItem(RegistryItem* item);
     void removeItem(int index);
     int size() const;

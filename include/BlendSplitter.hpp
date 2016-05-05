@@ -9,6 +9,7 @@
 #include <QSplitter>
 
 #include "RegistryItem.hpp"
+#include "SwitchingBar.hpp"
 #include "SwitchingWidget.hpp"
 #include "WidgetRegistry.hpp"
 

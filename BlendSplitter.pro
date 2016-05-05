@@ -19,6 +19,7 @@ QMAKE_CXXFLAGS += -std=c++11 -Wnon-virtual-dtor -Winit-self -Wredundant-decls -W
 SOURCES += \
     src/BlendSplitter.cpp \
     src/RegistryItem.cpp \
+    src/SwitchingBar.cpp \
     src/SwitchingWidget.cpp \
     src/WidgetRegistry.cpp \
     src/BlendSplitter/Expander.cpp \
@@ -27,13 +28,13 @@ SOURCES += \
     src/BlendSplitter/Overlay.cpp \
     src/BlendSplitter/SplitterDecorator.cpp \
     src/BlendSplitter/SplitterHandle.cpp \
-    src/BlendSplitter/SwitchingBar.cpp \
     src/BlendSplitter/SwitchingCombo.cpp \
     src/BlendSplitter/WidgetDecorator.cpp
 
 HEADERS  += \
     include/BlendSplitter.hpp \
     include/RegistryItem.hpp \
+    include/SwitchingBar.hpp \
     include/SwitchingWidget.hpp \
     include/WidgetRegistry.hpp \
     include/BlendSplitter/Expander.hpp \
@@ -43,7 +44,6 @@ HEADERS  += \
     include/BlendSplitter/Overlay.hpp \
     include/BlendSplitter/SplitterDecorator.hpp \
     include/BlendSplitter/SplitterHandle.hpp \
-    include/BlendSplitter/SwitchingBar.hpp \
     include/BlendSplitter/SwitchingCombo.hpp \
     include/BlendSplitter/WidgetDecorator.hpp
 
