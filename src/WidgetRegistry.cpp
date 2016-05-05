@@ -13,27 +13,54 @@ WidgetRegistry* WidgetRegistry::getRegistry()
     return theRegistry;
 }
 
-RegistryItem* WidgetRegistry::item(const int i) const
+RegistryItem* WidgetRegistry::item(int i) const
 {
-    return widgetList.value(i);
+    return list.value(i);
 }
 
-RegistryItem* WidgetRegistry::getDefault()
+int WidgetRegistry::indexOf(RegistryItem* item) const
 {
-    if(defaultWidget == nullptr)
+    return list.indexOf(item);
+}
+
+const RegistryItem* WidgetRegistry::getDefault()
+{
+    if(defaultItem == nullptr)
     {
-        if(widgetList.size() == 0)
+        if(list.size() == 0)
         {
             addItem();
         }
-        defaultWidget = item(0);
+        defaultItem = item(0);
     }
-    return defaultWidget;
+    return defaultItem;
+}
+
+void WidgetRegistry::setDefault(RegistryItem* item)
+{
+    if(!list.contains(item))
+    {
+        addItem(item);
+    }
+    defaultItem = item;
+}
+
+void WidgetRegistry::setDefault(int index)
+{
+    defaultItem = item(index);
+    if(defaultItem == 0)
+    {
+        if(size() == 0)
+        {
+            addItem();
+        }
+        defaultItem = item(0);
+    }
 }
 
 void WidgetRegistry::addItem(RegistryItem* item)
 {
-    widgetList.append(item);
+    list.append(item);
     emit registryChanged();
 }
 
@@ -42,7 +69,34 @@ void WidgetRegistry::addItem(QString name, QWidget* (*widget) ())
     addItem(new RegistryItem{name, widget});
 }
 
-int WidgetRegistry::size()
+void WidgetRegistry::insertItem(int index, RegistryItem* item)
 {
-    return widgetList.size();
+    list.insert(index, item);
+    emit registryChanged();
+}
+
+void WidgetRegistry::insertItem(int index, QString name, QWidget* (*widget) ())
+{
+    insertItem(index, new RegistryItem{name, widget});
+}
+
+void WidgetRegistry::removeItem(RegistryItem* item)
+{
+    removeItem(indexOf(item));
+}
+
+void WidgetRegistry::removeItem(int index)
+{
+    bool isDefault{index == indexOf(defaultItem) ? true : false};
+    list.removeAt(index);
+    if(isDefault)
+    {
+        setDefault();
+    }
+    emit registryChanged();
+}
+
+int WidgetRegistry::size() const
+{
+    return list.size();
 }
