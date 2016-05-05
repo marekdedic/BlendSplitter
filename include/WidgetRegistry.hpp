@@ -17,7 +17,7 @@ public:
     static WidgetRegistry* getRegistry();
     RegistryItem* item(int i) const;
     int indexOf(RegistryItem* item) const;
-    const RegistryItem* getDefault();
+    RegistryItem* getDefault();
     void setDefault(RegistryItem* item);
     void setDefault(int index = 0);
     void addItem(RegistryItem* item);

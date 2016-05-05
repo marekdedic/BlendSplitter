@@ -23,7 +23,7 @@ int WidgetRegistry::indexOf(RegistryItem* item) const
     return list.indexOf(item);
 }
 
-const RegistryItem* WidgetRegistry::getDefault()
+RegistryItem* WidgetRegistry::getDefault()
 {
     if(defaultItem == nullptr)
     {
@@ -47,15 +47,7 @@ void WidgetRegistry::setDefault(RegistryItem* item)
 
 void WidgetRegistry::setDefault(int index)
 {
-    defaultItem = item(index);
-    if(defaultItem == 0)
-    {
-        if(size() == 0)
-        {
-            addItem();
-        }
-        defaultItem = item(0);
-    }
+    setDefault(item(index));
 }
 
 void WidgetRegistry::addItem(RegistryItem* item)
