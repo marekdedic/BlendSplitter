@@ -9,7 +9,10 @@ int SwitchingBar::size = 36;
 QAction* SwitchingBar::addMenu(QMenu* menu)
 {
     QMenuBar* menuBar{new QMenuBar};
+    menuBar->setDefaultUp(true);
     layout->insertWidget(layout->count() - 1, menuBar);
+    layout->setAlignment(menuBar, Qt::AlignVCenter);
+    setStyleSheet("QMenuBar{background-color: transparent;}");
     return menuBar->addMenu(menu);
 }
 
