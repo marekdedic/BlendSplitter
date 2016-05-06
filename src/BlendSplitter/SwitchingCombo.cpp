@@ -5,8 +5,8 @@
 
 SwitchingCombo::SwitchingCombo()
 {
-    repopulate();
     connect(WidgetRegistry::getRegistry(), &WidgetRegistry::registryChanged, this, &SwitchingCombo::repopulate);
+    repopulate();
 }
 
 void SwitchingCombo::repopulate()
