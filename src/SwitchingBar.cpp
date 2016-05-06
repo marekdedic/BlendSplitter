@@ -31,7 +31,7 @@ SwitchingBar::SwitchingBar(QWidget* parent) : QWidget(parent), layout{new QHBoxL
     layout->addStretch();
 }
 
-void SwitchingBar::reconstruct(void (*populateBar) (SwitchingBar*))
+void SwitchingBar::reconstruct(void (*populateBar) (SwitchingBar*, QWidget*), QWidget* widget)
 {
     int count{layout->count() - 1};
     for(int i = 1; i < count; i++)
@@ -40,5 +40,5 @@ void SwitchingBar::reconstruct(void (*populateBar) (SwitchingBar*))
         delete it->widget();
         delete it;
     }
-    (*populateBar) (this);
+    (*populateBar) (this, widget);
 }

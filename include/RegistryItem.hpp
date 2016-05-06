@@ -13,8 +13,8 @@ class SwitchingBar;
 class BLENDSPLITTER_EXPORT RegistryItem
 {
 public:
-    RegistryItem(QString name = "Default", QWidget* (*widget) () = []()->QWidget* {return new QLabel{"Default Widget"};}, void (*populateBar) (SwitchingBar*) = [](SwitchingBar*)->void {});
+    RegistryItem(QString name = "Default", QWidget* (*widget) () = []()->QWidget* {return new QLabel{"Default Widget"};}, void (*populateBar) (SwitchingBar*, QWidget*) = [](SwitchingBar*, QWidget*)->void {});
     QString name;
     QWidget* (*widget) ();
-    void (*populateBar) (SwitchingBar*);
+    void (*populateBar) (SwitchingBar*, QWidget*);
 };

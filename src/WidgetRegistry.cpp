@@ -56,7 +56,7 @@ void WidgetRegistry::addItem(RegistryItem* item)
     emit registryChanged();
 }
 
-void WidgetRegistry::addItem(QString name, QWidget* (*widget) (), void (*populateBar) (SwitchingBar*))
+void WidgetRegistry::addItem(QString name, QWidget* (*widget) (), void (*populateBar) (SwitchingBar*, QWidget*))
 {
     addItem(new RegistryItem{name, widget, populateBar});
 }
@@ -67,7 +67,7 @@ void WidgetRegistry::insertItem(int index, RegistryItem* item)
     emit registryChanged();
 }
 
-void WidgetRegistry::insertItem(int index, QString name, QWidget* (*widget) (), void (*populateBar) (SwitchingBar*))
+void WidgetRegistry::insertItem(int index, QString name, QWidget* (*widget) (), void (*populateBar) (SwitchingBar*, QWidget*))
 {
     insertItem(index, new RegistryItem{name, widget, populateBar});
 }

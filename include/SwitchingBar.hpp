@@ -25,5 +25,5 @@ protected:
     QHBoxLayout* layout;
     SwitchingCombo* combo;
     SwitchingBar(QWidget* parent = nullptr);
-    void reconstruct(void (*populateBar) (SwitchingBar*));
+    void reconstruct(void (*populateBar) (SwitchingBar*, QWidget*), QWidget* widget);
 };
