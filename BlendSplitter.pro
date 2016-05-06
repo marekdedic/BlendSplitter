@@ -12,6 +12,8 @@ TARGET = BlendSplitter
 
 TEMPLATE = lib
 
+VERSION = 2.0
+
 CONFIG += c++11
 
 QMAKE_CXXFLAGS += -std=c++11 -Wnon-virtual-dtor -Winit-self -Wredundant-decls -Wcast-align -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wmain -std=c++11 -Wfatal-errors -Wextra -Wall
