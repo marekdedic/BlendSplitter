@@ -22,9 +22,9 @@ public:
     void setDefault(RegistryItem* item);
     void setDefault(int index = 0);
     void addItem(RegistryItem* item);
-    void addItem(QString name = "Default", QWidget* (*widget) () = []()->QWidget* {return new QLabel{"Default widget"};}, void (*populateBar) (SwitchingBar*) = [](SwitchingBar*)->void {});
+    void addItem(QString name = "Default", QWidget* (*widget) () = []()->QWidget* {return new QLabel{"Default widget"};}, void (*populateBar) (SwitchingBar*, QWidget*) = [](SwitchingBar*, QWidget*)->void {});
     void insertItem(int index, RegistryItem* item);
-    void insertItem(int index, QString name = "Default", QWidget* (*widget) () = []()->QWidget* {return new QLabel{"Default widget"};}, void (*populateBar) (SwitchingBar*) = [](SwitchingBar*)->void {});
+    void insertItem(int index, QString name = "Default", QWidget* (*widget) () = []()->QWidget* {return new QLabel{"Default widget"};}, void (*populateBar) (SwitchingBar*, QWidget*) = [](SwitchingBar*, QWidget*)->void {});
     void removeItem(RegistryItem* item);
     void removeItem(int index);
     int size() const;
