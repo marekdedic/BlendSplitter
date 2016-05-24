@@ -1,0 +1,4 @@
+version=4
+opts="pgpsigurlmangle=s/archive\/(\d\S*)\.tar\.gz/releases\/download\/$1\/BlendSplitter-$1\.tar\.gz\.asc/, \
+filenamemangle=s/.+\/(\d)\.(\d\S*)\.tar\.gz/libblendsplitter$1-$1.$2\.tar\.gz/" \
+  https://github.com/GenaBitu/BlendSplitter/releases .*/archive/(\d\S*)\.tar\.gz

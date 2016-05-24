@@ -1,0 +1,26 @@
+Source: libblendsplitter2
+Priority: optional
+Maintainer: GenaBitu <genabitu@gmail.com>
+Build-Depends: debhelper (>=9), qt5-qmake, qtbase5-dev, qtchooser
+Standards-Version: 3.9.8
+Section: libs
+Homepage: https://github.com/GenaBitu/BlendSplitter
+
+Package: libblendsplitter2
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: BlendSplitter library, version 2
+ A blender-like Qt Widget management library.
+ BlendSplitter Provides the BlendSplitter class, which is a Splitter like that
+ of the 3-D modelling software Blender.
+ This is the runtime package for the library.
+
+Package: libblendsplitter-dev
+Section: libdevel
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libblendsplitter2 (=${binary:Version})
+Description: BlendSplitter library, version 2, development files
+ A blender-like Qt Widget management library.
+ BlendSplitter Provides the BlendSplitter class, which is a Splitter like that
+ of the 3-D modelling software Blender.
+ This is the development package for the library.
