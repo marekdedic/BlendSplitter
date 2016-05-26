@@ -1,5 +1,5 @@
-libblendsplitter2 (2.0.0-1) unstable; urgency=low
+libblendsplitter2 (2.0.0-1ubuntu1) xenial; urgency=low
 
-  * Initial release (Closes: #825133)
+  * Initial release
 
  -- GenaBitu <genabitu@gmail.com>  Mon, 23 May 2016 00:34:16 +0200
