@@ -1,3 +1,9 @@
+libblendsplitter2 (2.1.0-1) unstable; urgency=low
+
+  * Header structure
+
+ -- GenaBitu <genabitu@gmail.com>  Sun, 12 Jun 2016 16:29:36 +0200
+
 libblendsplitter2 (2.0.0-1) unstable; urgency=low
 
   * Initial release (Closes: #825133)

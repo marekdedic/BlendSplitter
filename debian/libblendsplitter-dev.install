@@ -1,7 +1,8 @@
+include/BlendSplitter /usr/include
 include/BlendSplitter.hpp /usr/include
-include/RegistryItem.hpp /usr/include
-include/SwitchingBar.hpp /usr/include
-include/SwitchingWidget.hpp /usr/include
-include/WidgetRegistry.hpp /usr/include
+include/BS/RegistryItem.hpp /usr/include/BS
+include/BS/SwitchingBar.hpp /usr/include/BS
+include/BS/SwitchingWidget.hpp /usr/include/BS
+include/BS/WidgetRegistry.hpp /usr/include/BS
 
 libBlendSplitter.so /usr/lib
