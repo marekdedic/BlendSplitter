@@ -1,6 +1,6 @@
-#include "include/WidgetRegistry.hpp"
+#include "include/BS/WidgetRegistry.hpp"
 
-#include "include/RegistryItem.hpp"
+#include "include/BS/RegistryItem.hpp"
 
 WidgetRegistry* WidgetRegistry::theRegistry;
 

@@ -1,10 +1,10 @@
 #include "include/BlendSplitter.hpp"
 
-#include "include/WidgetRegistry.hpp"
-#include "include/RegistryItem.hpp"
-#include "include/BlendSplitter/SplitterDecorator.hpp"
-#include "include/BlendSplitter/SplitterHandle.hpp"
-#include "include/BlendSplitter/WidgetDecorator.hpp"
+#include "include/BS/WidgetRegistry.hpp"
+#include "include/BS/RegistryItem.hpp"
+#include "include/implementation/SplitterDecorator.hpp"
+#include "include/implementation/SplitterHandle.hpp"
+#include "include/implementation/WidgetDecorator.hpp"
 
 BlendSplitter::BlendSplitter(QWidget* (*defaultWidget) (), Qt::Orientation orientation) : QSplitter{orientation, nullptr}, defaultWidget{defaultWidget}
 {

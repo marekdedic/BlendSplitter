@@ -1,4 +1,4 @@
-#include "include/BlendSplitter/SplitterDecorator.hpp"
+#include "include/implementation/SplitterDecorator.hpp"
 
 #include "include/BlendSplitter.hpp"
 

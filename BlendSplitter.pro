@@ -34,19 +34,20 @@ SOURCES += \
     src/BlendSplitter/WidgetDecorator.cpp
 
 HEADERS  += \
+    include/BlendSplitter \
     include/BlendSplitter.hpp \
-    include/RegistryItem.hpp \
-    include/SwitchingBar.hpp \
-    include/SwitchingWidget.hpp \
-    include/WidgetRegistry.hpp \
-    include/BlendSplitter/Expander.hpp \
-    include/BlendSplitter/ExpanderBottom.hpp \
-    include/BlendSplitter/ExpanderTop.hpp \
-    include/BlendSplitter/Global.hpp \
-    include/BlendSplitter/Overlay.hpp \
-    include/BlendSplitter/SplitterDecorator.hpp \
-    include/BlendSplitter/SplitterHandle.hpp \
-    include/BlendSplitter/SwitchingCombo.hpp \
-    include/BlendSplitter/WidgetDecorator.hpp
+    include/BS/RegistryItem.hpp \
+    include/BS/SwitchingBar.hpp \
+    include/BS/SwitchingWidget.hpp \
+    include/BS/WidgetRegistry.hpp \
+    include/implementation/Expander.hpp \
+    include/implementation/ExpanderBottom.hpp \
+    include/implementation/ExpanderTop.hpp \
+    include/implementation/Global.hpp \
+    include/implementation/Overlay.hpp \
+    include/implementation/SplitterDecorator.hpp \
+    include/implementation/SplitterHandle.hpp \
+    include/implementation/SwitchingCombo.hpp \
+    include/implementation/WidgetDecorator.hpp
 
 DEFINES += BLENDSPLITTER_LIBRARY

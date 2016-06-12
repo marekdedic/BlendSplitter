@@ -1,7 +1,7 @@
-#include "include/BlendSplitter/WidgetDecorator.hpp"
+#include "include/implementation/WidgetDecorator.hpp"
 
-#include "include/BlendSplitter/ExpanderBottom.hpp"
-#include "include/BlendSplitter/ExpanderTop.hpp"
+#include "include/implementation/ExpanderBottom.hpp"
+#include "include/implementation/ExpanderTop.hpp"
 
 WidgetDecorator::WidgetDecorator(QWidget* widget) : QWidget{}, widget{widget}, expanderBottom{new ExpanderBottom{this}}, expanderTop{new ExpanderTop{this}}
 {

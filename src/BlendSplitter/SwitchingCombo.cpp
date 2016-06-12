@@ -1,7 +1,7 @@
-#include "include/BlendSplitter/SwitchingCombo.hpp"
+#include "include/implementation/SwitchingCombo.hpp"
 
-#include "include/WidgetRegistry.hpp"
-#include "include/RegistryItem.hpp"
+#include "include/BS/WidgetRegistry.hpp"
+#include "include/BS/RegistryItem.hpp"
 
 SwitchingCombo::SwitchingCombo()
 {

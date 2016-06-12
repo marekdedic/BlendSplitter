@@ -8,10 +8,10 @@
 
 #include <QSplitter>
 
-#include "RegistryItem.hpp"
-#include "SwitchingBar.hpp"
-#include "SwitchingWidget.hpp"
-#include "WidgetRegistry.hpp"
+#include "BS/RegistryItem.hpp"
+#include "BS/SwitchingBar.hpp"
+#include "BS/SwitchingWidget.hpp"
+#include "BS/WidgetRegistry.hpp"
 
 class Expander;
 class ExpanderBottom;

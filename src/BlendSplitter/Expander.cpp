@@ -1,8 +1,8 @@
-#include "include/BlendSplitter/Expander.hpp"
+#include "include/implementation/Expander.hpp"
 
 #include "include/BlendSplitter.hpp"
-#include "include/BlendSplitter/Overlay.hpp"
-#include "include/BlendSplitter/WidgetDecorator.hpp"
+#include "include/implementation/Overlay.hpp"
+#include "include/implementation/WidgetDecorator.hpp"
 
 int Expander::size = 12;
 QString Expander::image = ":/UI/QtSplitter_expander";

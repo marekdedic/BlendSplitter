@@ -1,9 +1,9 @@
-#include "include/SwitchingWidget.hpp"
+#include "include/BS/SwitchingWidget.hpp"
 
-#include "include/WidgetRegistry.hpp"
-#include "include/RegistryItem.hpp"
-#include "include/SwitchingBar.hpp"
-#include "include/BlendSplitter/SwitchingCombo.hpp"
+#include "include/BS/WidgetRegistry.hpp"
+#include "include/BS/RegistryItem.hpp"
+#include "include/BS/SwitchingBar.hpp"
+#include "include/implementation/SwitchingCombo.hpp"
 
 SwitchingWidget::SwitchingWidget(QWidget* parent) : QSplitter(Qt::Vertical, parent), bar{new SwitchingBar{}}
 {
