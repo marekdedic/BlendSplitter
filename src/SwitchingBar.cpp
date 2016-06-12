@@ -1,8 +1,8 @@
-#include "include/SwitchingBar.hpp"
+#include "include/BS/SwitchingBar.hpp"
 
 #include <QMenuBar>
-#include "include/BlendSplitter/SwitchingCombo.hpp"
-#include "include/BlendSplitter/Expander.hpp"
+#include "include/implementation/SwitchingCombo.hpp"
+#include "include/implementation/Expander.hpp"
 
 int SwitchingBar::size = 36;
 

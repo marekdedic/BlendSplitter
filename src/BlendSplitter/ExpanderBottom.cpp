@@ -1,8 +1,8 @@
-#include "include/BlendSplitter/ExpanderBottom.hpp"
+#include "include/implementation/ExpanderBottom.hpp"
 
 #include "include/BlendSplitter.hpp"
-#include "include/BlendSplitter/Overlay.hpp"
-#include "include/BlendSplitter/WidgetDecorator.hpp"
+#include "include/implementation/Overlay.hpp"
+#include "include/implementation/WidgetDecorator.hpp"
 
 ExpanderBottom::ExpanderBottom(WidgetDecorator* parent) : Expander(parent)
 {
