@@ -16,7 +16,7 @@ protected:
     QPixmap* pixmap;
     Overlay* overlay;
     Expander() = delete;
-    Expander(WidgetDecorator* parent);
+    explicit Expander(WidgetDecorator* parent);
     virtual void reposition();
 protected slots:
     virtual void mousePressEvent(QMouseEvent* event);

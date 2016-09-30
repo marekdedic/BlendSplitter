@@ -11,7 +11,7 @@ class ExpanderTop : public Expander
 private:
     friend WidgetDecorator;
     ExpanderTop() = delete;
-    ExpanderTop(WidgetDecorator* parent);
+    explicit ExpanderTop(WidgetDecorator* parent);
     virtual void reposition();
 protected slots:
     virtual void mouseMoveEvent(QMouseEvent* event);

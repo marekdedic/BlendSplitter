@@ -11,7 +11,7 @@ class ExpanderBottom : public Expander
 private:
     friend WidgetDecorator;
     ExpanderBottom() = delete;
-    ExpanderBottom(WidgetDecorator* parent);
+    explicit ExpanderBottom(WidgetDecorator* parent);
     virtual void reposition();
 protected slots:
     virtual void mouseMoveEvent(QMouseEvent* event);

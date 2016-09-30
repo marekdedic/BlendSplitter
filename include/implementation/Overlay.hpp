@@ -11,6 +11,6 @@ private:
     friend ExpanderBottom;
     friend ExpanderTop;
     Overlay() = delete;
-    Overlay(QWidget* parent);
+    explicit Overlay(QWidget* parent);
     void reposition();
 };
