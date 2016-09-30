@@ -24,14 +24,14 @@ void ExpanderTop::mouseMoveEvent(QMouseEvent *event)
         WidgetDecorator* parentDecorator{qobject_cast<WidgetDecorator*>(parentWidget())};
         if(parentDecorator == 0)
         {
-            std::cerr << "Bad cast caused by having an expander not properly inside a SplitWidget inside a Splitter." << std::endl;
-            qApp->exit(-1);
+            qCritical("A BlendSplitter library error occurred. Error code: 4");
+            return;
         }
         BlendSplitter* parentSplitter{qobject_cast<BlendSplitter*>(parentDecorator->parentWidget())};
         if(parentSplitter == 0)
         {
-            std::cerr << "Bad cast caused by having an expander not properly inside a SplitWidget inside a Splitter." << std::endl;
-            qApp->exit(-1);
+            qCritical("A BlendSplitter library error occurred. Error code: 5");
+            return;
         }
         if(parentSplitter->orientation() == Qt::Horizontal and event->x() < 0 and event->y() > 0 and (size - event->x()) > event->y())
         {
