@@ -15,7 +15,7 @@ private:
     ExpanderBottom* expanderBottom;
     ExpanderTop* expanderTop;
     WidgetDecorator() = delete;
-    WidgetDecorator(QWidget* widget);
+    explicit WidgetDecorator(QWidget* widget);
 protected slots:
     virtual void resizeEvent(QResizeEvent*);
 };

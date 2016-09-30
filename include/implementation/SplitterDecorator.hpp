@@ -9,7 +9,7 @@ class SplitterDecorator : public QWidget
     Q_OBJECT
 public:
     SplitterDecorator() = default;
-    SplitterDecorator(BlendSplitter* splitter);
+    explicit SplitterDecorator(BlendSplitter* splitter);
     SplitterDecorator(const SplitterDecorator& other); // DO NOT USE!
 private:
     BlendSplitter* splitter;

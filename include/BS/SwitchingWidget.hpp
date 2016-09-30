@@ -14,7 +14,7 @@ class BLENDSPLITTER_EXPORT SwitchingWidget : public QSplitter
 {
     Q_OBJECT
 public:
-    SwitchingWidget(QWidget* parent = nullptr);
+    explicit SwitchingWidget(QWidget* parent = nullptr);
 private slots:
     void changeCurrentWidget(int index);
 private:
