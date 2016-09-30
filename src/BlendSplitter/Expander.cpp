@@ -40,14 +40,14 @@ void Expander::mouseReleaseEvent(QMouseEvent* event)
         WidgetDecorator* parentDecorator{qobject_cast<WidgetDecorator*>(parentWidget())};
         if(parentDecorator == 0)
         {
-            std::cerr << "Bad cast caused by having an expander not properly inside a SplitWidget inside a Splitter." << std::endl;
-            qApp->exit(-1);
+            qCritical("A BlendSplitter library error occurred. Error code: 1");
+            return;
         }
         BlendSplitter* parentSplitter{qobject_cast<BlendSplitter*>(overlay->parentWidget()->parentWidget())};
         if(parentSplitter == 0)
         {
-            std::cerr << "Bad cast caused by having an expander not properly inside a SplitWidget inside a Splitter." << std::endl;
-            qApp->exit(-1);
+            qCritical("A BlendSplitter library error occurred. Error code: 2");
+            return;
         }
         QList<int> sizes{parentSplitter->sizes()};
         int parentIndex{parentSplitter->indexOf(parentDecorator)};
@@ -60,8 +60,8 @@ void Expander::mouseReleaseEvent(QMouseEvent* event)
             BlendSplitter* newParent{qobject_cast<BlendSplitter*>(parentSplitter->parentWidget()->parentWidget())};
             if(newParent == 0)
             {
-                std::cerr << "Bad cast caused by having an expander not properly inside a SplitWidget inside a Splitter." << std::endl;
-                qApp->exit(-1);
+                qCritical("A BlendSplitter library error occurred. Error code: 3");
+                return;
             }
             QList<int> sizes2{newParent->sizes()};
             newParent->insertDecoratedWidget(newParent->indexOf(parentSplitter->parentWidget()), parentDecorator);
