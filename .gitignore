@@ -1,3 +1,4 @@
 bin/
 *.user
 CppCheckResults.txt
+DoxygenResults.txt
