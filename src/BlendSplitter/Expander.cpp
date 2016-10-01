@@ -4,14 +4,11 @@
 #include "include/implementation/Overlay.hpp"
 #include "include/implementation/WidgetDecorator.hpp"
 
-int Expander::size = 12;
-QString Expander::image = ":/UI/QtSplitter_expander";
-
-Expander::Expander(WidgetDecorator* parent) : QLabel(parent), pixmap{new QPixmap{image}}, overlay{nullptr}
+Expander::Expander(WidgetDecorator* parent) : QLabel(parent), pixmap{new QPixmap{BlendSplitter::expanderImage}}, overlay{nullptr}
 {
-    *pixmap = pixmap->scaledToHeight(size, Qt::FastTransformation);
+    *pixmap = pixmap->scaledToHeight(BlendSplitter::expanderSize, Qt::FastTransformation);
     setPixmap(*pixmap);
-    resize(size, size);
+    resize(BlendSplitter::expanderSize, BlendSplitter::expanderSize);
     reposition();
 }
 

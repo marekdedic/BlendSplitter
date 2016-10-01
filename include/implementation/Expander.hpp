@@ -8,9 +8,6 @@ class WidgetDecorator;
 class Expander : public QLabel
 {
     Q_OBJECT
-public:
-    static int size;
-    static QString image;
 protected:
     friend WidgetDecorator;
     QPixmap* pixmap;

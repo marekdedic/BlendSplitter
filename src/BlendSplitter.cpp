@@ -6,6 +6,10 @@
 #include "include/implementation/SplitterHandle.hpp"
 #include "include/implementation/WidgetDecorator.hpp"
 
+int BlendSplitter::expanderSize{12};
+int BlendSplitter::switchingBarHeight{36};
+QString BlendSplitter::expanderImage{":/BlendSplitter/Expander"};
+
 BlendSplitter::BlendSplitter(QWidget* (*defaultWidget) (), Qt::Orientation orientation) : QSplitter{orientation, nullptr}, defaultWidget{defaultWidget}
 {
     setChildrenCollapsible(false);
