@@ -4,15 +4,13 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
-
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+QT += core gui widgets
 
 TARGET = BlendSplitter
 
 TEMPLATE = lib
 
-VERSION = 2.1.0
+VERSION = 3.0.0
 
 CONFIG += c++11
 
