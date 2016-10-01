@@ -17,14 +17,6 @@ class SwitchingBar;
 class BLENDSPLITTER_EXPORT RegistryItem
 {
 public:
-    /** \brief A constructor setting all the internal values
-     *
-     * This constructor takes 3 parameters corresponding to the 3 members of the RegistryItem class. See their desription for more details.
-     * \param name The name of the widget, used in the SwitchingBar combo box
-     * \param widget A pointer to a function constructing the widget
-     * \param populateBar A pointer to a function populating the SwitchingBar
-     */
-    RegistryItem(QString name = "Default", QWidget* (*widget) () = []()->QWidget* {return new QLabel{"Default Widget"};}, void (*populateBar) (SwitchingBar*, QWidget*) = [](SwitchingBar*, QWidget*)->void {});
     QString name; /**< The name of the widget, used in the SwitchingBar combo box. */
     /** \brief A function constructing the widget
      *
@@ -39,4 +31,12 @@ public:
      * \param A pointer to the newly-created widget in the SwitchingWidget
      */
     void (*populateBar) (SwitchingBar*, QWidget*);
+    /** \brief A constructor setting all the internal values
+     *
+     * This constructor takes 3 parameters corresponding to the 3 members of the RegistryItem class. See their desription for more details.
+     * \param name The name of the widget, used in the SwitchingBar combo box
+     * \param widget A pointer to a function constructing the widget
+     * \param populateBar A pointer to a function populating the SwitchingBar
+     */
+    RegistryItem(QString name = "Default", QWidget* (*widget) () = []()->QWidget* {return new QLabel{"Default Widget"};}, void (*populateBar) (SwitchingBar*, QWidget*) = [](SwitchingBar*, QWidget*)->void {});
 };
