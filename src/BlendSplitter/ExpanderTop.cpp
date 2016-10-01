@@ -7,7 +7,7 @@
 ExpanderTop::ExpanderTop(WidgetDecorator* parent) : Expander(parent)
 {
     QPolygon mask;
-    mask << QPoint{0, 0} << QPoint{0, size/10} << QPoint{size * 9 / 10, size} << QPoint{size, size} << QPoint{size, 0};
+    mask << QPoint{0, 0} << QPoint{0, BlendSplitter::expanderSize/10} << QPoint{BlendSplitter::expanderSize * 9 / 10, BlendSplitter::expanderSize} << QPoint{BlendSplitter::expanderSize, BlendSplitter::expanderSize} << QPoint{BlendSplitter::expanderSize, 0};
     setMask(QRegion{mask});
 }
 
@@ -33,27 +33,27 @@ void ExpanderTop::mouseMoveEvent(QMouseEvent *event)
             qCritical("A BlendSplitter library error occurred. Error code: 5");
             return;
         }
-        if(parentSplitter->orientation() == Qt::Horizontal and event->x() < 0 and event->y() > 0 and (size - event->x()) > event->y())
+        if(parentSplitter->orientation() == Qt::Horizontal and event->x() < 0 and event->y() > 0 and (BlendSplitter::expanderSize - event->x()) > event->y())
         {
             QList<int> sizes{parentSplitter->sizes()};
             int index{parentSplitter->indexOf(parentDecorator)};
-            sizes.insert(index + 1, size);
-            sizes[index] -= size + 1;
+            sizes.insert(index + 1, BlendSplitter::expanderSize);
+            sizes[index] -= BlendSplitter::expanderSize + 1;
             parentSplitter->insertWidget(index + 1);
             parentSplitter->setSizes(sizes);
             parentSplitter->handle(index + 1)->grabMouse();
         }
-        else if(parentSplitter->orientation() == Qt::Vertical and event->x() < size and event->y() > size and (size - event->x()) < event->y())
+        else if(parentSplitter->orientation() == Qt::Vertical and event->x() < BlendSplitter::expanderSize and event->y() > BlendSplitter::expanderSize and (BlendSplitter::expanderSize - event->x()) < event->y())
         {
             QList<int> sizes{parentSplitter->sizes()};
             int index{parentSplitter->indexOf(parentDecorator)};
-            sizes[index] -= size + 1;
-            sizes.insert(index, size);
+            sizes[index] -= BlendSplitter::expanderSize + 1;
+            sizes.insert(index, BlendSplitter::expanderSize);
             parentSplitter->insertWidget(index);
             parentSplitter->setSizes(sizes);
             parentSplitter->handle(index + 1)->grabMouse();
         }
-        else if(parentSplitter->orientation() == Qt::Horizontal and event->x() < size and event->y() > size and (size - event->x()) < event->y())
+        else if(parentSplitter->orientation() == Qt::Horizontal and event->x() < BlendSplitter::expanderSize and event->y() > BlendSplitter::expanderSize and (BlendSplitter::expanderSize - event->x()) < event->y())
         {
             BlendSplitter* newSplitter{new BlendSplitter{parentSplitter->defaultWidget, Qt::Vertical}};
             QList<int> sizes{parentSplitter->sizes()};
@@ -63,7 +63,7 @@ void ExpanderTop::mouseMoveEvent(QMouseEvent *event)
             parentSplitter->setSizes(sizes);
             newSplitter->handle(1)->grabMouse();
         }
-        else if(parentSplitter->orientation() == Qt::Vertical and event->x() < 0 and event->y() > 0 and (size - event->x()) > event->y())
+        else if(parentSplitter->orientation() == Qt::Vertical and event->x() < 0 and event->y() > 0 and (BlendSplitter::expanderSize - event->x()) > event->y())
         {
             BlendSplitter* newSplitter{new BlendSplitter{parentSplitter->defaultWidget, Qt::Horizontal}};
             QList<int> sizes{parentSplitter->sizes()};
@@ -73,7 +73,7 @@ void ExpanderTop::mouseMoveEvent(QMouseEvent *event)
             parentSplitter->setSizes(sizes);
             newSplitter->handle(1)->grabMouse();
         }
-        if(parentSplitter->orientation() == Qt::Horizontal and event->x() > size and event->y() > 0 and event->y() < parentDecorator->height())
+        if(parentSplitter->orientation() == Qt::Horizontal and event->x() > BlendSplitter::expanderSize and event->y() > 0 and event->y() < parentDecorator->height())
         {
             if(overlay == nullptr and parentSplitter->indexOf(parentDecorator) + 1 < parentSplitter->count())
             {
@@ -81,7 +81,7 @@ void ExpanderTop::mouseMoveEvent(QMouseEvent *event)
                 overlay->show();
             }
         }
-        else if(parentSplitter->orientation() == Qt::Vertical and event->x() < size and event->y() < 0 and (size - event->x()) < parentDecorator->width())
+        else if(parentSplitter->orientation() == Qt::Vertical and event->x() < BlendSplitter::expanderSize and event->y() < 0 and (BlendSplitter::expanderSize - event->x()) < parentDecorator->width())
         {
             if(overlay == nullptr and parentSplitter->indexOf(parentDecorator) > 0)
             {

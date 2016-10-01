@@ -21,7 +21,6 @@ class BLENDSPLITTER_EXPORT SwitchingBar : public QWidget
 {
     Q_OBJECT
 public:
-    static int size; /**< Height of the SwitchingBar. A static property. */
     /** \brief Add a QMenu
      *
      * This function adds a QMenu to the very right of the SwitchingBar. The menu is wrapped in an invisible QMenuBar.

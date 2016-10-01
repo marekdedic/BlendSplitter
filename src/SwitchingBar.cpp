@@ -1,10 +1,8 @@
 #include "include/BS/SwitchingBar.hpp"
 
 #include <QMenuBar>
+#include "include/BlendSplitter.hpp"
 #include "include/implementation/SwitchingCombo.hpp"
-#include "include/implementation/Expander.hpp"
-
-int SwitchingBar::size = 36;
 
 void SwitchingBar::addMenu(QMenu* menu)
 {
@@ -23,10 +21,10 @@ void SwitchingBar::addWidget(QWidget* widget)
 
 SwitchingBar::SwitchingBar(QWidget* parent) : QWidget(parent), layout{new QHBoxLayout{}}, combo{new SwitchingCombo{}}
 {
-    layout->setContentsMargins(Expander::size * 3 / 4, 0, 0, 0);
+    layout->setContentsMargins(BlendSplitter::expanderSize * 3 / 4, 0, 0, 0);
     setLayout(layout);
-    setMinimumHeight(size);
-    setMaximumHeight(size);
+    setMinimumHeight(BlendSplitter::switchingBarHeight);
+    setMaximumHeight(BlendSplitter::switchingBarHeight);
     layout->addWidget(combo);
     layout->addStretch();
 }

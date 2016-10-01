@@ -26,6 +26,9 @@ class BLENDSPLITTER_EXPORT BlendSplitter : public QSplitter
 {
     Q_OBJECT
 public:
+    static int expanderSize; /**< Size of the expanders in the corners */
+    static int switchingBarHeight; /**< Height of the SwitchingBar. A static property. */
+    static QString expanderImage; /**< The image to be used for the top left expander. The bottom right one will rotate this by pi (180 degrees). */
     /** \brief BlendSplitter class constructor
      * \param defaultWidget A pointer to function constructing the default widget. This function is called when a new widget is added to BlendSplitter.
      * \param orientation Orientation of the main BlendSplitter
