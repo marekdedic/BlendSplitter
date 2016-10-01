@@ -26,16 +26,15 @@ public:
      *
      * This function adds a QMenu to the very right of the SwitchingBar. The menu is wrapped in an invisible QMenuBar.
      * \param menu A pointer to the QMenu to be added
-     * \return \todo Remove this.
      */
-    QAction* addMenu(QMenu* menu);
+    void addMenu(QMenu* menu);
     /** \brief Add a QWidget
      *
      * This function adds a QWidget to the very right of the SwitchingBar. The widget is placed in a QHBoxLayout.
      * @param widget A pointer to the QWidget to be added
      */
     void addWidget(QWidget* widget);
-protected:
+private:
     friend SwitchingWidget;
     QHBoxLayout* layout;
     SwitchingCombo* combo;
