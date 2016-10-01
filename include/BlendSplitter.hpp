@@ -70,7 +70,7 @@ public:
      * \param splitter A pointer to the BlendSplitter to be inserted
      */
     void insertSplitter(int index, BlendSplitter* splitter);
-protected:
+private:
     friend Expander;
     friend ExpanderBottom;
     friend ExpanderTop;
