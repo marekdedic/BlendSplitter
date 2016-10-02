@@ -7,10 +7,9 @@ class ExpanderTop;
 
 class Overlay : public QLabel
 {
-private:
-    friend ExpanderBottom;
-    friend ExpanderTop;
+public:
     Overlay() = delete;
     explicit Overlay(QWidget* parent);
+private:
     void reposition();
 };
