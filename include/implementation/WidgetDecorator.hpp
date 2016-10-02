@@ -9,6 +9,7 @@ class ExpanderTop;
 class WidgetDecorator : public QWidget
 {
     Q_OBJECT
+    Q_DISABLE_COPY(WidgetDecorator)
 public:
     WidgetDecorator() = delete;
     explicit WidgetDecorator(QWidget* widget);

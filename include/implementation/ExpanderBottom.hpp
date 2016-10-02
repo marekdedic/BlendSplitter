@@ -8,6 +8,7 @@ class WidgetDecorator;
 class ExpanderBottom : public Expander
 {
     Q_OBJECT
+    Q_DISABLE_COPY(ExpanderBottom)
 public:
     ExpanderBottom() = delete;
     explicit ExpanderBottom(WidgetDecorator* parent);

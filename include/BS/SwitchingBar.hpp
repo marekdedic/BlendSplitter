@@ -20,6 +20,7 @@ class SwitchingCombo;
 class BLENDSPLITTER_EXPORT SwitchingBar : public QWidget
 {
     Q_OBJECT
+    Q_DISABLE_COPY(SwitchingBar)
 public:
     /** \brief Add a QMenu
      *

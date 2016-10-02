@@ -18,6 +18,7 @@ class SwitchingBar;
 class BLENDSPLITTER_EXPORT WidgetRegistry : public QObject
 {
     Q_OBJECT
+    Q_DISABLE_COPY(WidgetRegistry)
 public:
     /** \brief Registry getter
      *
