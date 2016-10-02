@@ -79,12 +79,7 @@ void WidgetRegistry::removeItem(RegistryItem* item)
 
 void WidgetRegistry::removeItem(int index)
 {
-    bool isDefault{index == indexOf(defaultItem)};
     list.removeAt(index);
-    if(isDefault)
-    {
-        setDefault();
-    }
     emit registryChanged();
 }
 
