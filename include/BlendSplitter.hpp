@@ -25,6 +25,7 @@ class WidgetDecorator;
 class BLENDSPLITTER_EXPORT BlendSplitter : public QSplitter
 {
     Q_OBJECT
+    Q_DISABLE_COPY(BlendSplitter)
 public:
     static int expanderSize; /**< Size of the expanders in the corners */
     static int switchingBarHeight; /**< Height of the SwitchingBar. A static property. */
@@ -34,8 +35,6 @@ public:
      * \param orientation Orientation of the main BlendSplitter
      */
     BlendSplitter(QWidget* (*defaultWidget) () = []()->QWidget* {return new SwitchingWidget{};}, Qt::Orientation orientation = Qt::Horizontal);
-    BlendSplitter(const BlendSplitter& other) = delete;
-    BlendSplitter& operator=(const BlendSplitter& other) = delete;
     /** \brief Add a widget to the BlendSplitter
      *
      * Adds the default widget to the very bottom/right of the BlendSplitter.

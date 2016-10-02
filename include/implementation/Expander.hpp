@@ -8,6 +8,7 @@ class WidgetDecorator;
 class Expander : public QLabel
 {
     Q_OBJECT
+    Q_DISABLE_COPY(Expander)
 protected:
     QPixmap* pixmap;
     Overlay* overlay;

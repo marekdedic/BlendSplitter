@@ -17,6 +17,7 @@ class SwitchingBar;
 class BLENDSPLITTER_EXPORT SwitchingWidget : public QSplitter
 {
     Q_OBJECT
+    Q_DISABLE_COPY(SwitchingWidget)
 public:
     /** \brief A default constructor similar to that of QWidget
      *
