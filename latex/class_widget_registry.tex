@@ -1,0 +1,322 @@
+\hypertarget{class_widget_registry}{}\section{Widget\+Registry Class Reference}
+\label{class_widget_registry}\index{Widget\+Registry@{Widget\+Registry}}
+
+
+A registry of all widgets that can be displayed in a \hyperlink{class_switching_widget}{Switching\+Widget}.  
+
+
+
+
+{\ttfamily \#include $<$Widget\+Registry.\+hpp$>$}
+
+
+
+Inheritance diagram for Widget\+Registry\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=164pt]{class_widget_registry__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Widget\+Registry\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=164pt]{class_widget_registry__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_widget_registry_aaf17eb75aaf18be5094dfd96f2d96fcc}{registry\+Changed} ()
+\begin{DoxyCompactList}\small\item\em Signal emited when \hyperlink{class_widget_registry}{Widget\+Registry} changes its contents. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_registry_item}{Registry\+Item} $\ast$ \hyperlink{class_widget_registry_acc992d9f1f43b631bde87450b0c25b80}{item} (int i) const 
+\begin{DoxyCompactList}\small\item\em Get the item at position i. \end{DoxyCompactList}\item 
+int \hyperlink{class_widget_registry_ad387790fdf8774107a61a5678bb56749}{index\+Of} (\hyperlink{class_registry_item}{Registry\+Item} $\ast$\hyperlink{class_widget_registry_acc992d9f1f43b631bde87450b0c25b80}{item}) const 
+\begin{DoxyCompactList}\small\item\em Get the position of an item in \hyperlink{class_widget_registry}{Widget\+Registry}. \end{DoxyCompactList}\item 
+\hyperlink{class_registry_item}{Registry\+Item} $\ast$ \hyperlink{class_widget_registry_a0841639b77ada4dc770886fea9fef193}{get\+Default} ()
+\begin{DoxyCompactList}\small\item\em Get the default \hyperlink{class_registry_item}{Registry\+Item}. \end{DoxyCompactList}\item 
+void \hyperlink{class_widget_registry_aa77ed2504c7e241eabf49ff4e1088fa2}{set\+Default} (\hyperlink{class_registry_item}{Registry\+Item} $\ast$\hyperlink{class_widget_registry_acc992d9f1f43b631bde87450b0c25b80}{item})
+\begin{DoxyCompactList}\small\item\em Set the default \hyperlink{class_registry_item}{Registry\+Item}. \end{DoxyCompactList}\item 
+void \hyperlink{class_widget_registry_a3d0fa9207009556d5218a3dda73349d0}{set\+Default} (int index=0)
+\begin{DoxyCompactList}\small\item\em Set the default \hyperlink{class_registry_item}{Registry\+Item}. \end{DoxyCompactList}\item 
+void \hyperlink{class_widget_registry_a53de88d7a538a8a6bbbcca4328abb480}{add\+Item} (\hyperlink{class_registry_item}{Registry\+Item} $\ast$\hyperlink{class_widget_registry_acc992d9f1f43b631bde87450b0c25b80}{item})
+\begin{DoxyCompactList}\small\item\em Add an item to \hyperlink{class_widget_registry}{Widget\+Registry}. \end{DoxyCompactList}\item 
+void \hyperlink{class_widget_registry_aa8f64ed60af596fedc3841129bfdb7cc}{add\+Item} (Q\+String name=\char`\"{}Default\char`\"{}, Q\+Widget $\ast$($\ast$widget)()=\mbox{[}$\,$\mbox{]}() -\/$>$Q\+Widget $\ast$\{return new Q\+Label\{\char`\"{}Default widget\char`\"{}\};\}, void($\ast$populate\+Bar)(\hyperlink{class_switching_bar}{Switching\+Bar} $\ast$, Q\+Widget $\ast$)=\mbox{[}$\,$\mbox{]}(\hyperlink{class_switching_bar}{Switching\+Bar} $\ast$, Q\+Widget $\ast$) -\/$>$void\{\})
+\begin{DoxyCompactList}\small\item\em Add an item to \hyperlink{class_widget_registry}{Widget\+Registry}. \end{DoxyCompactList}\item 
+void \hyperlink{class_widget_registry_a3a323a51d1e65d61d6ed9b8639a21070}{insert\+Item} (int index, \hyperlink{class_registry_item}{Registry\+Item} $\ast$\hyperlink{class_widget_registry_acc992d9f1f43b631bde87450b0c25b80}{item})
+\begin{DoxyCompactList}\small\item\em Insert an item into \hyperlink{class_widget_registry}{Widget\+Registry}. \end{DoxyCompactList}\item 
+void \hyperlink{class_widget_registry_a2e2effc3109c57494dafd5e0f59d0ed2}{insert\+Item} (int index, Q\+String name=\char`\"{}Default\char`\"{}, Q\+Widget $\ast$($\ast$widget)()=\mbox{[}$\,$\mbox{]}() -\/$>$Q\+Widget $\ast$\{return new Q\+Label\{\char`\"{}Default widget\char`\"{}\};\}, void($\ast$populate\+Bar)(\hyperlink{class_switching_bar}{Switching\+Bar} $\ast$, Q\+Widget $\ast$)=\mbox{[}$\,$\mbox{]}(\hyperlink{class_switching_bar}{Switching\+Bar} $\ast$, Q\+Widget $\ast$) -\/$>$void\{\})
+\begin{DoxyCompactList}\small\item\em Insert an item into widget\+Registry. \end{DoxyCompactList}\item 
+void \hyperlink{class_widget_registry_a076561002958c840a9096d27cdbfdeed}{remove\+Item} (\hyperlink{class_registry_item}{Registry\+Item} $\ast$\hyperlink{class_widget_registry_acc992d9f1f43b631bde87450b0c25b80}{item})
+\begin{DoxyCompactList}\small\item\em Remove a \hyperlink{class_registry_item}{Registry\+Item} from \hyperlink{class_widget_registry}{Widget\+Registry}. \end{DoxyCompactList}\item 
+void \hyperlink{class_widget_registry_a96abefe3fed38e9424609cc3cf2f8d7d}{remove\+Item} (int index)
+\begin{DoxyCompactList}\small\item\em Remove a \hyperlink{class_registry_item}{Registry\+Item} from \hyperlink{class_widget_registry}{Widget\+Registry}. \end{DoxyCompactList}\item 
+int \hyperlink{class_widget_registry_ac7439152ea46435f870466eeb0d619f5}{size} () const 
+\begin{DoxyCompactList}\small\item\em Get the size of \hyperlink{class_widget_registry}{Widget\+Registry}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_widget_registry}{Widget\+Registry} $\ast$ \hyperlink{class_widget_registry_ad0c8eaf65a4c00947866a56cc2c48eb2}{get\+Registry} ()
+\begin{DoxyCompactList}\small\item\em Registry getter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A registry of all widgets that can be displayed in a \hyperlink{class_switching_widget}{Switching\+Widget}. 
+
+This singleton-\/class acts as a registry of widgets that can be displayed in a \hyperlink{class_switching_widget}{Switching\+Widget} by selecting from a combo box in the \hyperlink{class_switching_bar}{Switching\+Bar}. Each item is represented as one \hyperlink{class_registry_item}{Registry\+Item}. The Registry also contains a pointer to the default \hyperlink{class_registry_item}{Registry\+Item}, which is shown when a new \hyperlink{class_switching_widget}{Switching\+Widget} is created. 
+
+Definition at line 18 of file Widget\+Registry.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{Widget\+Registry@{Widget\+Registry}!add\+Item@{add\+Item}}
+\index{add\+Item@{add\+Item}!Widget\+Registry@{Widget\+Registry}}
+\subsubsection[{\texorpdfstring{add\+Item(\+Registry\+Item $\ast$item)}{addItem(RegistryItem *item)}}]{\setlength{\rightskip}{0pt plus 5cm}void Widget\+Registry\+::add\+Item (
+\begin{DoxyParamCaption}
+\item[{{\bf Registry\+Item} $\ast$}]{item}
+\end{DoxyParamCaption}
+)}\hypertarget{class_widget_registry_a53de88d7a538a8a6bbbcca4328abb480}{}\label{class_widget_registry_a53de88d7a538a8a6bbbcca4328abb480}
+
+
+Add an item to \hyperlink{class_widget_registry}{Widget\+Registry}. 
+
+Adds a given \hyperlink{class_registry_item}{Registry\+Item} at the end of \hyperlink{class_widget_registry}{Widget\+Registry}. 
+\begin{DoxyParams}{Parameters}
+{\em item} & A pointer to the \hyperlink{class_registry_item}{Registry\+Item} to be added \\
+\hline
+\end{DoxyParams}
+\index{Widget\+Registry@{Widget\+Registry}!add\+Item@{add\+Item}}
+\index{add\+Item@{add\+Item}!Widget\+Registry@{Widget\+Registry}}
+\subsubsection[{\texorpdfstring{add\+Item(\+Q\+String name=""Default"", Q\+Widget $\ast$($\ast$widget)()=[]() -\/$>$\+Q\+Widget $\ast$\lcurly{}return new Q\+Label\lcurly{}""Default widget""\rcurly{};\rcurly{}, void($\ast$populate\+Bar)(\+Switching\+Bar $\ast$, Q\+Widget $\ast$)=[](\+Switching\+Bar $\ast$, Q\+Widget $\ast$) -\/$>$void\lcurly{}\rcurly{})}{addItem(QString name="Default", QWidget *(*widget)()=[]() ->QWidget *\{return new QLabel\{"Default widget"\};\}, void(*populateBar)(SwitchingBar *, QWidget *)=[](SwitchingBar *, QWidget *) ->void\{\})}}]{\setlength{\rightskip}{0pt plus 5cm}void Widget\+Registry\+::add\+Item (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{name = {\ttfamily \char`\"{}Default\char`\"{}}, }
+\item[{Q\+Widget $\ast$($\ast$)()}]{widget = {\ttfamily \mbox{[}\mbox{]}()~-\/$>$QWidget~$\ast$\{return~new~QLabel\{\char`\"{}Default~widget\char`\"{}\};\}}, }
+\item[{void($\ast$)({\bf Switching\+Bar} $\ast$, Q\+Widget $\ast$)}]{populate\+Bar = {\ttfamily \mbox{[}\mbox{]}({\bf Switching\+Bar}~$\ast$,~QWidget~$\ast$)~-\/$>$void\{\}}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_widget_registry_aa8f64ed60af596fedc3841129bfdb7cc}{}\label{class_widget_registry_aa8f64ed60af596fedc3841129bfdb7cc}
+
+
+Add an item to \hyperlink{class_widget_registry}{Widget\+Registry}. 
+
+Adds a \hyperlink{class_registry_item}{Registry\+Item} constructed with the given parameters at the end of \hyperlink{class_widget_registry}{Widget\+Registry}. This is equal to calling add\+Item(new \hyperlink{class_registry_item}{Registry\+Item}\{name, widget, populate\+Bar\}). 
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the widget, used in the \hyperlink{class_switching_bar}{Switching\+Bar} combo box \\
+\hline
+{\em widget} & A pointer to a function constructing the widget \\
+\hline
+{\em populate\+Bar} & A pointer to a function populating the \hyperlink{class_switching_bar}{Switching\+Bar} \\
+\hline
+\end{DoxyParams}
+\index{Widget\+Registry@{Widget\+Registry}!get\+Default@{get\+Default}}
+\index{get\+Default@{get\+Default}!Widget\+Registry@{Widget\+Registry}}
+\subsubsection[{\texorpdfstring{get\+Default()}{getDefault()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Registry\+Item}$\ast$ Widget\+Registry\+::get\+Default (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_widget_registry_a0841639b77ada4dc770886fea9fef193}{}\label{class_widget_registry_a0841639b77ada4dc770886fea9fef193}
+
+
+Get the default \hyperlink{class_registry_item}{Registry\+Item}. 
+
+This function gives you the default \hyperlink{class_registry_item}{Registry\+Item}. Note that if no item was set as default, the currently first item is set as default by this function. If the registry is empty, a \hyperlink{class_registry_item}{Registry\+Item} is added to the registry (using the default constructor) and set as default. \begin{DoxyReturn}{Returns}
+A pointer to the default \hyperlink{class_registry_item}{Registry\+Item} 
+\end{DoxyReturn}
+\index{Widget\+Registry@{Widget\+Registry}!get\+Registry@{get\+Registry}}
+\index{get\+Registry@{get\+Registry}!Widget\+Registry@{Widget\+Registry}}
+\subsubsection[{\texorpdfstring{get\+Registry()}{getRegistry()}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Widget\+Registry}$\ast$ Widget\+Registry\+::get\+Registry (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_widget_registry_ad0c8eaf65a4c00947866a56cc2c48eb2}{}\label{class_widget_registry_ad0c8eaf65a4c00947866a56cc2c48eb2}
+
+
+Registry getter. 
+
+This is a singleton class, i. e. you can\textquotesingle{}t construct any object yourself. To get the one-\/and-\/only instance of this class, you need to call \hyperlink{class_widget_registry_ad0c8eaf65a4c00947866a56cc2c48eb2}{Widget\+Registry\+::get\+Registry()}. The function will create the object if neccessary (= when called for the first time) and return a pointer to it. \begin{DoxyReturn}{Returns}
+A pointer to the one-\/and-\/only instance of \hyperlink{class_widget_registry}{Widget\+Registry} 
+\end{DoxyReturn}
+\index{Widget\+Registry@{Widget\+Registry}!index\+Of@{index\+Of}}
+\index{index\+Of@{index\+Of}!Widget\+Registry@{Widget\+Registry}}
+\subsubsection[{\texorpdfstring{index\+Of(\+Registry\+Item $\ast$item) const }{indexOf(RegistryItem *item) const }}]{\setlength{\rightskip}{0pt plus 5cm}int Widget\+Registry\+::index\+Of (
+\begin{DoxyParamCaption}
+\item[{{\bf Registry\+Item} $\ast$}]{item}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_widget_registry_ad387790fdf8774107a61a5678bb56749}{}\label{class_widget_registry_ad387790fdf8774107a61a5678bb56749}
+
+
+Get the position of an item in \hyperlink{class_widget_registry}{Widget\+Registry}. 
+
+Get the index (counting starts at 0) of an item. Often used together with \hyperlink{class_widget_registry_acc992d9f1f43b631bde87450b0c25b80}{item(int i) const}. 
+\begin{DoxyParams}{Parameters}
+{\em item} & A pointer to the item whose index is to be returned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Index of the item 
+\end{DoxyReturn}
+\index{Widget\+Registry@{Widget\+Registry}!insert\+Item@{insert\+Item}}
+\index{insert\+Item@{insert\+Item}!Widget\+Registry@{Widget\+Registry}}
+\subsubsection[{\texorpdfstring{insert\+Item(int index, Registry\+Item $\ast$item)}{insertItem(int index, RegistryItem *item)}}]{\setlength{\rightskip}{0pt plus 5cm}void Widget\+Registry\+::insert\+Item (
+\begin{DoxyParamCaption}
+\item[{int}]{index, }
+\item[{{\bf Registry\+Item} $\ast$}]{item}
+\end{DoxyParamCaption}
+)}\hypertarget{class_widget_registry_a3a323a51d1e65d61d6ed9b8639a21070}{}\label{class_widget_registry_a3a323a51d1e65d61d6ed9b8639a21070}
+
+
+Insert an item into \hyperlink{class_widget_registry}{Widget\+Registry}. 
+
+Inserts a given \hyperlink{class_registry_item}{Registry\+Item} into \hyperlink{class_widget_registry}{Widget\+Registry} at a given index. 
+\begin{DoxyParams}{Parameters}
+{\em index} & The desired index of the inserted \hyperlink{class_registry_item}{Registry\+Item} (counting starts at 0) \\
+\hline
+{\em item} & A pointer to the \hyperlink{class_registry_item}{Registry\+Item} to be added \\
+\hline
+\end{DoxyParams}
+\index{Widget\+Registry@{Widget\+Registry}!insert\+Item@{insert\+Item}}
+\index{insert\+Item@{insert\+Item}!Widget\+Registry@{Widget\+Registry}}
+\subsubsection[{\texorpdfstring{insert\+Item(int index, Q\+String name=""Default"", Q\+Widget $\ast$($\ast$widget)()=[]() -\/$>$\+Q\+Widget $\ast$\lcurly{}return new Q\+Label\lcurly{}""Default widget""\rcurly{};\rcurly{}, void($\ast$populate\+Bar)(\+Switching\+Bar $\ast$, Q\+Widget $\ast$)=[](\+Switching\+Bar $\ast$, Q\+Widget $\ast$) -\/$>$void\lcurly{}\rcurly{})}{insertItem(int index, QString name="Default", QWidget *(*widget)()=[]() ->QWidget *\{return new QLabel\{"Default widget"\};\}, void(*populateBar)(SwitchingBar *, QWidget *)=[](SwitchingBar *, QWidget *) ->void\{\})}}]{\setlength{\rightskip}{0pt plus 5cm}void Widget\+Registry\+::insert\+Item (
+\begin{DoxyParamCaption}
+\item[{int}]{index, }
+\item[{Q\+String}]{name = {\ttfamily \char`\"{}Default\char`\"{}}, }
+\item[{Q\+Widget $\ast$($\ast$)()}]{widget = {\ttfamily \mbox{[}\mbox{]}()~-\/$>$QWidget~$\ast$\{return~new~QLabel\{\char`\"{}Default~widget\char`\"{}\};\}}, }
+\item[{void($\ast$)({\bf Switching\+Bar} $\ast$, Q\+Widget $\ast$)}]{populate\+Bar = {\ttfamily \mbox{[}\mbox{]}({\bf Switching\+Bar}~$\ast$,~QWidget~$\ast$)~-\/$>$void\{\}}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_widget_registry_a2e2effc3109c57494dafd5e0f59d0ed2}{}\label{class_widget_registry_a2e2effc3109c57494dafd5e0f59d0ed2}
+
+
+Insert an item into widget\+Registry. 
+
+Inserts a \hyperlink{class_registry_item}{Registry\+Item} constructed with the given parameters into \hyperlink{class_widget_registry}{Widget\+Registry} at a given index. This is equal to calling insert\+Item(index, new \hyperlink{class_registry_item}{Registry\+Item}\{name, widget, populate\+Bar\}). 
+\begin{DoxyParams}{Parameters}
+{\em index} & The desired index of the inserted \hyperlink{class_registry_item}{Registry\+Item} (counting starts at 0) \\
+\hline
+{\em name} & The name of the widget, used in the \hyperlink{class_switching_bar}{Switching\+Bar} combo box \\
+\hline
+{\em widget} & A pointer to a function constructing the widget \\
+\hline
+{\em populate\+Bar} & A pointer to a function populating the \hyperlink{class_switching_bar}{Switching\+Bar} \\
+\hline
+\end{DoxyParams}
+\index{Widget\+Registry@{Widget\+Registry}!item@{item}}
+\index{item@{item}!Widget\+Registry@{Widget\+Registry}}
+\subsubsection[{\texorpdfstring{item(int i) const }{item(int i) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Registry\+Item}$\ast$ Widget\+Registry\+::item (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_widget_registry_acc992d9f1f43b631bde87450b0c25b80}{}\label{class_widget_registry_acc992d9f1f43b631bde87450b0c25b80}
+
+
+Get the item at position i. 
+
+This function gives you the item at position i (counting starts at 0). 
+\begin{DoxyParams}{Parameters}
+{\em i} & Index of the item to be returned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the \hyperlink{class_registry_item}{Registry\+Item} at position i 
+\end{DoxyReturn}
+\index{Widget\+Registry@{Widget\+Registry}!registry\+Changed@{registry\+Changed}}
+\index{registry\+Changed@{registry\+Changed}!Widget\+Registry@{Widget\+Registry}}
+\subsubsection[{\texorpdfstring{registry\+Changed}{registryChanged}}]{\setlength{\rightskip}{0pt plus 5cm}void Widget\+Registry\+::registry\+Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\hypertarget{class_widget_registry_aaf17eb75aaf18be5094dfd96f2d96fcc}{}\label{class_widget_registry_aaf17eb75aaf18be5094dfd96f2d96fcc}
+
+
+Signal emited when \hyperlink{class_widget_registry}{Widget\+Registry} changes its contents. 
+
+This signal is emited when a \hyperlink{class_registry_item}{Registry\+Item} is added, inserted or removed from \hyperlink{class_widget_registry}{Widget\+Registry}. It is N\+OT emited when the default item is changed unless this change requires adding a \hyperlink{class_registry_item}{Registry\+Item}. \index{Widget\+Registry@{Widget\+Registry}!remove\+Item@{remove\+Item}}
+\index{remove\+Item@{remove\+Item}!Widget\+Registry@{Widget\+Registry}}
+\subsubsection[{\texorpdfstring{remove\+Item(\+Registry\+Item $\ast$item)}{removeItem(RegistryItem *item)}}]{\setlength{\rightskip}{0pt plus 5cm}void Widget\+Registry\+::remove\+Item (
+\begin{DoxyParamCaption}
+\item[{{\bf Registry\+Item} $\ast$}]{item}
+\end{DoxyParamCaption}
+)}\hypertarget{class_widget_registry_a076561002958c840a9096d27cdbfdeed}{}\label{class_widget_registry_a076561002958c840a9096d27cdbfdeed}
+
+
+Remove a \hyperlink{class_registry_item}{Registry\+Item} from \hyperlink{class_widget_registry}{Widget\+Registry}. 
+
+Removes a given \hyperlink{class_registry_item}{Registry\+Item} from \hyperlink{class_widget_registry}{Widget\+Registry}. If this is also the default \hyperlink{class_registry_item}{Registry\+Item}, the first \hyperlink{class_registry_item}{Registry\+Item} is set as default if it exists. This is equal to calling remove\+Item(index\+Of(item)). 
+\begin{DoxyParams}{Parameters}
+{\em item} & \\
+\hline
+\end{DoxyParams}
+\index{Widget\+Registry@{Widget\+Registry}!remove\+Item@{remove\+Item}}
+\index{remove\+Item@{remove\+Item}!Widget\+Registry@{Widget\+Registry}}
+\subsubsection[{\texorpdfstring{remove\+Item(int index)}{removeItem(int index)}}]{\setlength{\rightskip}{0pt plus 5cm}void Widget\+Registry\+::remove\+Item (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{class_widget_registry_a96abefe3fed38e9424609cc3cf2f8d7d}{}\label{class_widget_registry_a96abefe3fed38e9424609cc3cf2f8d7d}
+
+
+Remove a \hyperlink{class_registry_item}{Registry\+Item} from \hyperlink{class_widget_registry}{Widget\+Registry}. 
+
+Removes the \hyperlink{class_registry_item}{Registry\+Item} at position index (counting starts at 0) from \hyperlink{class_widget_registry}{Widget\+Registry}. If this is also the default \hyperlink{class_registry_item}{Registry\+Item}, the first \hyperlink{class_registry_item}{Registry\+Item} is set as default if it exists. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the \hyperlink{class_registry_item}{Registry\+Item} to be removed \\
+\hline
+\end{DoxyParams}
+\index{Widget\+Registry@{Widget\+Registry}!set\+Default@{set\+Default}}
+\index{set\+Default@{set\+Default}!Widget\+Registry@{Widget\+Registry}}
+\subsubsection[{\texorpdfstring{set\+Default(\+Registry\+Item $\ast$item)}{setDefault(RegistryItem *item)}}]{\setlength{\rightskip}{0pt plus 5cm}void Widget\+Registry\+::set\+Default (
+\begin{DoxyParamCaption}
+\item[{{\bf Registry\+Item} $\ast$}]{item}
+\end{DoxyParamCaption}
+)}\hypertarget{class_widget_registry_aa77ed2504c7e241eabf49ff4e1088fa2}{}\label{class_widget_registry_aa77ed2504c7e241eabf49ff4e1088fa2}
+
+
+Set the default \hyperlink{class_registry_item}{Registry\+Item}. 
+
+This function sets the default \hyperlink{class_registry_item}{Registry\+Item}. Note that if the item is not in \hyperlink{class_widget_registry}{Widget\+Registry}, it is added as the last entry. The default item is used when a new \hyperlink{class_switching_widget}{Switching\+Widget} is created as the displayed widget. 
+\begin{DoxyParams}{Parameters}
+{\em item} & A pointer to the \hyperlink{class_registry_item}{Registry\+Item} to be set as default \\
+\hline
+\end{DoxyParams}
+\index{Widget\+Registry@{Widget\+Registry}!set\+Default@{set\+Default}}
+\index{set\+Default@{set\+Default}!Widget\+Registry@{Widget\+Registry}}
+\subsubsection[{\texorpdfstring{set\+Default(int index=0)}{setDefault(int index=0)}}]{\setlength{\rightskip}{0pt plus 5cm}void Widget\+Registry\+::set\+Default (
+\begin{DoxyParamCaption}
+\item[{int}]{index = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_widget_registry_a3d0fa9207009556d5218a3dda73349d0}{}\label{class_widget_registry_a3d0fa9207009556d5218a3dda73349d0}
+
+
+Set the default \hyperlink{class_registry_item}{Registry\+Item}. 
+
+This function sets the default \hyperlink{class_registry_item}{Registry\+Item} to be the \hyperlink{class_registry_item}{Registry\+Item} at given index. This is equal to calling set\+Default(item(index)). 
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the \hyperlink{class_registry_item}{Registry\+Item} to be set as default (counting starts at 0) \\
+\hline
+\end{DoxyParams}
+\index{Widget\+Registry@{Widget\+Registry}!size@{size}}
+\index{size@{size}!Widget\+Registry@{Widget\+Registry}}
+\subsubsection[{\texorpdfstring{size() const }{size() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Widget\+Registry\+::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_widget_registry_ac7439152ea46435f870466eeb0d619f5}{}\label{class_widget_registry_ac7439152ea46435f870466eeb0d619f5}
+
+
+Get the size of \hyperlink{class_widget_registry}{Widget\+Registry}. 
+
+This function returns the number of Registry\+Items currently in \hyperlink{class_widget_registry}{Widget\+Registry}. Note that these are indexed as 0, ..., (\hyperlink{class_widget_registry_ac7439152ea46435f870466eeb0d619f5}{size()} -\/ 1). \begin{DoxyReturn}{Returns}
+Number of Registry\+Items in \hyperlink{class_widget_registry}{Widget\+Registry} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+B\+S/Widget\+Registry.\+hpp\end{DoxyCompactItemize}
