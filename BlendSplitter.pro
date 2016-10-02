@@ -49,3 +49,6 @@ HEADERS  += \
     include/implementation/WidgetDecorator.hpp
 
 DEFINES += BLENDSPLITTER_LIBRARY
+
+RESOURCES += \
+    BlendSplitterResources.qrc
