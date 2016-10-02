@@ -8,8 +8,7 @@ class WidgetDecorator;
 class ExpanderBottom : public Expander
 {
     Q_OBJECT
-private:
-    friend WidgetDecorator;
+public:
     ExpanderBottom() = delete;
     explicit ExpanderBottom(WidgetDecorator* parent);
     virtual void reposition();

@@ -7,9 +7,8 @@ class SwitchingBar;
 class SwitchingCombo : public QComboBox
 {
     Q_OBJECT
-protected:
-    friend SwitchingBar;
+public:
     SwitchingCombo();
-protected slots:
+public slots:
     void repopulate();
 };

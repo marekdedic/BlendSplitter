@@ -9,7 +9,6 @@ class Expander : public QLabel
 {
     Q_OBJECT
 protected:
-    friend WidgetDecorator;
     QPixmap* pixmap;
     Overlay* overlay;
     Expander() = delete;

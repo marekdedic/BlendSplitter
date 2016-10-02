@@ -9,13 +9,13 @@ class ExpanderTop;
 class WidgetDecorator : public QWidget
 {
     Q_OBJECT
+public:
+    WidgetDecorator() = delete;
+    explicit WidgetDecorator(QWidget* widget);
 private:
-    friend BlendSplitter;
     QWidget* widget;
     ExpanderBottom* expanderBottom;
     ExpanderTop* expanderTop;
-    WidgetDecorator() = delete;
-    explicit WidgetDecorator(QWidget* widget);
 protected slots:
     virtual void resizeEvent(QResizeEvent*);
 };
