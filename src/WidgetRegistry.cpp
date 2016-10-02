@@ -92,3 +92,5 @@ int WidgetRegistry::size() const
 {
     return list.size();
 }
+
+WidgetRegistry::WidgetRegistry() : list{}, defaultItem{nullptr} {}
