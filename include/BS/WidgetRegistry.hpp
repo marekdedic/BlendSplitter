@@ -113,8 +113,8 @@ signals:
      */
     void registryChanged();
 private:
-    WidgetRegistry() = default;
     static WidgetRegistry* theRegistry;
     QList<RegistryItem*> list;
     RegistryItem* defaultItem;
+    WidgetRegistry();
 };
