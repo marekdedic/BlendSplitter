@@ -1,0 +1,217 @@
+\hypertarget{class_blend_splitter}{}\section{Blend\+Splitter Class Reference}
+\label{class_blend_splitter}\index{Blend\+Splitter@{Blend\+Splitter}}
+
+
+A user-\/defined Splitter.  
+
+
+
+
+{\ttfamily \#include $<$Blend\+Splitter.\+hpp$>$}
+
+
+
+Inheritance diagram for Blend\+Splitter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{class_blend_splitter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Blend\+Splitter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{class_blend_splitter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_blend_splitter_a8a305d92da45200aa9cc3e7160124cc3}{Blend\+Splitter} (Q\+Widget $\ast$($\ast$default\+Widget)()=\mbox{[}$\,$\mbox{]}() -\/$>$Q\+Widget $\ast$\{return new \hyperlink{class_switching_widget}{Switching\+Widget}\{\};\}, Qt\+::\+Orientation orientation=Qt\+::\+Horizontal)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_blend_splitter}{Blend\+Splitter} class constructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_blend_splitter_a9bb010ba4ee756ca4d718acadaffb7cc}{add\+Widget} ()
+\begin{DoxyCompactList}\small\item\em Add a widget to the \hyperlink{class_blend_splitter}{Blend\+Splitter}. \end{DoxyCompactList}\item 
+void \hyperlink{class_blend_splitter_a305c3aee946a9fb9dcd95fdc72faff8b}{add\+Widget} (Q\+Widget $\ast$widget)
+\begin{DoxyCompactList}\small\item\em Add a widget to the \hyperlink{class_blend_splitter}{Blend\+Splitter}. \end{DoxyCompactList}\item 
+void \hyperlink{class_blend_splitter_ac26cdfb64fb785a1983a5b7527ce5189}{insert\+Widget} (int index)
+\begin{DoxyCompactList}\small\item\em Insert a widget into the \hyperlink{class_blend_splitter}{Blend\+Splitter}. \end{DoxyCompactList}\item 
+void \hyperlink{class_blend_splitter_a9c15101a7a0acb30f6cd46ff5259af79}{insert\+Widget} (int index, Q\+Widget $\ast$widget)
+\begin{DoxyCompactList}\small\item\em Insert a widget into the \hyperlink{class_blend_splitter}{Blend\+Splitter}. \end{DoxyCompactList}\item 
+void \hyperlink{class_blend_splitter_abcee5dda4bde4fdb6fda1f3c1f5b9c9a}{add\+Splitter} (\hyperlink{class_blend_splitter}{Blend\+Splitter} $\ast$splitter)
+\begin{DoxyCompactList}\small\item\em Add another \hyperlink{class_blend_splitter}{Blend\+Splitter} to this \hyperlink{class_blend_splitter}{Blend\+Splitter}. \end{DoxyCompactList}\item 
+void \hyperlink{class_blend_splitter_a5e1adaac62d47cc3815835e713373e2b}{insert\+Splitter} (int index, \hyperlink{class_blend_splitter}{Blend\+Splitter} $\ast$splitter)
+\begin{DoxyCompactList}\small\item\em Insert another \hyperlink{class_blend_splitter}{Blend\+Splitter} into this \hyperlink{class_blend_splitter}{Blend\+Splitter}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{class_blend_splitter_a233a45efce9417f826d76ce54d832d50}{expander\+Size}
+\item 
+static int \hyperlink{class_blend_splitter_a478fa3cfcf59f76edf8f021bee297e0d}{switching\+Bar\+Height}
+\item 
+static Q\+String \hyperlink{class_blend_splitter_a38c7ab0fb471718aca5eb3fe09aa124b}{expander\+Image}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A user-\/defined Splitter. 
+
+This widget implements the functionality of Blender (Open-\/source 3D modelling software) widget management. This widget displays a splitter similar to Q\+Splitter. However, each widget in \hyperlink{class_blend_splitter}{Blend\+Splitter} has a pair of Expanders (one in top right and one in bottom left corner). By dragging from these Expanders inwards a new widget is created in the direction of the drag. If the direction is different to that of the \hyperlink{class_blend_splitter}{Blend\+Splitter}, a new \hyperlink{class_blend_splitter}{Blend\+Splitter} with parallel direction is created in place of the widget with the widget and the new widget in it. By dragging from these expanders outwards, a neighbouring widget (or a collection of widgets) can be closed. While the mouse is held, the widgets to be closed are marked with black overlay. When the mouse is released, they are closed. \hyperlink{class_blend_splitter}{Blend\+Splitter} can be used like any other Q\+Widget, although setting one as the central widget is recommended. A \hyperlink{class_blend_splitter}{Blend\+Splitter} can contain any Q\+Widget, but to achieve best results, use it together with \hyperlink{class_switching_widget}{Switching\+Widget}. 
+
+Definition at line 25 of file Blend\+Splitter.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Blend\+Splitter@{Blend\+Splitter}!Blend\+Splitter@{Blend\+Splitter}}
+\index{Blend\+Splitter@{Blend\+Splitter}!Blend\+Splitter@{Blend\+Splitter}}
+\subsubsection[{\texorpdfstring{Blend\+Splitter(\+Q\+Widget $\ast$($\ast$default\+Widget)()=[]() -\/$>$\+Q\+Widget $\ast$\lcurly{}return new Switching\+Widget\lcurly{}\rcurly{};\rcurly{}, Qt\+::\+Orientation orientation=\+Qt\+::\+Horizontal)}{BlendSplitter(QWidget *(*defaultWidget)()=[]() ->QWidget *\{return new SwitchingWidget\{\};\}, Qt::Orientation orientation=Qt::Horizontal)}}]{\setlength{\rightskip}{0pt plus 5cm}Blend\+Splitter\+::\+Blend\+Splitter (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$($\ast$)()}]{default\+Widget = {\ttfamily \mbox{[}\mbox{]}()~-\/$>$QWidget~$\ast$\{return~new~{\bf Switching\+Widget}\{\};\}}, }
+\item[{Qt\+::\+Orientation}]{orientation = {\ttfamily Qt\+:\+:Horizontal}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_blend_splitter_a8a305d92da45200aa9cc3e7160124cc3}{}\label{class_blend_splitter_a8a305d92da45200aa9cc3e7160124cc3}
+
+
+\hyperlink{class_blend_splitter}{Blend\+Splitter} class constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em default\+Widget} & A pointer to function constructing the default widget. This function is called when a new widget is added to \hyperlink{class_blend_splitter}{Blend\+Splitter}. \\
+\hline
+{\em orientation} & Orientation of the main \hyperlink{class_blend_splitter}{Blend\+Splitter} \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Blend\+Splitter@{Blend\+Splitter}!add\+Splitter@{add\+Splitter}}
+\index{add\+Splitter@{add\+Splitter}!Blend\+Splitter@{Blend\+Splitter}}
+\subsubsection[{\texorpdfstring{add\+Splitter(\+Blend\+Splitter $\ast$splitter)}{addSplitter(BlendSplitter *splitter)}}]{\setlength{\rightskip}{0pt plus 5cm}void Blend\+Splitter\+::add\+Splitter (
+\begin{DoxyParamCaption}
+\item[{{\bf Blend\+Splitter} $\ast$}]{splitter}
+\end{DoxyParamCaption}
+)}\hypertarget{class_blend_splitter_abcee5dda4bde4fdb6fda1f3c1f5b9c9a}{}\label{class_blend_splitter_abcee5dda4bde4fdb6fda1f3c1f5b9c9a}
+
+
+Add another \hyperlink{class_blend_splitter}{Blend\+Splitter} to this \hyperlink{class_blend_splitter}{Blend\+Splitter}. 
+
+Adds a \hyperlink{class_blend_splitter}{Blend\+Splitter} (usually with parallel orientation) to the \hyperlink{class_blend_splitter}{Blend\+Splitter} 
+\begin{DoxyParams}{Parameters}
+{\em splitter} & A pointer to the \hyperlink{class_blend_splitter}{Blend\+Splitter} to be added \\
+\hline
+\end{DoxyParams}
+\index{Blend\+Splitter@{Blend\+Splitter}!add\+Widget@{add\+Widget}}
+\index{add\+Widget@{add\+Widget}!Blend\+Splitter@{Blend\+Splitter}}
+\subsubsection[{\texorpdfstring{add\+Widget()}{addWidget()}}]{\setlength{\rightskip}{0pt plus 5cm}void Blend\+Splitter\+::add\+Widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_blend_splitter_a9bb010ba4ee756ca4d718acadaffb7cc}{}\label{class_blend_splitter_a9bb010ba4ee756ca4d718acadaffb7cc}
+
+
+Add a widget to the \hyperlink{class_blend_splitter}{Blend\+Splitter}. 
+
+Adds the default widget to the very bottom/right of the \hyperlink{class_blend_splitter}{Blend\+Splitter}. \index{Blend\+Splitter@{Blend\+Splitter}!add\+Widget@{add\+Widget}}
+\index{add\+Widget@{add\+Widget}!Blend\+Splitter@{Blend\+Splitter}}
+\subsubsection[{\texorpdfstring{add\+Widget(\+Q\+Widget $\ast$widget)}{addWidget(QWidget *widget)}}]{\setlength{\rightskip}{0pt plus 5cm}void Blend\+Splitter\+::add\+Widget (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{widget}
+\end{DoxyParamCaption}
+)}\hypertarget{class_blend_splitter_a305c3aee946a9fb9dcd95fdc72faff8b}{}\label{class_blend_splitter_a305c3aee946a9fb9dcd95fdc72faff8b}
+
+
+Add a widget to the \hyperlink{class_blend_splitter}{Blend\+Splitter}. 
+
+Adds the specified widget to the very bottom/right of the \hyperlink{class_blend_splitter}{Blend\+Splitter} 
+\begin{DoxyParams}{Parameters}
+{\em widget} & A pointer to the widget to be added \\
+\hline
+\end{DoxyParams}
+\index{Blend\+Splitter@{Blend\+Splitter}!insert\+Splitter@{insert\+Splitter}}
+\index{insert\+Splitter@{insert\+Splitter}!Blend\+Splitter@{Blend\+Splitter}}
+\subsubsection[{\texorpdfstring{insert\+Splitter(int index, Blend\+Splitter $\ast$splitter)}{insertSplitter(int index, BlendSplitter *splitter)}}]{\setlength{\rightskip}{0pt plus 5cm}void Blend\+Splitter\+::insert\+Splitter (
+\begin{DoxyParamCaption}
+\item[{int}]{index, }
+\item[{{\bf Blend\+Splitter} $\ast$}]{splitter}
+\end{DoxyParamCaption}
+)}\hypertarget{class_blend_splitter_a5e1adaac62d47cc3815835e713373e2b}{}\label{class_blend_splitter_a5e1adaac62d47cc3815835e713373e2b}
+
+
+Insert another \hyperlink{class_blend_splitter}{Blend\+Splitter} into this \hyperlink{class_blend_splitter}{Blend\+Splitter}. 
+
+Inserts a \hyperlink{class_blend_splitter}{Blend\+Splitter} (usually with parallel orientation) into the \hyperlink{class_blend_splitter}{Blend\+Splitter} at the given position counting from top/left (counting starts at 0). 
+\begin{DoxyParams}{Parameters}
+{\em index} & The desired position \\
+\hline
+{\em splitter} & A pointer to the \hyperlink{class_blend_splitter}{Blend\+Splitter} to be inserted \\
+\hline
+\end{DoxyParams}
+\index{Blend\+Splitter@{Blend\+Splitter}!insert\+Widget@{insert\+Widget}}
+\index{insert\+Widget@{insert\+Widget}!Blend\+Splitter@{Blend\+Splitter}}
+\subsubsection[{\texorpdfstring{insert\+Widget(int index)}{insertWidget(int index)}}]{\setlength{\rightskip}{0pt plus 5cm}void Blend\+Splitter\+::insert\+Widget (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{class_blend_splitter_ac26cdfb64fb785a1983a5b7527ce5189}{}\label{class_blend_splitter_ac26cdfb64fb785a1983a5b7527ce5189}
+
+
+Insert a widget into the \hyperlink{class_blend_splitter}{Blend\+Splitter}. 
+
+Inserts the default widget into the \hyperlink{class_blend_splitter}{Blend\+Splitter} at the given position counting from top/left (counting starts at 0). This function should N\+OT be called with a \hyperlink{class_blend_splitter}{Blend\+Splitter} as a parameter. 
+\begin{DoxyParams}{Parameters}
+{\em index} & The desired position \\
+\hline
+\end{DoxyParams}
+\index{Blend\+Splitter@{Blend\+Splitter}!insert\+Widget@{insert\+Widget}}
+\index{insert\+Widget@{insert\+Widget}!Blend\+Splitter@{Blend\+Splitter}}
+\subsubsection[{\texorpdfstring{insert\+Widget(int index, Q\+Widget $\ast$widget)}{insertWidget(int index, QWidget *widget)}}]{\setlength{\rightskip}{0pt plus 5cm}void Blend\+Splitter\+::insert\+Widget (
+\begin{DoxyParamCaption}
+\item[{int}]{index, }
+\item[{Q\+Widget $\ast$}]{widget}
+\end{DoxyParamCaption}
+)}\hypertarget{class_blend_splitter_a9c15101a7a0acb30f6cd46ff5259af79}{}\label{class_blend_splitter_a9c15101a7a0acb30f6cd46ff5259af79}
+
+
+Insert a widget into the \hyperlink{class_blend_splitter}{Blend\+Splitter}. 
+
+Inserts the specified widget into the \hyperlink{class_blend_splitter}{Blend\+Splitter} at the given position counting from top/left (counting starts at 0). This function should N\+OT be called with a \hyperlink{class_blend_splitter}{Blend\+Splitter} as a parameter. 
+\begin{DoxyParams}{Parameters}
+{\em index} & The desired position \\
+\hline
+{\em widget} & A pointer to the widget to be inserted \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\index{Blend\+Splitter@{Blend\+Splitter}!expander\+Image@{expander\+Image}}
+\index{expander\+Image@{expander\+Image}!Blend\+Splitter@{Blend\+Splitter}}
+\subsubsection[{\texorpdfstring{expander\+Image}{expanderImage}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Blend\+Splitter\+::expander\+Image\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_blend_splitter_a38c7ab0fb471718aca5eb3fe09aa124b}{}\label{class_blend_splitter_a38c7ab0fb471718aca5eb3fe09aa124b}
+The image to be used for the top left expander. The bottom right one will rotate this by pi (180 degrees). 
+
+Definition at line 32 of file Blend\+Splitter.\+hpp.
+
+\index{Blend\+Splitter@{Blend\+Splitter}!expander\+Size@{expander\+Size}}
+\index{expander\+Size@{expander\+Size}!Blend\+Splitter@{Blend\+Splitter}}
+\subsubsection[{\texorpdfstring{expander\+Size}{expanderSize}}]{\setlength{\rightskip}{0pt plus 5cm}int Blend\+Splitter\+::expander\+Size\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_blend_splitter_a233a45efce9417f826d76ce54d832d50}{}\label{class_blend_splitter_a233a45efce9417f826d76ce54d832d50}
+Size of the expanders in the corners 
+
+Definition at line 30 of file Blend\+Splitter.\+hpp.
+
+\index{Blend\+Splitter@{Blend\+Splitter}!switching\+Bar\+Height@{switching\+Bar\+Height}}
+\index{switching\+Bar\+Height@{switching\+Bar\+Height}!Blend\+Splitter@{Blend\+Splitter}}
+\subsubsection[{\texorpdfstring{switching\+Bar\+Height}{switchingBarHeight}}]{\setlength{\rightskip}{0pt plus 5cm}int Blend\+Splitter\+::switching\+Bar\+Height\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_blend_splitter_a478fa3cfcf59f76edf8f021bee297e0d}{}\label{class_blend_splitter_a478fa3cfcf59f76edf8f021bee297e0d}
+Height of the \hyperlink{class_switching_bar}{Switching\+Bar}. A static property. 
+
+Definition at line 31 of file Blend\+Splitter.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/Blend\+Splitter.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,116 @@
+\hypertarget{class_registry_item}{}\section{Registry\+Item Class Reference}
+\label{class_registry_item}\index{Registry\+Item@{Registry\+Item}}
+
+
+An item intended to be put into \hyperlink{class_widget_registry}{Widget\+Registry}.  
+
+
+
+
+{\ttfamily \#include $<$Registry\+Item.\+hpp$>$}
+
+
+
+Collaboration diagram for Registry\+Item\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{class_registry_item__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_registry_item_aa10a1fbd1806ad6309c67d763b8ce97c}{Registry\+Item} (Q\+String \hyperlink{class_registry_item_a662d7e2c473bea72a0549caf63ea5bfd}{name}=\char`\"{}Default\char`\"{}, Q\+Widget $\ast$($\ast$\hyperlink{class_registry_item_aa95c5a5dbfdf491e53b07dbc0a027e14}{widget})()=\mbox{[}$\,$\mbox{]}() -\/$>$Q\+Widget $\ast$\{return new Q\+Label\{\char`\"{}Default Widget\char`\"{}\};\}, void($\ast$\hyperlink{class_registry_item_a0784869b48c86a581e12c88fd2706cd0}{populate\+Bar})(\hyperlink{class_switching_bar}{Switching\+Bar} $\ast$, Q\+Widget $\ast$)=\mbox{[}$\,$\mbox{]}(\hyperlink{class_switching_bar}{Switching\+Bar} $\ast$, Q\+Widget $\ast$) -\/$>$void\{\})
+\begin{DoxyCompactList}\small\item\em A constructor setting all the internal values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+String \hyperlink{class_registry_item_a662d7e2c473bea72a0549caf63ea5bfd}{name}
+\item 
+Q\+Widget $\ast$($\ast$ \hyperlink{class_registry_item_aa95c5a5dbfdf491e53b07dbc0a027e14}{widget} )()
+\begin{DoxyCompactList}\small\item\em A function constructing the widget. \end{DoxyCompactList}\item 
+void($\ast$ \hyperlink{class_registry_item_a0784869b48c86a581e12c88fd2706cd0}{populate\+Bar} )(\hyperlink{class_switching_bar}{Switching\+Bar} $\ast$, Q\+Widget $\ast$)
+\begin{DoxyCompactList}\small\item\em A function populating the \hyperlink{class_switching_bar}{Switching\+Bar}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An item intended to be put into \hyperlink{class_widget_registry}{Widget\+Registry}. 
+
+Each \hyperlink{class_registry_item}{Registry\+Item} corresponds to one widget that can be displayed in a \hyperlink{class_blend_splitter}{Blend\+Splitter}. It describes how this widget should be constructed, what is its name and what items should be in the \hyperlink{class_switching_bar}{Switching\+Bar} when this widget is selected. 
+
+Definition at line 17 of file Registry\+Item.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Registry\+Item@{Registry\+Item}!Registry\+Item@{Registry\+Item}}
+\index{Registry\+Item@{Registry\+Item}!Registry\+Item@{Registry\+Item}}
+\subsubsection[{\texorpdfstring{Registry\+Item(\+Q\+String name=""Default"", Q\+Widget $\ast$($\ast$widget)()=[]() -\/$>$\+Q\+Widget $\ast$\lcurly{}return new Q\+Label\lcurly{}""Default Widget""\rcurly{};\rcurly{}, void($\ast$populate\+Bar)(\+Switching\+Bar $\ast$, Q\+Widget $\ast$)=[](\+Switching\+Bar $\ast$, Q\+Widget $\ast$) -\/$>$void\lcurly{}\rcurly{})}{RegistryItem(QString name="Default", QWidget *(*widget)()=[]() ->QWidget *\{return new QLabel\{"Default Widget"\};\}, void(*populateBar)(SwitchingBar *, QWidget *)=[](SwitchingBar *, QWidget *) ->void\{\})}}]{\setlength{\rightskip}{0pt plus 5cm}Registry\+Item\+::\+Registry\+Item (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{name = {\ttfamily \char`\"{}Default\char`\"{}}, }
+\item[{Q\+Widget $\ast$($\ast$)()}]{widget = {\ttfamily \mbox{[}\mbox{]}()~-\/$>$QWidget~$\ast$\{return~new~QLabel\{\char`\"{}Default~Widget\char`\"{}\};\}}, }
+\item[{void($\ast$)({\bf Switching\+Bar} $\ast$, Q\+Widget $\ast$)}]{populate\+Bar = {\ttfamily \mbox{[}\mbox{]}({\bf Switching\+Bar}~$\ast$,~QWidget~$\ast$)~-\/$>$void\{\}}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_registry_item_aa10a1fbd1806ad6309c67d763b8ce97c}{}\label{class_registry_item_aa10a1fbd1806ad6309c67d763b8ce97c}
+
+
+A constructor setting all the internal values. 
+
+This constructor takes 3 parameters corresponding to the 3 members of the \hyperlink{class_registry_item}{Registry\+Item} class. See their desription for more details. 
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the widget, used in the \hyperlink{class_switching_bar}{Switching\+Bar} combo box \\
+\hline
+{\em widget} & A pointer to a function constructing the widget \\
+\hline
+{\em populate\+Bar} & A pointer to a function populating the \hyperlink{class_switching_bar}{Switching\+Bar} \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\index{Registry\+Item@{Registry\+Item}!name@{name}}
+\index{name@{name}!Registry\+Item@{Registry\+Item}}
+\subsubsection[{\texorpdfstring{name}{name}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Registry\+Item\+::name}\hypertarget{class_registry_item_a662d7e2c473bea72a0549caf63ea5bfd}{}\label{class_registry_item_a662d7e2c473bea72a0549caf63ea5bfd}
+The name of the widget, used in the \hyperlink{class_switching_bar}{Switching\+Bar} combo box. 
+
+Definition at line 20 of file Registry\+Item.\+hpp.
+
+\index{Registry\+Item@{Registry\+Item}!populate\+Bar@{populate\+Bar}}
+\index{populate\+Bar@{populate\+Bar}!Registry\+Item@{Registry\+Item}}
+\subsubsection[{\texorpdfstring{populate\+Bar}{populateBar}}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ Registry\+Item\+::populate\+Bar) ({\bf Switching\+Bar} $\ast$, Q\+Widget $\ast$)}\hypertarget{class_registry_item_a0784869b48c86a581e12c88fd2706cd0}{}\label{class_registry_item_a0784869b48c86a581e12c88fd2706cd0}
+
+
+A function populating the \hyperlink{class_switching_bar}{Switching\+Bar}. 
+
+A pointer to a function populating the \hyperlink{class_switching_bar}{Switching\+Bar}. This function is called each time this widget is selected in any \hyperlink{class_switching_widget}{Switching\+Widget}. Usually this function makes use of the interface provided by \hyperlink{class_switching_bar}{Switching\+Bar} to populate it. 
+\begin{DoxyParams}{Parameters}
+{\em A} & pointer to the \hyperlink{class_switching_bar}{Switching\+Bar} to be populated \\
+\hline
+{\em A} & pointer to the newly-\/created widget in the \hyperlink{class_switching_widget}{Switching\+Widget} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 33 of file Registry\+Item.\+hpp.
+
+\index{Registry\+Item@{Registry\+Item}!widget@{widget}}
+\index{widget@{widget}!Registry\+Item@{Registry\+Item}}
+\subsubsection[{\texorpdfstring{widget}{widget}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Widget$\ast$($\ast$ Registry\+Item\+::widget) ()}\hypertarget{class_registry_item_aa95c5a5dbfdf491e53b07dbc0a027e14}{}\label{class_registry_item_aa95c5a5dbfdf491e53b07dbc0a027e14}
+
+
+A function constructing the widget. 
+
+A pointer to a function returning Q\+Widget$\ast$. This function is called to construct the widget each time it is selected in any \hyperlink{class_switching_widget}{Switching\+Widget}. Usually in this function the widget is dynamically created using {\ttfamily new} operator and the pointer is returned. \begin{DoxyReturn}{Returns}
+A pointer to the newly-\/created Q\+Widget 
+\end{DoxyReturn}
+
+
+Definition at line 26 of file Registry\+Item.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+B\+S/Registry\+Item.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,87 @@
+\hypertarget{class_switching_bar}{}\section{Switching\+Bar Class Reference}
+\label{class_switching_bar}\index{Switching\+Bar@{Switching\+Bar}}
+
+
+A menu bar which is always found on the bottom of \hyperlink{class_switching_widget}{Switching\+Widget}.  
+
+
+
+
+{\ttfamily \#include $<$Switching\+Bar.\+hpp$>$}
+
+
+
+Inheritance diagram for Switching\+Bar\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{class_switching_bar__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Switching\+Bar\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{class_switching_bar__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_switching_bar_ad92ca7f8533cb2a9993b30b49126a2b4}{add\+Menu} (Q\+Menu $\ast$menu)
+\begin{DoxyCompactList}\small\item\em Add a Q\+Menu. \end{DoxyCompactList}\item 
+void \hyperlink{class_switching_bar_a8e30709aa4ada4364acf8b755f8eefb6}{add\+Widget} (Q\+Widget $\ast$widget)
+\begin{DoxyCompactList}\small\item\em Add a Q\+Widget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A menu bar which is always found on the bottom of \hyperlink{class_switching_widget}{Switching\+Widget}. 
+
+This menu bar is similar to the built-\/in Q\+Menu\+Bar, but can also contain plain Q\+Widgets. The first item on the left is always a combo box for selecting which widget should be displayed in the \hyperlink{class_switching_widget}{Switching\+Widget}. 
+
+Definition at line 20 of file Switching\+Bar.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{Switching\+Bar@{Switching\+Bar}!add\+Menu@{add\+Menu}}
+\index{add\+Menu@{add\+Menu}!Switching\+Bar@{Switching\+Bar}}
+\subsubsection[{\texorpdfstring{add\+Menu(\+Q\+Menu $\ast$menu)}{addMenu(QMenu *menu)}}]{\setlength{\rightskip}{0pt plus 5cm}void Switching\+Bar\+::add\+Menu (
+\begin{DoxyParamCaption}
+\item[{Q\+Menu $\ast$}]{menu}
+\end{DoxyParamCaption}
+)}\hypertarget{class_switching_bar_ad92ca7f8533cb2a9993b30b49126a2b4}{}\label{class_switching_bar_ad92ca7f8533cb2a9993b30b49126a2b4}
+
+
+Add a Q\+Menu. 
+
+This function adds a Q\+Menu to the very right of the \hyperlink{class_switching_bar}{Switching\+Bar}. The menu is wrapped in an invisible Q\+Menu\+Bar. 
+\begin{DoxyParams}{Parameters}
+{\em menu} & A pointer to the Q\+Menu to be added \\
+\hline
+\end{DoxyParams}
+\index{Switching\+Bar@{Switching\+Bar}!add\+Widget@{add\+Widget}}
+\index{add\+Widget@{add\+Widget}!Switching\+Bar@{Switching\+Bar}}
+\subsubsection[{\texorpdfstring{add\+Widget(\+Q\+Widget $\ast$widget)}{addWidget(QWidget *widget)}}]{\setlength{\rightskip}{0pt plus 5cm}void Switching\+Bar\+::add\+Widget (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{widget}
+\end{DoxyParamCaption}
+)}\hypertarget{class_switching_bar_a8e30709aa4ada4364acf8b755f8eefb6}{}\label{class_switching_bar_a8e30709aa4ada4364acf8b755f8eefb6}
+
+
+Add a Q\+Widget. 
+
+This function adds a Q\+Widget to the very right of the \hyperlink{class_switching_bar}{Switching\+Bar}. The widget is placed in a Q\+H\+Box\+Layout. 
+\begin{DoxyParams}{Parameters}
+{\em widget} & A pointer to the Q\+Widget to be added \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+B\+S/Switching\+Bar.\+hpp\end{DoxyCompactItemize}
