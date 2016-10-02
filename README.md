@@ -1,4 +1,4 @@
-# %BlendSplitter
+# BlendSplitter
 A blender-like Qt Widget management library, version 3.
 
 You can download the whole documentation in pdf on (https://genabitu.github.io/BlendSplitter/latex/BlendSplitter.pdf).
@@ -34,6 +34,7 @@ int main(int argc, char** argv)
 }
 ```
 On Gnome 3.22, this example looks like:
+
 ![BlendSplitter example 1](docs/BlendSplitter_example_1.png)
 
 Example with composite splitters
@@ -65,6 +66,7 @@ int main(int argc, char** argv)
 }
 ```
 On Gnome 3.22, this example looks like:
+
 ![BlendSplitter example 2](docs/BlendSplitter_example_2.png)
 
 SwitchingWidget
@@ -109,4 +111,5 @@ int main(int argc, char** argv)
 }
 ```
 On Gnome 3.22, this example looks like:
+
 ![SwitchingWidget example](docs/SwitchingWidget_example.png)
