@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/BlendSplitter">
+        <file alias="Expander">resources/expander.png</file>
+    </qresource>
+</RCC>

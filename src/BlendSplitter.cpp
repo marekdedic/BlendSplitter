@@ -12,6 +12,7 @@ QString BlendSplitter::expanderImage{":/BlendSplitter/Expander"};
 
 BlendSplitter::BlendSplitter(QWidget* (*defaultWidget) (), Qt::Orientation orientation) : QSplitter{orientation, nullptr}, defaultWidget{defaultWidget}
 {
+    Q_INIT_RESOURCE(BlendSplitterResources);
     setChildrenCollapsible(false);
     setHandleWidth(1);
     setStyleSheet("QSplitter::handle{background: black;}");
