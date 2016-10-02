@@ -12,7 +12,7 @@ class SwitchingBar;
 
 /** \brief A widget whose actual content can be selected from a combo box
  *
- * This widget displays a Widget with a SwitchingBar on the bottom. The widget displayed is one from WidgetRegistry and it can be selected using a combo box in the SwitchingBar.
+ * This widget displays a Widget with a SwitchingBar on the bottom. The widget displayed is one from WidgetRegistry and it can be selected using a combo box in the SwitchingBar. Note that constructing an object of this class with empty WidgetRegistry will cause a default RegistryItem to be added.
  */
 class BLENDSPLITTER_EXPORT SwitchingWidget : public QSplitter
 {

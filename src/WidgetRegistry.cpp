@@ -47,7 +47,10 @@ void WidgetRegistry::setDefault(RegistryItem* item)
 
 void WidgetRegistry::setDefault(int index)
 {
-    setDefault(item(index));
+    if(index < size())
+    {
+        setDefault(item(index));
+    }
 }
 
 void WidgetRegistry::addItem(RegistryItem* item)
