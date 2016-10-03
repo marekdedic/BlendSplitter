@@ -1,0 +1,124 @@
+A blender-\/like Qt Widget management library, version 3.
+
+You can download the whole documentation in pdf on (\href{https://genabitu.github.io/BlendSplitter/latex/BlendSplitter.pdf}{\tt https\+://genabitu.\+github.\+io/\+Blend\+Splitter/latex/\+Blend\+Splitter.\+pdf}).
+
+This library offers 2 kinds of functionality -\/ one implemented by the \hyperlink{class_blend_splitter}{Blend\+Splitter} class, the other by the \hyperlink{class_switching_widget}{Switching\+Widget} class. Although these are intended to be used together, each one of them can be used separately.
+
+\section*{\hyperlink{class_blend_splitter}{Blend\+Splitter} }
+
+This widget implements the functionality of Blender (Open-\/source 3D modelling software) widget management. This widget displays a splitter similar to Q\+Splitter. However, each widget in \hyperlink{class_blend_splitter}{Blend\+Splitter} has a pair of Expanders (one in top right and one in bottom left corner). By dragging from these Expanders inwards a new widget is created in the direction of the drag. If the direction is different to that of the \hyperlink{class_blend_splitter}{Blend\+Splitter}, a new \hyperlink{class_blend_splitter}{Blend\+Splitter} with parallel direction is created in place of the widget with the widget and the new widget in it. By dragging from these expanders outwards, a neighbouring widget (or a collection of widgets) can be closed. While the mouse is held, the widgets to be closed are marked with black overlay. When the mouse is released, they are closed. \hyperlink{class_blend_splitter}{Blend\+Splitter} can be used like any other Q\+Widget, although setting one as the central widget is recommended. A \hyperlink{class_blend_splitter}{Blend\+Splitter} can contain objects of any class inheriting from Q\+Widget. Note that you have to manually set the initial state of the \hyperlink{class_blend_splitter}{Blend\+Splitter}. You need to add at least 1 widget, otherwise nothing will be displayed.
+
+\hyperlink{class_blend_splitter}{Blend\+Splitter} provides 3 static variables that allow some customization of the library design. These are expander\+Size, switching\+Bar\+Height and expander\+Image. These are all initialized with default values. The default Expander image is provided by the library.
+
+The default Expander image\+:
+
+ \subsection*{Example }
+
+
+\begin{DoxyCode}
+1 \{C++\}
+2 #include <QApplication>
+3 #include <QMainWindow>
+4 
+5 #include <BlendSplitter>
+6 
+7 int main(int argc, char** argv)
+8 \{
+9     new QApplication\{argc, argv\};
+10     QMainWindow* window\{new QMainWindow\{\}\};
+11     BlendSplitter* splitter\{new BlendSplitter\{[]()->QWidget* \{return new QLabel\{"My Widget"\};\}\}\};
+12 
+13     window->setCentralWidget(splitter);
+14     window->resize(400, 200);
+15     window->setWindowTitle("BlendSplitter example");
+16 
+17     splitter->addWidget();
+18 
+19     window->show();
+20     return qApp->exec();
+21 \}
+\end{DoxyCode}
+ On Gnome 3.\+22, this example looks like\+:
+
+ \subsection*{Example with composite splitters }
+
+
+\begin{DoxyCode}
+1 \{C++\}
+2 #include <QApplication>
+3 #include <QMainWindow>
+4 
+5 #include <BlendSplitter>
+6 
+7 int main(int argc, char** argv)
+8 \{
+9     new QApplication\{argc, argv\};
+10     QMainWindow* window\{new QMainWindow\{\}\};
+11     BlendSplitter* splitter\{new BlendSplitter\{[]()->QWidget* \{return new QLabel\{"My Widget"\};\}\}\};
+12 
+13     window->setCentralWidget(splitter);
+14     window->resize(400, 200);
+15     window->setWindowTitle("BlendSplitter example 2");
+16 
+17     splitter->addWidget();
+18     BlendSplitter* splitter2\{new BlendSplitter\{[]()->QWidget* \{return new QLabel\{"My Widget"\};\},
+       Qt::Vertical\}\};
+19     splitter->addSplitter(splitter2);
+20     splitter2->addWidget();
+21     splitter2->addWidget();
+22 
+23     window->show();
+24     return qApp->exec();
+25 \}
+\end{DoxyCode}
+ On Gnome 3.\+22, this example looks like\+:
+
+ \section*{\hyperlink{class_switching_widget}{Switching\+Widget} }
+
+This class displays a Widget with a \hyperlink{class_switching_bar}{Switching\+Bar} on the bottom. The widget displayed is one from \hyperlink{class_widget_registry}{Widget\+Registry} and it can be selected using a combo box in the \hyperlink{class_switching_bar}{Switching\+Bar}. The \hyperlink{class_switching_bar}{Switching\+Bar} is like a Q\+Menu\+Bar, but can also contain plain widgets. A \hyperlink{class_switching_widget}{Switching\+Widget} can contain objects of any class inheriting from Q\+Widget.
+
+Note that constructing an object of this class when \hyperlink{class_widget_registry}{Widget\+Registry} is empty will cause a default \hyperlink{class_registry_item}{Registry\+Item} to be added to it. The height of the \hyperlink{class_switching_bar}{Switching\+Bar} can be modified by changing \hyperlink{class_blend_splitter_a478fa3cfcf59f76edf8f021bee297e0d}{Blend\+Splitter\+::switching\+Bar\+Height}.
+
+\subsection*{Example }
+
+
+\begin{DoxyCode}
+1 \{C++\}
+2 #include <QApplication>
+3 #include <QMainWindow>
+4 
+5 #include <BlendSplitter>
+6 
+7 int main(int argc, char** argv)
+8 \{
+9     new QApplication\{argc, argv\};
+10     QMainWindow* window\{new QMainWindow\{\}\};
+11 
+12     WidgetRegistry::getRegistry()->addItem();
+13     WidgetRegistry::getRegistry()->addItem("Type1", []()->QWidget* \{return new QLabel\{"Type 1 Label"\};\},
+       [](SwitchingBar* bar, QWidget*)->void \{
+14         QMenu* menu\{new QMenu\{"My first menu"\}\};
+15         bar->addMenu(menu);
+16         QMenu* menu2\{new QMenu\{"My second menu"\}\};
+17         menu2->addAction(new QAction\{"New", 0\});
+18         menu2->addAction(new QAction\{"Close", 0\});
+19         bar->addMenu(menu2);
+20         QLabel* lab\{new QLabel\{"My third not-so-menu"\}\};
+21         bar->addWidget(lab);
+22     \});
+23     WidgetRegistry::getRegistry()->addItem(new RegistryItem\{"Type2", []()->QWidget* \{return new
+       QLabel\{"Type 2 Label"\};\}\});
+24     WidgetRegistry::getRegistry()->setDefault(1);
+25 
+26     SwitchingWidget* widget\{new SwitchingWidget\{\}\};
+27 
+28     window->setCentralWidget(widget);
+29     window->resize(600, 400);
+30     window->setWindowTitle("SwitchingWidget example");
+31 
+32     window->show();
+33     return qApp->exec();
+34 \}
+\end{DoxyCode}
+ On Gnome 3.\+22, this example looks like\+:
+

@@ -167,9 +167,15 @@ Static Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A user-defined Splitter. </p>
-<p>This widget implements the functionality of Blender (Open-source 3D modelling software) widget management. This widget displays a splitter similar to QSplitter. However, each widget in <a class="el" href="class_blend_splitter.html" title="A user-defined Splitter. ">BlendSplitter</a> has a pair of Expanders (one in top right and one in bottom left corner). By dragging from these Expanders inwards a new widget is created in the direction of the drag. If the direction is different to that of the <a class="el" href="class_blend_splitter.html" title="A user-defined Splitter. ">BlendSplitter</a>, a new <a class="el" href="class_blend_splitter.html" title="A user-defined Splitter. ">BlendSplitter</a> with parallel direction is created in place of the widget with the widget and the new widget in it. By dragging from these expanders outwards, a neighbouring widget (or a collection of widgets) can be closed. While the mouse is held, the widgets to be closed are marked with black overlay. When the mouse is released, they are closed. <a class="el" href="class_blend_splitter.html" title="A user-defined Splitter. ">BlendSplitter</a> can be used like any other QWidget, although setting one as the central widget is recommended. A <a class="el" href="class_blend_splitter.html" title="A user-defined Splitter. ">BlendSplitter</a> can contain any QWidget, but to achieve best results, use it together with <a class="el" href="class_switching_widget.html" title="A widget whose actual content can be selected from a combo box. ">SwitchingWidget</a>. </p>
+<p>This widget implements the functionality of Blender (Open-source 3D modelling software) widget management. This widget displays a splitter similar to QSplitter. However, each widget in <a class="el" href="class_blend_splitter.html" title="A user-defined Splitter. ">BlendSplitter</a> has a pair of Expanders (one in top right and one in bottom left corner). By dragging from these Expanders inwards a new widget is created in the direction of the drag. If the direction is different to that of the <a class="el" href="class_blend_splitter.html" title="A user-defined Splitter. ">BlendSplitter</a>, a new <a class="el" href="class_blend_splitter.html" title="A user-defined Splitter. ">BlendSplitter</a> with parallel direction is created in place of the widget with the widget and the new widget in it. By dragging from these expanders outwards, a neighbouring widget (or a collection of widgets) can be closed. While the mouse is held, the widgets to be closed are marked with black overlay. When the mouse is released, they are closed. <a class="el" href="class_blend_splitter.html" title="A user-defined Splitter. ">BlendSplitter</a> can be used like any other QWidget, although setting one as the central widget is recommended. A <a class="el" href="class_blend_splitter.html" title="A user-defined Splitter. ">BlendSplitter</a> can contain any QWidget, but to achieve best results, use it together with <a class="el" href="class_switching_widget.html" title="A widget whose actual content can be selected from a combo box. ">SwitchingWidget</a>.</p>
+<p><a class="el" href="class_blend_splitter.html" title="A user-defined Splitter. ">BlendSplitter</a> provides 3 static variables that allow some customization of the library design. These are expanderSize, switchingBarHeight and expanderImage. These are all initialized with default values. The default Expander image is provided by the library.</p>
+<p>The default Expander image:</p>
+<div class="image">
+<img src="expander.png" alt="expander.png"/>
+<div class="caption">
+The default Expander</div></div>
 
-<p>Definition at line <a class="el" href="_blend_splitter_8hpp_source.html#l00025">25</a> of file <a class="el" href="_blend_splitter_8hpp_source.html">BlendSplitter.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_blend_splitter_8hpp_source.html#l00031">31</a> of file <a class="el" href="_blend_splitter_8hpp_source.html">BlendSplitter.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a8a305d92da45200aa9cc3e7160124cc3"></a>
 <div class="memitem">
@@ -385,9 +391,9 @@ Static Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The image to be used for the top left expander. The bottom right one will rotate this by pi (180 degrees). </p>
+<p>The image to be used for the top left expander. The bottom right one will rotate this by pi (180 degrees). Default value: ":/BlendSplitter/Expander" </p>
 
-<p>Definition at line <a class="el" href="_blend_splitter_8hpp_source.html#l00032">32</a> of file <a class="el" href="_blend_splitter_8hpp_source.html">BlendSplitter.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_blend_splitter_8hpp_source.html#l00038">38</a> of file <a class="el" href="_blend_splitter_8hpp_source.html">BlendSplitter.hpp</a>.</p>
 
 </div>
 </div>
@@ -408,9 +414,9 @@ Static Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Size of the expanders in the corners </p>
+<p>Size of the expanders in the corners. Default value: 12 </p>
 
-<p>Definition at line <a class="el" href="_blend_splitter_8hpp_source.html#l00030">30</a> of file <a class="el" href="_blend_splitter_8hpp_source.html">BlendSplitter.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_blend_splitter_8hpp_source.html#l00036">36</a> of file <a class="el" href="_blend_splitter_8hpp_source.html">BlendSplitter.hpp</a>.</p>
 
 </div>
 </div>
@@ -431,9 +437,9 @@ Static Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Height of the <a class="el" href="class_switching_bar.html" title="A menu bar which is always found on the bottom of SwitchingWidget. ">SwitchingBar</a>. A static property. </p>
+<p>Height of the <a class="el" href="class_switching_bar.html" title="A menu bar which is always found on the bottom of SwitchingWidget. ">SwitchingBar</a>. Default value: 36 </p>
 
-<p>Definition at line <a class="el" href="_blend_splitter_8hpp_source.html#l00031">31</a> of file <a class="el" href="_blend_splitter_8hpp_source.html">BlendSplitter.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_blend_splitter_8hpp_source.html#l00037">37</a> of file <a class="el" href="_blend_splitter_8hpp_source.html">BlendSplitter.hpp</a>.</p>
 
 </div>
 </div>

@@ -39,9 +39,11 @@ Collaboration diagram for Switching\+Widget\+:
 \subsection{Detailed Description}
 A widget whose actual content can be selected from a combo box. 
 
-This widget displays a Widget with a \hyperlink{class_switching_bar}{Switching\+Bar} on the bottom. The widget displayed is one from \hyperlink{class_widget_registry}{Widget\+Registry} and it can be selected using a combo box in the \hyperlink{class_switching_bar}{Switching\+Bar}. 
+This widget displays a Widget with a \hyperlink{class_switching_bar}{Switching\+Bar} on the bottom. The widget displayed is one from \hyperlink{class_widget_registry}{Widget\+Registry} and it can be selected using a combo box in the \hyperlink{class_switching_bar}{Switching\+Bar}.
 
-Definition at line 17 of file Switching\+Widget.\+hpp.
+Note that constructing an object of this class when \hyperlink{class_widget_registry}{Widget\+Registry} is empty will cause a default \hyperlink{class_registry_item}{Registry\+Item} to be added to it. The height of the \hyperlink{class_switching_bar}{Switching\+Bar} can be modified by changing \hyperlink{class_blend_splitter_a478fa3cfcf59f76edf8f021bee297e0d}{Blend\+Splitter\+::switching\+Bar\+Height}. 
+
+Definition at line 19 of file Switching\+Widget.\+hpp.
 
 
 
