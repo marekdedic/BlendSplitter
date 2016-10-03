@@ -14,7 +14,6 @@ BlendSplitter provides 3 static variables that allow some customization of the l
 The default Expander image:
 
 ![The default Expander](resources/expander.png)
-@image latex resources/expander.png
 
 Example
 -------
