@@ -13,6 +13,7 @@ class WidgetDecorator : public QWidget
 public:
     WidgetDecorator() = delete;
     explicit WidgetDecorator(QWidget* widget);
+    ~WidgetDecorator();
 private:
     QWidget* widget;
     ExpanderBottom* expanderBottom;

@@ -72,3 +72,8 @@ void Expander::mouseReleaseEvent(QMouseEvent* event)
         overlay = nullptr;
     }
 }
+
+Expander::~Expander()
+{
+    delete pixmap;
+}
