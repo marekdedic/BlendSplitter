@@ -9,6 +9,12 @@ BlendSplitter
 =============
 This widget implements the functionality of Blender (Open-source 3D modelling software) widget management. This widget displays a splitter similar to QSplitter. However, each widget in BlendSplitter has a pair of Expanders (one in top right and one in bottom left corner). By dragging from these Expanders inwards a new widget is created in the direction of the drag. If the direction is different to that of the BlendSplitter, a new BlendSplitter with parallel direction is created in place of the widget with the widget and the new widget in it. By dragging from these expanders outwards, a neighbouring widget (or a collection of widgets) can be closed. While the mouse is held, the widgets to be closed are marked with black overlay. When the mouse is released, they are closed. BlendSplitter can be used like any other QWidget, although setting one as the central widget is recommended. A BlendSplitter can contain objects of any class inheriting from QWidget. Note that you have to manually set the initial state of the BlendSplitter. You need to add at least 1 widget, otherwise nothing will be displayed.
 
+BlendSplitter provides 3 static variables that allow some customization of the library design. These are expanderSize, switchingBarHeight and expanderImage. These are all initialized with default values. The default Expander image is provided by the library.
+
+The default Expander image:
+
+![The default Expander](resources/expander.png)
+
 Example
 -------
 ```C++
@@ -72,6 +78,8 @@ On Gnome 3.22, this example looks like:
 SwitchingWidget
 ===============
 This class displays a Widget with a SwitchingBar on the bottom. The widget displayed is one from WidgetRegistry and it can be selected using a combo box in the SwitchingBar. The SwitchingBar is like a QMenuBar, but can also contain plain widgets. A SwitchingWidget can contain objects of any class inheriting from QWidget.
+
+Note that constructing an object of this class when WidgetRegistry is empty will cause a default RegistryItem to be added to it. The height of the SwitchingBar can be modified by changing BlendSplitter::switchingBarHeight.
 
 Example
 -------
