@@ -40,3 +40,8 @@ void SwitchingBar::reconstruct(void (*populateBar) (SwitchingBar*, QWidget*), QW
     }
     (*populateBar) (this, widget);
 }
+
+SwitchingBar::~SwitchingBar()
+{
+    delete layout;
+}

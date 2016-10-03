@@ -40,4 +40,5 @@ private:
     SwitchingCombo* combo;
     explicit SwitchingBar(QWidget* parent = nullptr);
     void reconstruct(void (*populateBar) (SwitchingBar*, QWidget*), QWidget* widget);
+    ~SwitchingBar();
 };

@@ -15,6 +15,7 @@ protected:
     Expander() = delete;
     explicit Expander(WidgetDecorator* parent);
     virtual void reposition();
+    ~Expander();
 protected slots:
     virtual void mousePressEvent(QMouseEvent* event);
     virtual void mouseMoveEvent(QMouseEvent* event) = 0;

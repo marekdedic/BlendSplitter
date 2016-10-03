@@ -13,6 +13,11 @@ WidgetDecorator::WidgetDecorator(QWidget* widget) : QWidget{}, widget{widget}, e
     setMinimumSize(2 * BlendSplitter::expanderSize, 2 * BlendSplitter::expanderSize);
 }
 
+WidgetDecorator::~WidgetDecorator()
+{
+    delete layout();
+}
+
 void WidgetDecorator::resizeEvent(QResizeEvent*)
 {
     expanderBottom->reposition();

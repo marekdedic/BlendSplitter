@@ -11,6 +11,7 @@ class SplitterDecorator : public QWidget
 public:
     SplitterDecorator() = delete;
     explicit SplitterDecorator(BlendSplitter* splitter);
+    ~SplitterDecorator();
 private:
     BlendSplitter* splitter;
 };

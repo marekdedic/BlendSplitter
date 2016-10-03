@@ -9,3 +9,8 @@ SplitterDecorator::SplitterDecorator(BlendSplitter* splitter) : QWidget{}, split
     layout->setMargin(0);
     setLayout(layout);
 }
+
+SplitterDecorator::~SplitterDecorator()
+{
+    delete layout();
+}
