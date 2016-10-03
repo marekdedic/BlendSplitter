@@ -21,15 +21,21 @@ class WidgetDecorator;
 /** \brief A user-defined Splitter
  *
  * This widget implements the functionality of Blender (Open-source 3D modelling software) widget management. This widget displays a splitter similar to QSplitter. However, each widget in BlendSplitter has a pair of Expanders (one in top right and one in bottom left corner). By dragging from these Expanders inwards a new widget is created in the direction of the drag. If the direction is different to that of the BlendSplitter, a new BlendSplitter with parallel direction is created in place of the widget with the widget and the new widget in it. By dragging from these expanders outwards, a neighbouring widget (or a collection of widgets) can be closed. While the mouse is held, the widgets to be closed are marked with black overlay. When the mouse is released, they are closed. BlendSplitter can be used like any other QWidget, although setting one as the central widget is recommended. A BlendSplitter can contain any QWidget, but to achieve best results, use it together with SwitchingWidget.
+ *
+ * BlendSplitter provides 3 static variables that allow some customization of the library design. These are expanderSize, switchingBarHeight and expanderImage. These are all initialized with default values. The default Expander image is provided by the library.
+ *
+ * The default Expander image:
+ *
+ * ![The default Expander](resources/expander.png)
  */
 class BLENDSPLITTER_EXPORT BlendSplitter : public QSplitter
 {
     Q_OBJECT
     Q_DISABLE_COPY(BlendSplitter)
 public:
-    static int expanderSize; /**< Size of the expanders in the corners */
-    static int switchingBarHeight; /**< Height of the SwitchingBar. A static property. */
-    static QString expanderImage; /**< The image to be used for the top left expander. The bottom right one will rotate this by pi (180 degrees). */
+    static int expanderSize; /**< Size of the expanders in the corners. Default value: 12 */
+    static int switchingBarHeight; /**< Height of the SwitchingBar. Default value: 36 */
+    static QString expanderImage; /**< The image to be used for the top left expander. The bottom right one will rotate this by pi (180 degrees). Default value: \":/BlendSplitter/Expander\" */
     /** \brief BlendSplitter class constructor
      * \param defaultWidget A pointer to function constructing the default widget. This function is called when a new widget is added to BlendSplitter.
      * \param orientation Orientation of the main BlendSplitter
