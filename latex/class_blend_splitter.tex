@@ -60,9 +60,15 @@ static Q\+String \hyperlink{class_blend_splitter_a38c7ab0fb471718aca5eb3fe09aa12
 \subsection{Detailed Description}
 A user-\/defined Splitter. 
 
-This widget implements the functionality of Blender (Open-\/source 3D modelling software) widget management. This widget displays a splitter similar to Q\+Splitter. However, each widget in \hyperlink{class_blend_splitter}{Blend\+Splitter} has a pair of Expanders (one in top right and one in bottom left corner). By dragging from these Expanders inwards a new widget is created in the direction of the drag. If the direction is different to that of the \hyperlink{class_blend_splitter}{Blend\+Splitter}, a new \hyperlink{class_blend_splitter}{Blend\+Splitter} with parallel direction is created in place of the widget with the widget and the new widget in it. By dragging from these expanders outwards, a neighbouring widget (or a collection of widgets) can be closed. While the mouse is held, the widgets to be closed are marked with black overlay. When the mouse is released, they are closed. \hyperlink{class_blend_splitter}{Blend\+Splitter} can be used like any other Q\+Widget, although setting one as the central widget is recommended. A \hyperlink{class_blend_splitter}{Blend\+Splitter} can contain any Q\+Widget, but to achieve best results, use it together with \hyperlink{class_switching_widget}{Switching\+Widget}. 
+This widget implements the functionality of Blender (Open-\/source 3D modelling software) widget management. This widget displays a splitter similar to Q\+Splitter. However, each widget in \hyperlink{class_blend_splitter}{Blend\+Splitter} has a pair of Expanders (one in top right and one in bottom left corner). By dragging from these Expanders inwards a new widget is created in the direction of the drag. If the direction is different to that of the \hyperlink{class_blend_splitter}{Blend\+Splitter}, a new \hyperlink{class_blend_splitter}{Blend\+Splitter} with parallel direction is created in place of the widget with the widget and the new widget in it. By dragging from these expanders outwards, a neighbouring widget (or a collection of widgets) can be closed. While the mouse is held, the widgets to be closed are marked with black overlay. When the mouse is released, they are closed. \hyperlink{class_blend_splitter}{Blend\+Splitter} can be used like any other Q\+Widget, although setting one as the central widget is recommended. A \hyperlink{class_blend_splitter}{Blend\+Splitter} can contain any Q\+Widget, but to achieve best results, use it together with \hyperlink{class_switching_widget}{Switching\+Widget}.
 
-Definition at line 25 of file Blend\+Splitter.\+hpp.
+\hyperlink{class_blend_splitter}{Blend\+Splitter} provides 3 static variables that allow some customization of the library design. These are expander\+Size, switching\+Bar\+Height and expander\+Image. These are all initialized with default values. The default Expander image is provided by the library.
+
+The default Expander image\+:
+
+
+
+Definition at line 31 of file Blend\+Splitter.\+hpp.
 
 
 
@@ -192,23 +198,23 @@ Inserts the specified widget into the \hyperlink{class_blend_splitter}{Blend\+Sp
 \index{Blend\+Splitter@{Blend\+Splitter}!expander\+Image@{expander\+Image}}
 \index{expander\+Image@{expander\+Image}!Blend\+Splitter@{Blend\+Splitter}}
 \subsubsection[{\texorpdfstring{expander\+Image}{expanderImage}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Blend\+Splitter\+::expander\+Image\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_blend_splitter_a38c7ab0fb471718aca5eb3fe09aa124b}{}\label{class_blend_splitter_a38c7ab0fb471718aca5eb3fe09aa124b}
-The image to be used for the top left expander. The bottom right one will rotate this by pi (180 degrees). 
+The image to be used for the top left expander. The bottom right one will rotate this by pi (180 degrees). Default value\+: "\+:/\+Blend\+Splitter/\+Expander" 
 
-Definition at line 32 of file Blend\+Splitter.\+hpp.
+Definition at line 38 of file Blend\+Splitter.\+hpp.
 
 \index{Blend\+Splitter@{Blend\+Splitter}!expander\+Size@{expander\+Size}}
 \index{expander\+Size@{expander\+Size}!Blend\+Splitter@{Blend\+Splitter}}
 \subsubsection[{\texorpdfstring{expander\+Size}{expanderSize}}]{\setlength{\rightskip}{0pt plus 5cm}int Blend\+Splitter\+::expander\+Size\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_blend_splitter_a233a45efce9417f826d76ce54d832d50}{}\label{class_blend_splitter_a233a45efce9417f826d76ce54d832d50}
-Size of the expanders in the corners 
+Size of the expanders in the corners. Default value\+: 12 
 
-Definition at line 30 of file Blend\+Splitter.\+hpp.
+Definition at line 36 of file Blend\+Splitter.\+hpp.
 
 \index{Blend\+Splitter@{Blend\+Splitter}!switching\+Bar\+Height@{switching\+Bar\+Height}}
 \index{switching\+Bar\+Height@{switching\+Bar\+Height}!Blend\+Splitter@{Blend\+Splitter}}
 \subsubsection[{\texorpdfstring{switching\+Bar\+Height}{switchingBarHeight}}]{\setlength{\rightskip}{0pt plus 5cm}int Blend\+Splitter\+::switching\+Bar\+Height\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_blend_splitter_a478fa3cfcf59f76edf8f021bee297e0d}{}\label{class_blend_splitter_a478fa3cfcf59f76edf8f021bee297e0d}
-Height of the \hyperlink{class_switching_bar}{Switching\+Bar}. A static property. 
+Height of the \hyperlink{class_switching_bar}{Switching\+Bar}. Default value\+: 36 
 
-Definition at line 31 of file Blend\+Splitter.\+hpp.
+Definition at line 37 of file Blend\+Splitter.\+hpp.
 
 
 

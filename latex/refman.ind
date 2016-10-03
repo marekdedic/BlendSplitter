@@ -1,104 +1,104 @@
 \begin{theindex}
 
   \item {add\+Item}
-    \subitem {Widget\+Registry}, \hyperpage{18}
+    \subitem {Widget\+Registry}, \hyperpage{22}
   \item {add\+Menu}
-    \subitem {Switching\+Bar}, \hyperpage{13}
+    \subitem {Switching\+Bar}, \hyperpage{17}
   \item {add\+Splitter}
-    \subitem {Blend\+Splitter}, \hyperpage{7}
+    \subitem {Blend\+Splitter}, \hyperpage{11}
   \item {add\+Widget}
-    \subitem {Blend\+Splitter}, \hyperpage{7}
-    \subitem {Switching\+Bar}, \hyperpage{13}
+    \subitem {Blend\+Splitter}, \hyperpage{11, 12}
+    \subitem {Switching\+Bar}, \hyperpage{17}
 
   \indexspace
 
-  \item {Blend\+Splitter}, \hyperpage{5}
-    \subitem {add\+Splitter}, \hyperpage{7}
-    \subitem {add\+Widget}, \hyperpage{7}
-    \subitem {Blend\+Splitter}, \hyperpage{7}
-    \subitem {expander\+Image}, \hyperpage{9}
-    \subitem {expander\+Size}, \hyperpage{9}
-    \subitem {insert\+Splitter}, \hyperpage{8}
-    \subitem {insert\+Widget}, \hyperpage{8}
-    \subitem {switching\+Bar\+Height}, \hyperpage{9}
+  \item {Blend\+Splitter}, \hyperpage{9}
+    \subitem {add\+Splitter}, \hyperpage{11}
+    \subitem {add\+Widget}, \hyperpage{11, 12}
+    \subitem {Blend\+Splitter}, \hyperpage{11}
+    \subitem {expander\+Image}, \hyperpage{13}
+    \subitem {expander\+Size}, \hyperpage{13}
+    \subitem {insert\+Splitter}, \hyperpage{12}
+    \subitem {insert\+Widget}, \hyperpage{12}
+    \subitem {switching\+Bar\+Height}, \hyperpage{13}
 
   \indexspace
 
   \item {expander\+Image}
-    \subitem {Blend\+Splitter}, \hyperpage{9}
+    \subitem {Blend\+Splitter}, \hyperpage{13}
   \item {expander\+Size}
-    \subitem {Blend\+Splitter}, \hyperpage{9}
+    \subitem {Blend\+Splitter}, \hyperpage{13}
 
   \indexspace
 
   \item {get\+Default}
-    \subitem {Widget\+Registry}, \hyperpage{19}
+    \subitem {Widget\+Registry}, \hyperpage{23}
   \item {get\+Registry}
-    \subitem {Widget\+Registry}, \hyperpage{19}
+    \subitem {Widget\+Registry}, \hyperpage{23}
 
   \indexspace
 
   \item {index\+Of}
-    \subitem {Widget\+Registry}, \hyperpage{19}
+    \subitem {Widget\+Registry}, \hyperpage{23}
   \item {insert\+Item}
-    \subitem {Widget\+Registry}, \hyperpage{19, 20}
+    \subitem {Widget\+Registry}, \hyperpage{23, 24}
   \item {insert\+Splitter}
-    \subitem {Blend\+Splitter}, \hyperpage{8}
+    \subitem {Blend\+Splitter}, \hyperpage{12}
   \item {insert\+Widget}
-    \subitem {Blend\+Splitter}, \hyperpage{8}
+    \subitem {Blend\+Splitter}, \hyperpage{12}
   \item {item}
-    \subitem {Widget\+Registry}, \hyperpage{20}
+    \subitem {Widget\+Registry}, \hyperpage{24}
 
   \indexspace
 
   \item {name}
-    \subitem {Registry\+Item}, \hyperpage{10}
+    \subitem {Registry\+Item}, \hyperpage{14}
 
   \indexspace
 
   \item {populate\+Bar}
-    \subitem {Registry\+Item}, \hyperpage{10}
+    \subitem {Registry\+Item}, \hyperpage{14}
 
   \indexspace
 
   \item {registry\+Changed}
-    \subitem {Widget\+Registry}, \hyperpage{20}
-  \item {Registry\+Item}, \hyperpage{9}
-    \subitem {name}, \hyperpage{10}
-    \subitem {populate\+Bar}, \hyperpage{10}
-    \subitem {Registry\+Item}, \hyperpage{10}
-    \subitem {widget}, \hyperpage{11}
+    \subitem {Widget\+Registry}, \hyperpage{24}
+  \item {Registry\+Item}, \hyperpage{13}
+    \subitem {name}, \hyperpage{14}
+    \subitem {populate\+Bar}, \hyperpage{14}
+    \subitem {Registry\+Item}, \hyperpage{14}
+    \subitem {widget}, \hyperpage{15}
   \item {remove\+Item}
-    \subitem {Widget\+Registry}, \hyperpage{20, 21}
+    \subitem {Widget\+Registry}, \hyperpage{24, 25}
 
   \indexspace
 
   \item {set\+Default}
-    \subitem {Widget\+Registry}, \hyperpage{21}
+    \subitem {Widget\+Registry}, \hyperpage{25}
   \item {size}
-    \subitem {Widget\+Registry}, \hyperpage{21}
-  \item {Switching\+Bar}, \hyperpage{11}
-    \subitem {add\+Menu}, \hyperpage{13}
-    \subitem {add\+Widget}, \hyperpage{13}
+    \subitem {Widget\+Registry}, \hyperpage{25}
+  \item {Switching\+Bar}, \hyperpage{15}
+    \subitem {add\+Menu}, \hyperpage{17}
+    \subitem {add\+Widget}, \hyperpage{17}
   \item {switching\+Bar\+Height}
-    \subitem {Blend\+Splitter}, \hyperpage{9}
-  \item {Switching\+Widget}, \hyperpage{13}
-    \subitem {Switching\+Widget}, \hyperpage{15}
+    \subitem {Blend\+Splitter}, \hyperpage{13}
+  \item {Switching\+Widget}, \hyperpage{17}
+    \subitem {Switching\+Widget}, \hyperpage{19}
 
   \indexspace
 
   \item {widget}
-    \subitem {Registry\+Item}, \hyperpage{11}
-  \item {Widget\+Registry}, \hyperpage{15}
-    \subitem {add\+Item}, \hyperpage{18}
-    \subitem {get\+Default}, \hyperpage{19}
-    \subitem {get\+Registry}, \hyperpage{19}
-    \subitem {index\+Of}, \hyperpage{19}
-    \subitem {insert\+Item}, \hyperpage{19, 20}
-    \subitem {item}, \hyperpage{20}
-    \subitem {registry\+Changed}, \hyperpage{20}
-    \subitem {remove\+Item}, \hyperpage{20, 21}
-    \subitem {set\+Default}, \hyperpage{21}
-    \subitem {size}, \hyperpage{21}
+    \subitem {Registry\+Item}, \hyperpage{15}
+  \item {Widget\+Registry}, \hyperpage{19}
+    \subitem {add\+Item}, \hyperpage{22}
+    \subitem {get\+Default}, \hyperpage{23}
+    \subitem {get\+Registry}, \hyperpage{23}
+    \subitem {index\+Of}, \hyperpage{23}
+    \subitem {insert\+Item}, \hyperpage{23, 24}
+    \subitem {item}, \hyperpage{24}
+    \subitem {registry\+Changed}, \hyperpage{24}
+    \subitem {remove\+Item}, \hyperpage{24, 25}
+    \subitem {set\+Default}, \hyperpage{25}
+    \subitem {size}, \hyperpage{25}
 
 \end{theindex}
