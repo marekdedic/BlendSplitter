@@ -1,0 +1,3 @@
+gh-pages/* /usr/share/doc/libblendsplitter
+gh-pages/search/* /usr/share/doc/libblendsplitter/search
+gh-pages/latex/BlendSplitter.pdf /usr/share/doc/libblendsplitter/latex
