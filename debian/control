@@ -1,15 +1,17 @@
-Source: libblendsplitter2
+Source: libblendsplitter3
+Section: libs
 Priority: optional
 Maintainer: GenaBitu <genabitu@gmail.com>
-Build-Depends: debhelper (>=9), qt5-qmake, qtbase5-dev, qtchooser
-Standards-Version: 3.9.7
-Section: libs
+Build-Depends: debhelper (>=9), qt5-qmake, qtbase5-dev, qtchooser, doxygen, doxygen-latex, graphviz
+Standards-Version: 3.9.8
+Vcs-Git: https://github.com/GenaBitu/BlendSplitter.git
+Vcs-Browser: https://github.com/GenaBitu/BlendSplitter
 Homepage: https://github.com/GenaBitu/BlendSplitter
 
-Package: libblendsplitter2
+Package: libblendsplitter3
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: BlendSplitter library, version 2
+Description: BlendSplitter library, version 3
  A blender-like Qt Widget management library.
  BlendSplitter Provides the BlendSplitter class, which is a Splitter like that
  of the 3-D modelling software Blender.
@@ -18,9 +20,21 @@ Description: BlendSplitter library, version 2
 Package: libblendsplitter-dev
 Section: libdevel
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libblendsplitter2 (=${binary:Version})
-Description: BlendSplitter library, version 2, development files
+Depends: ${misc:Depends}, libblendsplitter3 (=${binary:Version})
+Suggests: libblendsplitter-doc
+Description: BlendSplitter library, version 3, development files
  A blender-like Qt Widget management library.
  BlendSplitter Provides the BlendSplitter class, which is a Splitter like that
  of the 3-D modelling software Blender.
  This is the development package for the library.
+
+Package: libblendsplitter-doc
+Section: doc
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: libblendsplitter-dev
+Description: BlendSplitter library, version 3, documentation
+ A blender-like Qt Widget management library.
+ BlendSplitter Provides the BlendSplitter class, which is a Splitter like that
+ of the 3-D modelling software Blender.
+ This is the documentation package for the liSbrary.
