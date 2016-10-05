@@ -1,3 +1,9 @@
+libblendsplitter3 (3.0.0-1ubuntu1) xenial; urgency=low
+
+  * Public API
+
+ -- GenaBitu <genabitu@gmail.com>  Mon, 3 Oct 2016 11:06:00 +0200
+
 libblendsplitter2 (2.1.0-1ubuntu1) xenial; urgency=low
 
   * Header structure
