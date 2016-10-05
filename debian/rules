@@ -6,3 +6,18 @@ export QT_SELECT = qt5
 %:
 	dh $@
 
+override_dh_auto_configure:
+	dh_auto_configure
+	./doxygen.sh
+
+override_dh_installchangelogs:
+	dh_installchangelogs CHANGELOG.md
+
+override_dh_compress:
+	dh_compress --exclude=BlendSplitter.pdf
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -fr gh-pages/*
+	rm -f DoxygenResults.txt
+
