@@ -1,0 +1,13 @@
+Document: libblendsplitter
+Title: BlendSplitter library documentation
+Author: GenaBitu
+Abstract: This is the documentation for the BlendSplitter library and the classes it provides.
+Section: Programming/C++
+
+Format: HTML
+Index: /usr/share/doc/libblendsplitter/index.html
+Files: /usr/share/doc/libblendsplitter/*.html /usr/share/doc/libblendsplitter/*.js /usr/share/doc/libblendsplitter/*.png /usr/share/doc/libblendsplitter/*.map /usr/share/doc/libblendsplitter/*.md5 /usr/share/doc/libblendsplitter/*.svg /usr/share/doc/libblendsplitter/*.css /usr/share/doc/libblendsplitter/search/*.html /usr/share/doc/libblendsplitter/search/*.js /usr/share/doc/libblendsplitter/search/*.png
+
+Format: PDF
+Files: /usr/share/doc/libblendsplitter/latex/BlendSplitter.pdf
+
