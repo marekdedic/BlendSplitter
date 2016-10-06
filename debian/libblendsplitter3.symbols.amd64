@@ -118,6 +118,7 @@ libBlendSplitter.so.3 libblendsplitter3 #MINVER#
  _ZN17SplitterDecoratorD0Ev@Base 3.0.0
  _ZN17SplitterDecoratorD1Ev@Base 3.0.0
  _ZN17SplitterDecoratorD2Ev@Base 3.0.0
+ _ZN5QListIP12RegistryItemE13detach_helperEi@Base 3.0.0
  _ZN5QListIP12RegistryItemE18detach_helper_growEii@Base 3.0.0
  _ZN5QListIP12RegistryItemE6appendERKS1_@Base 3.0.0
  _ZN5QListIP12RegistryItemED1Ev@Base 3.0.0
@@ -150,7 +151,9 @@ libBlendSplitter.so.3 libblendsplitter3 #MINVER#
  _ZN8ExpanderD0Ev@Base 3.0.0
  _ZN8ExpanderD1Ev@Base 3.0.0
  _ZN8ExpanderD2Ev@Base 3.0.0
+ _ZN9QtPrivate11QSlotObjectIM14SwitchingComboFvvENS_4ListIIEEEvE4implEiPNS_15QSlotObjectBaseEP7QObjectPPvPb@Base 3.0.0
  _ZN9QtPrivate11QSlotObjectIM14SwitchingComboFvvENS_4ListIJEEEvE4implEiPNS_15QSlotObjectBaseEP7QObjectPPvPb@Base 3.0.0
+ _ZN9QtPrivate11QSlotObjectIM15SwitchingWidgetFviENS_4ListIIiEEEvE4implEiPNS_15QSlotObjectBaseEP7QObjectPPvPb@Base 3.0.0
  _ZN9QtPrivate11QSlotObjectIM15SwitchingWidgetFviENS_4ListIJiEEEvE4implEiPNS_15QSlotObjectBaseEP7QObjectPPvPb@Base 3.0.0
  _ZNK11ExpanderTop10metaObjectEv@Base 3.0.0
  _ZNK12SwitchingBar10metaObjectEv@Base 3.0.0
