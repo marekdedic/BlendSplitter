@@ -5,7 +5,7 @@
 class ExpanderBottom;
 class ExpanderTop;
 
-class Overlay : public QLabel
+class Overlay final : public QLabel
 {
     Q_OBJECT
     Q_DISABLE_COPY(Overlay)

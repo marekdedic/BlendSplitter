@@ -6,7 +6,7 @@ class BlendSplitter;
 class ExpanderBottom;
 class ExpanderTop;
 
-class WidgetDecorator : public QWidget
+class WidgetDecorator final : public QWidget
 {
     Q_OBJECT
     Q_DISABLE_COPY(WidgetDecorator)

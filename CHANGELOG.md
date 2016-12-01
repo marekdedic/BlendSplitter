@@ -1,5 +1,9 @@
 #Changelog
 
+## [3.1.0] - 2016-12-01 - CMake
+ - Using CMake
+ - SwitchingWidget and BlendSplitter can take RegistryItem as parameter
+
 ## [3.0.0] - 2016-10-03 - Public API
  - Defined a public API: https://genabitu.github.io/BlendSplitter/
  - Documented everything using Doxygen
