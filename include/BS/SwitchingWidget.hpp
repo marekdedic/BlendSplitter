@@ -9,6 +9,7 @@
 #include <QSplitter>
 
 class SwitchingBar;
+class RegistryItem;
 
 /** \brief A widget whose actual content can be selected from a combo box
  *
@@ -24,9 +25,16 @@ public:
     /** \brief A default constructor similar to that of QWidget
      *
      * Creates a SwitchingWidget containg the default widget specified in WidgetRegistry
+     * \param item A RegistryItem to display in the widget. If nullptr, then WidgetRegistry::getDefault() is used.
      * \param parent A parent widget
      */
-    explicit SwitchingWidget(QWidget* parent = nullptr);
+    SwitchingWidget(RegistryItem* item = nullptr, QWidget* parent = nullptr);
+    /** \brief Set the current Widget displayed.
+     *
+     * Sets the current widget to be the item
+     * \param item A RegistryItem to display in the widget. If nullptr, then WidgetRegistry::getDefault() is used.
+     */
+    void setCurrentWidget(RegistryItem* item = nullptr);
 private slots:
     void changeCurrentWidget(int index);
 private:

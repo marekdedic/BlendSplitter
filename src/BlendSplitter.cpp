@@ -28,6 +28,11 @@ void BlendSplitter::addWidget(QWidget* widget)
     insertWidget(-1, widget);
 }
 
+void BlendSplitter::addWidget(RegistryItem* item)
+{
+    insertWidget(-1, item);
+}
+
 void BlendSplitter::insertWidget(int index)
 {
     insertWidget(index, (*defaultWidget) ());
@@ -37,6 +42,11 @@ void BlendSplitter::insertWidget(int index, QWidget* widget)
 {
     WidgetDecorator* decorator{new WidgetDecorator{widget}};
     QSplitter::insertWidget(index, decorator);
+}
+
+void BlendSplitter::insertWidget(int index, RegistryItem* item)
+{
+    insertWidget(index, new SwitchingWidget{item});
 }
 
 void BlendSplitter::addDecoratedWidget(WidgetDecorator* widget)
