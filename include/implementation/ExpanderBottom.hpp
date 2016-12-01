@@ -12,7 +12,7 @@ class ExpanderBottom : public Expander
 public:
     ExpanderBottom() = delete;
     explicit ExpanderBottom(WidgetDecorator* parent);
-    virtual void reposition();
+    virtual void reposition() override;
 protected slots:
-    virtual void mouseMoveEvent(QMouseEvent* event);
+    virtual void mouseMoveEvent(QMouseEvent* event) override;
 };

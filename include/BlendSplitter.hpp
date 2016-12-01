@@ -83,7 +83,7 @@ private:
     friend ExpanderBottom;
     friend ExpanderTop;
     QWidget* (*defaultWidget) ();
-    virtual QSplitterHandle* createHandle();
+    virtual QSplitterHandle* createHandle() override;
     void addDecoratedWidget(WidgetDecorator* widget);
     void insertDecoratedWidget(int index, WidgetDecorator* widget);
 };

@@ -19,5 +19,5 @@ private:
     ExpanderBottom* expanderBottom;
     ExpanderTop* expanderTop;
 protected slots:
-    virtual void resizeEvent(QResizeEvent*);
+    virtual void resizeEvent(QResizeEvent*) override;
 };

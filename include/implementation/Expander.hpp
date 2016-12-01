@@ -17,7 +17,7 @@ protected:
     virtual void reposition();
     ~Expander();
 protected slots:
-    virtual void mousePressEvent(QMouseEvent* event);
-    virtual void mouseMoveEvent(QMouseEvent* event) = 0;
-    virtual void mouseReleaseEvent(QMouseEvent* event);
+    virtual void mousePressEvent(QMouseEvent* event) override;
+    virtual void mouseMoveEvent(QMouseEvent* event) override = 0;
+    virtual void mouseReleaseEvent(QMouseEvent* event) override;
 };
