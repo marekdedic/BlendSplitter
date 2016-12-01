@@ -5,7 +5,7 @@
 #include "Expander.hpp"
 class WidgetDecorator;
 
-class ExpanderTop : public Expander
+class ExpanderTop final : public Expander
 {
     Q_OBJECT
     Q_DISABLE_COPY(ExpanderTop)

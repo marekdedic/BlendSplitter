@@ -4,7 +4,7 @@
 
 class BlendSplitter;
 
-class SplitterHandle : public QSplitterHandle
+class SplitterHandle final : public QSplitterHandle
 {
     Q_OBJECT
     Q_DISABLE_COPY(SplitterHandle)
