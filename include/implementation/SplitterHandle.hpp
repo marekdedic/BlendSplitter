@@ -12,5 +12,5 @@ public:
     SplitterHandle() = delete;
     SplitterHandle(Qt::Orientation orientation, QSplitter* parent);
 protected slots:
-    virtual void mouseReleaseEvent(QMouseEvent* event);
+    virtual void mouseReleaseEvent(QMouseEvent* event) override;
 };

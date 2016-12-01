@@ -12,7 +12,7 @@ class ExpanderTop : public Expander
 public:
     ExpanderTop() = delete;
     explicit ExpanderTop(WidgetDecorator* parent);
-    virtual void reposition();
+    virtual void reposition() override;
 protected slots:
-    virtual void mouseMoveEvent(QMouseEvent* event);
+    virtual void mouseMoveEvent(QMouseEvent* event) override;
 };
