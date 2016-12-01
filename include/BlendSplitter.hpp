@@ -52,6 +52,12 @@ public:
      * \param widget A pointer to the widget to be added
      */
     void addWidget(QWidget* widget);
+    /** \brief Add a widget to the BlendSplitter
+     *
+     * Adds the specified widget from the WidgetRegistry to the very bottom/right of the BlendSplitter
+     * \param item A RegistryItem to be added (inside a SwitchingWidget).
+     */
+    void addWidget(RegistryItem* item);
     /** \brief Insert a widget into the BlendSplitter
      *
      * Inserts the default widget into the BlendSplitter at the given position counting from top/left (counting starts at 0). This function should NOT be called with a BlendSplitter as a parameter.
@@ -65,6 +71,13 @@ public:
      * \param widget A pointer to the widget to be inserted
      */
     void insertWidget(int index, QWidget* widget);
+    /** \brief Insert a widget into the BlendSplitter
+     *
+     * Inserts the specified widget from WidgetRegistry into the BlendSplitter at the given position counting from top/left (counting starts at 0). This function should NOT be called with a BlendSplitter as a parameter.
+     * \param index The desired position
+     * \param item A RegistryItem to be added (inside a SwitchingWidget).
+     */
+    void insertWidget(int index, RegistryItem* item);
     /** \brief Add another BlendSplitter to this BlendSplitter
      *
      * Adds a BlendSplitter (usually with parallel orientation) to the BlendSplitter
