@@ -1,4 +1,4 @@
-libBlendSplitter.so.3.0.0 /usr/lib
-libBlendSplitter.so.3.0 /usr/lib
+libBlendSplitter.so.3.1.0 /usr/lib
+libBlendSplitter.so.3.1 /usr/lib
 libBlendSplitter.so.3 /usr/lib
 CHANGELOG.md /usr/share/doc/libblendsplitter3

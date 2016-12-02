@@ -1,3 +1,9 @@
+libblendsplitter3 (3.1.0-1) unstable; urgency=low
+
+  * RegistryItem in constructors, CMake
+
+ -- GenaBitu <genabitu@gmail.com>  Thu, 1 Dec 2016 21:21:00 +0100
+
 libblendsplitter3 (3.0.0-2) unstable; urgency=low
 
   * Symbols used only for amd64

@@ -20,4 +20,9 @@ override_dh_auto_clean:
 	dh_auto_clean
 	rm -fr gh-pages/*
 	rm -f DoxygenResults.txt
+	rm -f libBlendSplitter.so*
+
+override_dh_install:
+	cp -P obj-${DEB_HOST_MULTIARCH}/libBlendSplitter.so* ./
+	dh_install
 
