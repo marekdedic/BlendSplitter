@@ -16,27 +16,27 @@ The default Expander image\+:
 
 
 \begin{DoxyCode}
-1 \{C++\}
-2 #include <QApplication>
-3 #include <QMainWindow>
-4 
-5 #include <BlendSplitter>
-6 
-7 int main(int argc, char** argv)
-8 \{
-9     new QApplication\{argc, argv\};
-10     QMainWindow* window\{new QMainWindow\{\}\};
-11     BlendSplitter* splitter\{new BlendSplitter\{[]()->QWidget* \{return new QLabel\{"My Widget"\};\}\}\};
-12 
-13     window->setCentralWidget(splitter);
-14     window->resize(400, 200);
-15     window->setWindowTitle("BlendSplitter example");
-16 
-17     splitter->addWidget();
-18 
-19     window->show();
-20     return qApp->exec();
-21 \}
+\{C++\}
+#include <QApplication>
+#include <QMainWindow>
+
+#include <BlendSplitter>
+
+int main(int argc, char** argv)
+\{
+    new QApplication\{argc, argv\};
+    QMainWindow* window\{new QMainWindow\{\}\};
+    BlendSplitter* splitter\{new BlendSplitter\{[]()->QWidget* \{return new QLabel\{"My Widget"\};\}\}\};
+
+    window->setCentralWidget(splitter);
+    window->resize(400, 200);
+    window->setWindowTitle("BlendSplitter example");
+
+    splitter->addWidget();
+
+    window->show();
+    return qApp->exec();
+\}
 \end{DoxyCode}
  On Gnome 3.\+22, this example looks like\+:
 
@@ -44,32 +44,32 @@ The default Expander image\+:
 
 
 \begin{DoxyCode}
-1 \{C++\}
-2 #include <QApplication>
-3 #include <QMainWindow>
-4 
-5 #include <BlendSplitter>
-6 
-7 int main(int argc, char** argv)
-8 \{
-9     new QApplication\{argc, argv\};
-10     QMainWindow* window\{new QMainWindow\{\}\};
-11     BlendSplitter* splitter\{new BlendSplitter\{[]()->QWidget* \{return new QLabel\{"My Widget"\};\}\}\};
-12 
-13     window->setCentralWidget(splitter);
-14     window->resize(400, 200);
-15     window->setWindowTitle("BlendSplitter example 2");
-16 
-17     splitter->addWidget();
-18     BlendSplitter* splitter2\{new BlendSplitter\{[]()->QWidget* \{return new QLabel\{"My Widget"\};\},
+\{C++\}
+#include <QApplication>
+#include <QMainWindow>
+
+#include <BlendSplitter>
+
+int main(int argc, char** argv)
+\{
+    new QApplication\{argc, argv\};
+    QMainWindow* window\{new QMainWindow\{\}\};
+    BlendSplitter* splitter\{new BlendSplitter\{[]()->QWidget* \{return new QLabel\{"My Widget"\};\}\}\};
+
+    window->setCentralWidget(splitter);
+    window->resize(400, 200);
+    window->setWindowTitle("BlendSplitter example 2");
+
+    splitter->addWidget();
+    BlendSplitter* splitter2\{new BlendSplitter\{[]()->QWidget* \{return new QLabel\{"My Widget"\};\},
        Qt::Vertical\}\};
-19     splitter->addSplitter(splitter2);
-20     splitter2->addWidget();
-21     splitter2->addWidget();
-22 
-23     window->show();
-24     return qApp->exec();
-25 \}
+    splitter->addSplitter(splitter2);
+    splitter2->addWidget();
+    splitter2->addWidget();
+
+    window->show();
+    return qApp->exec();
+\}
 \end{DoxyCode}
  On Gnome 3.\+22, this example looks like\+:
 
@@ -83,42 +83,42 @@ Note that constructing an object of this class when \hyperlink{class_widget_regi
 
 
 \begin{DoxyCode}
-1 \{C++\}
-2 #include <QApplication>
-3 #include <QMainWindow>
-4 
-5 #include <BlendSplitter>
-6 
-7 int main(int argc, char** argv)
-8 \{
-9     new QApplication\{argc, argv\};
-10     QMainWindow* window\{new QMainWindow\{\}\};
-11 
-12     WidgetRegistry::getRegistry()->addItem();
-13     WidgetRegistry::getRegistry()->addItem("Type1", []()->QWidget* \{return new QLabel\{"Type 1 Label"\};\},
+\{C++\}
+#include <QApplication>
+#include <QMainWindow>
+
+#include <BlendSplitter>
+
+int main(int argc, char** argv)
+\{
+    new QApplication\{argc, argv\};
+    QMainWindow* window\{new QMainWindow\{\}\};
+
+    WidgetRegistry::getRegistry()->addItem();
+    WidgetRegistry::getRegistry()->addItem("Type1", []()->QWidget* \{return new QLabel\{"Type 1 Label"\};\},
        [](SwitchingBar* bar, QWidget*)->void \{
-14         QMenu* menu\{new QMenu\{"My first menu"\}\};
-15         bar->addMenu(menu);
-16         QMenu* menu2\{new QMenu\{"My second menu"\}\};
-17         menu2->addAction(new QAction\{"New", 0\});
-18         menu2->addAction(new QAction\{"Close", 0\});
-19         bar->addMenu(menu2);
-20         QLabel* lab\{new QLabel\{"My third not-so-menu"\}\};
-21         bar->addWidget(lab);
-22     \});
-23     WidgetRegistry::getRegistry()->addItem(new RegistryItem\{"Type2", []()->QWidget* \{return new
+        QMenu* menu\{new QMenu\{"My first menu"\}\};
+        bar->addMenu(menu);
+        QMenu* menu2\{new QMenu\{"My second menu"\}\};
+        menu2->addAction(new QAction\{"New", 0\});
+        menu2->addAction(new QAction\{"Close", 0\});
+        bar->addMenu(menu2);
+        QLabel* lab\{new QLabel\{"My third not-so-menu"\}\};
+        bar->addWidget(lab);
+    \});
+    WidgetRegistry::getRegistry()->addItem(new RegistryItem\{"Type2", []()->QWidget* \{return new
        QLabel\{"Type 2 Label"\};\}\});
-24     WidgetRegistry::getRegistry()->setDefault(1);
-25 
-26     SwitchingWidget* widget\{new SwitchingWidget\{\}\};
-27 
-28     window->setCentralWidget(widget);
-29     window->resize(600, 400);
-30     window->setWindowTitle("SwitchingWidget example");
-31 
-32     window->show();
-33     return qApp->exec();
-34 \}
+    WidgetRegistry::getRegistry()->setDefault(1);
+
+    SwitchingWidget* widget\{new SwitchingWidget\{\}\};
+
+    window->setCentralWidget(widget);
+    window->resize(600, 400);
+    window->setWindowTitle("SwitchingWidget example");
+
+    window->show();
+    return qApp->exec();
+\}
 \end{DoxyCode}
  On Gnome 3.\+22, this example looks like\+:
 

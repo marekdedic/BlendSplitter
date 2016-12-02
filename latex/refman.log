@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2016.8.25)  3 OCT 2016 09:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2016.11.23)  2 DEC 2016 11:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **refman
 (./refman.tex
 LaTeX2e <2016/03/31> patch level 3
-Babel <3.9r> and hyphenation patterns for 5 language(s) loaded.
+Babel <3.9r> and hyphenation patterns for 3 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/bk10.clo
@@ -172,10 +172,15 @@ Package: tabularx 2016/02/03 v2.11 `tabularx' package (DPC)
 \TX@ftn=\toks23
 )
 (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2016/10/11 v2.1 Span multiple rows of a table
+\multirow@colwidth=\skip54
+\multirow@cnta=\count107
+\multirow@cntb=\count108
+\multirow@dima=\skip55
 \bigstrutjot=\dimen124
 )
 \xrefbox=\box37
-\xreflength=\skip54
+\xreflength=\skip56
 )
 (/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjustbox.sty
 Package: adjustbox 2012/05/21 v1.0 Adjusting TeX boxes (trim, clip, ...)
@@ -189,7 +194,7 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 \XKV@tempa@toks=\toks25
 
 (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/keyval.tex))
-\XKV@depth=\count107
+\XKV@depth=\count109
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjcalc.sty
@@ -236,7 +241,7 @@ File: tc-pdftex.def 2012/05/13 v1.0 Clipping driver for pdftex
 
 (/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count108
+\c@checkoddpage=\count110
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
@@ -557,20 +562,20 @@ Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2016/04/07 v1.8p multicolumn formatting (FMi)
-\c@tracingmulticols=\count109
+\c@tracingmulticols=\count111
 \mult@box=\box39
 \multicol@leftmargin=\dimen135
-\c@unbalance=\count110
-\c@collectmore=\count111
-\doublecol@number=\count112
-\multicoltolerance=\count113
-\multicolpretolerance=\count114
+\c@unbalance=\count112
+\c@collectmore=\count113
+\doublecol@number=\count114
+\multicoltolerance=\count115
+\multicolpretolerance=\count116
 \full@width=\dimen136
 \page@free=\dimen137
 \premulticols=\dimen138
 \postmulticols=\dimen139
-\multicolsep=\skip55
-\multicolbaselineskip=\skip56
+\multicolsep=\skip57
+\multicolbaselineskip=\skip58
 \partial@page=\box40
 \last@line=\box41
 \maxbalancingoverflow=\dimen140
@@ -595,14 +600,14 @@ Package: multicol 2016/04/07 v1.8p multicolumn formatting (FMi)
 \@tempa=\box60
 \@tempa=\box61
 \@tempa=\box62
-\c@columnbadness=\count115
-\c@finalcolumnbadness=\count116
+\c@columnbadness=\count117
+\c@finalcolumnbadness=\count118
 \last@try=\dimen141
 \multicolovershoot=\dimen142
 \multicolundershoot=\dimen143
 \mult@nat@firstbox=\box63
 \colbreak@box=\box64
-\mc@col@check@num=\count117
+\mc@col@check@num=\count119
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2016/06/19 v1.99m Standard LaTeX package
@@ -807,9 +812,9 @@ Package ifvtex Info: VTeX not detected.
 (/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count118
-\Gm@cntv=\count119
-\c@Gm@tempcnt=\count120
+\Gm@cnth=\count120
+\Gm@cntv=\count121
+\c@Gm@tempcnt=\count122
 \Gm@bindingoffset=\dimen144
 \Gm@wd@mp=\dimen145
 \Gm@odd@mp=\dimen146
@@ -821,62 +826,63 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@dimlist=\toks29
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-\fancy@headwidth=\skip57
-\f@ncyO@elh=\skip58
-\f@ncyO@erh=\skip59
-\f@ncyO@olh=\skip60
-\f@ncyO@orh=\skip61
-\f@ncyO@elf=\skip62
-\f@ncyO@erf=\skip63
-\f@ncyO@olf=\skip64
-\f@ncyO@orf=\skip65
+Package: fancyhdr 2016/09/06 3.8 Extensive control of page headers and footers
+\fancy@headwidth=\skip59
+\f@ncyO@elh=\skip60
+\f@ncyO@erh=\skip61
+\f@ncyO@olh=\skip62
+\f@ncyO@orh=\skip63
+\f@ncyO@elf=\skip64
+\f@ncyO@erf=\skip65
+\f@ncyO@olf=\skip66
+\f@ncyO@orf=\skip67
 )
 (/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip66
-\bibsep=\skip67
+\bibhang=\skip68
+\bibsep=\skip69
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count121
+\c@NAT@ctr=\count123
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2013/05/02 v2.3f parameterised ToC, etc., typesetting
 Package tocloft Info: The document has chapter divisions on input line 44.
-\cftparskip=\skip68
-\cftbeforetoctitleskip=\skip69
-\cftaftertoctitleskip=\skip70
-\cftbeforepartskip=\skip71
-\cftpartnumwidth=\skip72
-\cftpartindent=\skip73
-\cftbeforechapskip=\skip74
-\cftchapindent=\skip75
-\cftchapnumwidth=\skip76
-\cftbeforesecskip=\skip77
-\cftsecindent=\skip78
-\cftsecnumwidth=\skip79
-\cftbeforesubsecskip=\skip80
-\cftsubsecindent=\skip81
-\cftsubsecnumwidth=\skip82
-\cftbeforesubsubsecskip=\skip83
-\cftsubsubsecindent=\skip84
-\cftsubsubsecnumwidth=\skip85
-\cftbeforeparaskip=\skip86
-\cftparaindent=\skip87
-\cftparanumwidth=\skip88
-\cftbeforesubparaskip=\skip89
-\cftsubparaindent=\skip90
-\cftsubparanumwidth=\skip91
-\cftbeforeloftitleskip=\skip92
-\cftafterloftitleskip=\skip93
-\cftbeforefigskip=\skip94
-\cftfigindent=\skip95
-\cftfignumwidth=\skip96
-\c@lofdepth=\count122
-\c@lotdepth=\count123
-\cftbeforelottitleskip=\skip97
-\cftafterlottitleskip=\skip98
-\cftbeforetabskip=\skip99
-\cfttabindent=\skip100
-\cfttabnumwidth=\skip101
+\cftparskip=\skip70
+\cftbeforetoctitleskip=\skip71
+\cftaftertoctitleskip=\skip72
+\cftbeforepartskip=\skip73
+\cftpartnumwidth=\skip74
+\cftpartindent=\skip75
+\cftbeforechapskip=\skip76
+\cftchapindent=\skip77
+\cftchapnumwidth=\skip78
+\cftbeforesecskip=\skip79
+\cftsecindent=\skip80
+\cftsecnumwidth=\skip81
+\cftbeforesubsecskip=\skip82
+\cftsubsecindent=\skip83
+\cftsubsecnumwidth=\skip84
+\cftbeforesubsubsecskip=\skip85
+\cftsubsubsecindent=\skip86
+\cftsubsubsecnumwidth=\skip87
+\cftbeforeparaskip=\skip88
+\cftparaindent=\skip89
+\cftparanumwidth=\skip90
+\cftbeforesubparaskip=\skip91
+\cftsubparaindent=\skip92
+\cftsubparanumwidth=\skip93
+\cftbeforeloftitleskip=\skip94
+\cftafterloftitleskip=\skip95
+\cftbeforefigskip=\skip96
+\cftfigindent=\skip97
+\cftfignumwidth=\skip98
+\c@lofdepth=\count124
+\c@lotdepth=\count125
+\cftbeforelottitleskip=\skip99
+\cftafterlottitleskip=\skip100
+\cftbeforetabskip=\skip101
+\cfttabindent=\skip102
+\cfttabnumwidth=\skip103
 )
 \@indexfile=\write3
 \openout3 = `refman.idx'.
@@ -936,15 +942,15 @@ Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
 \@linkdim=\dimen152
-\Hy@linkcounter=\count124
-\Hy@pagecounter=\count125
+\Hy@linkcounter=\count126
+\Hy@pagecounter=\count127
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2016/06/24 v6.83q Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count126
+\Hy@SavedSpaceFactor=\count128
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -965,7 +971,7 @@ Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 ))
-\c@Hy@tempcnt=\count127
+\c@Hy@tempcnt=\count129
 
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
@@ -973,7 +979,7 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5088.
 \XeTeXLinkMargin=\dimen153
-\Fld@menulength=\count128
+\Fld@menulength=\count130
 \Field@Width=\dimen154
 \Fld@charsize=\dimen155
 Package hyperref Info: Hyper figures OFF on input line 6342.
@@ -985,18 +991,18 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6367.
 Package hyperref Info: PDF/A mode OFF on input line 6372.
 LaTeX Info: Redefining \ref on input line 6412.
 LaTeX Info: Redefining \pageref on input line 6416.
-\Hy@abspage=\count129
-\c@Item=\count130
-\c@Hfootnote=\count131
+\Hy@abspage=\count131
+\c@Item=\count132
+\c@Hfootnote=\count133
 )
 
 Package hyperref Message: Driver: hpdftex.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2016/06/24 v6.83q Hyperref driver for pdfTeX
-\Fld@listcount=\count132
-\c@bookmark@seq@number=\count133
-\Hy@SectionHShift=\skip102
+\Fld@listcount=\count134
+\c@bookmark@seq@number=\count135
+\Hy@SectionHShift=\skip104
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 105.
 Package hyperref Info: Option `unicode' set `true' on input line 105.
@@ -1020,7 +1026,7 @@ Package caption3 Info: TeX engine: e-TeX on input line 67.
 \caption@parindent=\dimen161
 \caption@hangindent=\dimen162
 )
-\c@ContinuedFloat=\count134
+\c@ContinuedFloat=\count136
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: longtable package is loaded.
@@ -1063,16 +1069,16 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count135
+\scratchcounter=\count137
 \scratchdimen=\dimen163
 \scratchbox=\box65
-\nofMPsegments=\count136
-\nofMParguments=\count137
+\nofMPsegments=\count138
+\nofMParguments=\count139
 \everyMPshowfont=\toks30
-\MPscratchCnt=\count138
+\MPscratchCnt=\count140
 \MPscratchDim=\dimen164
-\MPnumerator=\count139
-\makeMPintoPDFobject=\count140
+\MPnumerator=\count141
+\makeMPintoPDFobject=\count142
 \everyMPtoPDFconversion=\toks31
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1134,7 +1140,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count141
+\c@section@level=\count143
 )
 LaTeX Info: Redefining \ref on input line 117.
 LaTeX Info: Redefining \pageref on input line 117.
@@ -1178,13 +1184,13 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 
 ]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 22.39185pt on input line 134.
+(Font)              scaled to size 22.39185pt on input line 135.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 134.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 135.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 22.39185pt on input line 134.
+(Font)              scaled to size 22.39185pt on input line 135.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 22.39185pt on input line 134.
+(Font)              scaled to size 22.39185pt on input line 135.
  (./refman.toc
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 1.
@@ -1194,60 +1200,33 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <7> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 6.29996pt on input line 1.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 7.19995pt on input line 13.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 13.
 
-Underfull \hbox (badness 10000) in paragraph at lines 10--10
- [][] [][][]\T1/phv/m/n/10 Blend[]Splitter([]Q[]Widget $\OMS/cmsy/m/n/10 ^^C$\T
-1/phv/m/n/10 ($\OMS/cmsy/m/n/10 ^^C$\T1/phv/m/n/10 default[]Widget)()=[]() -$\O
-ML/cmm/m/it/10 >$[]\T1/phv/m/n/10 Q[]Widget $\OMS/cmsy/m/n/10 ^^C$\T1/phv/m/n/1
-0 {return new 
- []
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+) [1
 
-[3
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 43--43
- [][] [][][]\T1/phv/m/n/10 add[]Item([]Q[]String name=""Default"", Q[]Widget $\
-OMS/cmsy/m/n/10 ^^C$\T1/phv/m/n/10 ($\OMS/cmsy/m/n/10 ^^C$\T1/phv/m/n/10 widget
-)()=[]() -$\OML/cmm/m/it/10 >$[]\T1/phv/m/n/10 Q[]Widget 
- []
-
-
-Underfull \hbox (badness 1917) in paragraph at lines 48--48
- [][] [][][]\T1/phv/m/n/10 insert[]Item(int in-dex, Q[]String name=""Default"",
- Q[]Widget $\OMS/cmsy/m/n/10 ^^C$\T1/phv/m/n/10 ($\OMS/cmsy/m/n/10 ^^C$\T1/phv/
-m/n/10 widget)()=[]() - 
- []
-
-
-Underfull \hbox (badness 1681) in paragraph at lines 48--48
- \OML/cmm/m/it/10 >$[]\T1/phv/m/n/10 Q[]Widget $\OMS/cmsy/m/n/10 ^^C$\T1/phv/m/
-n/10 {return new Q[]Label{""Default wid-get""};}, void($\OMS/cmsy/m/n/10 ^^C$\T
-1/phv/m/n/10 populate[]Bar)([] 
- []
-
-)
+])
 \tf@toc=\write5
 \openout5 = `refman.toc'.
 
- [4]
-Package hyperref Info: Option `pageanchor' set `true' on input line 137.
+ [2]
+Package hyperref Info: Option `pageanchor' set `true' on input line 138.
 
 Chapter 1.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 18.66588pt on input line 140.
+(Font)              scaled to size 18.66588pt on input line 141.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <20.74> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 140.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 141.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 18.66588pt on input line 140.
+(Font)              scaled to size 18.66588pt on input line 141.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 18.66588pt on input line 140.
+(Font)              scaled to size 18.66588pt on input line 141.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 6.29996pt on input line 140.
+(Font)              scaled to size 6.29996pt on input line 141.
 (./index.tex
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 3.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
 Underfull \hbox (badness 2005) in paragraph at lines 3--4
 []\T1/phv/m/n/10 You can down-load the whole doc-u-men-ta-tion in pdf on ([][]\
 T1/pcr/m/n/10 https[]://genabitu.[]github.[]io/[]Blend[]
@@ -1281,21 +1260,21 @@ Chapter 3.
 ]
 Chapter 4.
 (./class_blend_splitter.tex
-<class_blend_splitter__inherit__graph.pdf, id=401, 190.7125pt x 321.2pt>
+<class_blend_splitter__inherit__graph.pdf, id=412, 190.7125pt x 343.2825pt>
 File: class_blend_splitter__inherit__graph.pdf Graphic file (type pdf)
 
 <use class_blend_splitter__inherit__graph.pdf>
 Package pdftex.def Info: class_blend_splitter__inherit__graph.pdf used on input
  line 19.
-(pdftex.def)             Requested size: 190.0pt x 320.01314pt.
+(pdftex.def)             Requested size: 190.0pt x 342.01402pt.
 
-<class_blend_splitter__coll__graph.pdf, id=402, 190.7125pt x 321.2pt>
+<class_blend_splitter__coll__graph.pdf, id=413, 190.7125pt x 343.2825pt>
 File: class_blend_splitter__coll__graph.pdf Graphic file (type pdf)
 
 <use class_blend_splitter__coll__graph.pdf>
 Package pdftex.def Info: class_blend_splitter__coll__graph.pdf used on input li
 ne 29.
-(pdftex.def)             Requested size: 190.0pt x 320.01314pt.
+(pdftex.def)             Requested size: 190.0pt x 342.01402pt.
  [9 <./class_blend_splitter__inherit__graph.pdf>]
 LaTeX Font Info:    Try loading font information for TS1+phv on input line 35.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
@@ -1317,81 +1296,84 @@ LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 [10 <./class_blend_splitter__coll__graph.pdf>]
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (Font)              scaled to size 8.99994pt on input line 83.
-LaTeX Font Info:    Font shape `T1/phv/bc/it' in size <10> not available
-(Font)              Font shape `T1/phv/bc/sl' tried instead on input line 83.
-LaTeX Font Info:    Font shape `T1/phv/bc/sl' will be
-(Font)              scaled to size 8.99994pt on input line 83.
-LaTeX Font Info:    Font shape `T1/phv/bc/it' in size <7> not available
-(Font)              Font shape `T1/phv/bc/sl' tried instead on input line 83.
-LaTeX Font Info:    Font shape `T1/phv/bc/sl' will be
-(Font)              scaled to size 6.29996pt on input line 83.
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 84.
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 84.
+ [11]
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 7.19995pt on input line 118.
 
-
-LaTeX Font Warning: Font shape `T1/pcr/bc/it' undefined
-(Font)              using `T1/pcr/m/n' instead on input line 83.
-
-[11] [12]
 
 LaTeX Font Warning: Font shape `T1/pcr/bc/n' undefined
-(Font)              using `T1/pcr/m/n' instead on input line 200.
+(Font)              using `T1/pcr/m/n' instead on input line 118.
 
-) (./class_registry_item.tex
-<class_registry_item__coll__graph.pdf, id=517, 168.63pt x 160.6pt>
+[12] [13]) (./class_registry_item.tex
+<class_registry_item__coll__graph.pdf, id=570, 168.63pt x 160.6pt>
 File: class_registry_item__coll__graph.pdf Graphic file (type pdf)
 
 <use class_registry_item__coll__graph.pdf>
 Package pdftex.def Info: class_registry_item__coll__graph.pdf used on input lin
 e 19.
 (pdftex.def)             Requested size: 168.0pt x 160.0041pt.
- [13 <./class_registry_item__coll__graph.pdf>] [14]
-Underfull \hbox (badness 10000) detected at line 105
+ [14 <./class_registry_item__coll__graph.pdf>]
+Overfull \hbox (27.92316pt too wide) in paragraph at lines 52--53
+|  \T1/pcr/bc/n/8 void($\OMS/cmsy/m/n/8 ^^C$\T1/pcr/bc/n/8 )([][]Switching[]Bar
+[][] $\OMS/cmsy/m/n/8 ^^C$\T1/pcr/bc/n/8 , Q[]Widget $\OMS/cmsy/m/n/8 ^^C$\T1/p
+cr/bc/n/8 ) \T1/pcr/m/sl/8 populate[]Bar = [][]([][]Switching[]Bar[][] $\OMS/cm
+sy/m/n/8 ^^C$\T1/pcr/m/sl/8 , QWidget $\OMS/cmsy/m/n/8 ^^C$\T1/pcr/m/sl/8 ) -$\
+OML/cmm/m/it/8 >$\T1/pcr/m/sl/8 void {}
+ []
+
+[15]
+Underfull \hbox (badness 10000) detected at line 111
 [][][]
  []
 
 ) (./class_switching_bar.tex
-<class_switching_bar__inherit__graph.pdf, id=577, 158.5925pt x 243.91125pt>
+<class_switching_bar__inherit__graph.pdf, id=634, 158.5925pt x 243.91125pt>
 File: class_switching_bar__inherit__graph.pdf Graphic file (type pdf)
 
 <use class_switching_bar__inherit__graph.pdf>
 Package pdftex.def Info: class_switching_bar__inherit__graph.pdf used on input 
 line 19.
 (pdftex.def)             Requested size: 158.0pt x 243.02113pt.
- [15]
-<class_switching_bar__coll__graph.pdf, id=584, 158.5925pt x 243.91125pt>
+ [16]
+<class_switching_bar__coll__graph.pdf, id=640, 158.5925pt x 243.91125pt>
 File: class_switching_bar__coll__graph.pdf Graphic file (type pdf)
 
 <use class_switching_bar__coll__graph.pdf>
 Package pdftex.def Info: class_switching_bar__coll__graph.pdf used on input lin
 e 29.
 (pdftex.def)             Requested size: 158.0pt x 243.02113pt.
- [16 <./class_switching_bar__inherit__graph.pdf> <./class_switching_bar__coll__
+ [17 <./class_switching_bar__inherit__graph.pdf> <./class_switching_bar__coll__
 graph.pdf
 
 pdfTeX warning: pdflatex (file ./class_switching_bar__coll__graph.pdf): PDF inc
 lusion: multiple pdfs with page group included in a single page
->]) (./class_switching_widget.tex
-<class_switching_widget__inherit__graph.pdf, id=611, 185.69376pt x 232.87pt>
+>]) (./class_switching_widget.tex [18]
+<class_switching_widget__inherit__graph.pdf, id=674, 188.705pt x 243.91125pt>
 File: class_switching_widget__inherit__graph.pdf Graphic file (type pdf)
 
 <use class_switching_widget__inherit__graph.pdf>
 Package pdftex.def Info: class_switching_widget__inherit__graph.pdf used on inp
 ut line 19.
-(pdftex.def)             Requested size: 185.0pt x 232.00595pt.
- [17]
-<class_switching_widget__coll__graph.pdf, id=618, 185.69376pt x 232.87pt>
+(pdftex.def)             Requested size: 188.0pt x 242.9988pt.
+
+<class_switching_widget__coll__graph.pdf, id=675, 188.705pt x 243.91125pt>
 File: class_switching_widget__coll__graph.pdf Graphic file (type pdf)
 
 <use class_switching_widget__coll__graph.pdf>
 Package pdftex.def Info: class_switching_widget__coll__graph.pdf used on input 
 line 29.
-(pdftex.def)             Requested size: 185.0pt x 232.00595pt.
- [18 <./class_switching_widget__inherit__graph.pdf> <./class_switching_widget__
+(pdftex.def)             Requested size: 188.0pt x 242.9988pt.
+ [19 <./class_switching_widget__inherit__graph.pdf> <./class_switching_widget__
 coll__graph.pdf
 
 pdfTeX warning: pdflatex (file ./class_switching_widget__coll__graph.pdf): PDF 
 inclusion: multiple pdfs with page group included in a single page
->]) (./class_widget_registry.tex
-<class_widget_registry__inherit__graph.pdf, id=649, 164.615pt x 365.365pt>
+>] [20]) (./class_widget_registry.tex
+<class_widget_registry__inherit__graph.pdf, id=730, 164.615pt x 365.365pt>
 File: class_widget_registry__inherit__graph.pdf Graphic file (type pdf)
 
 <use class_widget_registry__inherit__graph.pdf>
@@ -1399,88 +1381,106 @@ Package pdftex.def Info: class_widget_registry__inherit__graph.pdf used on inpu
 t line 19.
 (pdftex.def)             Requested size: 164.0pt x 364.00937pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [19]
-<class_widget_registry__coll__graph.pdf, id=656, 164.615pt x 365.365pt>
+<class_widget_registry__coll__graph.pdf, id=731, 164.615pt x 365.365pt>
 File: class_widget_registry__coll__graph.pdf Graphic file (type pdf)
 
 <use class_widget_registry__coll__graph.pdf>
 Package pdftex.def Info: class_widget_registry__coll__graph.pdf used on input l
 ine 29.
 (pdftex.def)             Requested size: 164.0pt x 364.00937pt.
+ [21 <./class_widget_registry__inherit__graph.pdf>] [22 <./class_widget_registr
+y__coll__graph.pdf>]
+Overfull \hbox (27.92316pt too wide) in paragraph at lines 100--101
+|  \T1/pcr/bc/n/8 void($\OMS/cmsy/m/n/8 ^^C$\T1/pcr/bc/n/8 )([][]Switching[]Bar
+[][] $\OMS/cmsy/m/n/8 ^^C$\T1/pcr/bc/n/8 , Q[]Widget $\OMS/cmsy/m/n/8 ^^C$\T1/p
+cr/bc/n/8 ) \T1/pcr/m/sl/8 populate[]Bar = [][]([][]Switching[]Bar[][] $\OMS/cm
+sy/m/n/8 ^^C$\T1/pcr/m/sl/8 , QWidget $\OMS/cmsy/m/n/8 ^^C$\T1/pcr/m/sl/8 ) -$\
+OML/cmm/m/it/8 >$\T1/pcr/m/sl/8 void {}
+ []
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [20 <./class_widget_registry__inherit__graph.pdf>] [21 <./class_widget_registr
-y__coll__graph.pdf>] [22]
-Underfull \hbox (badness 10000) detected at line 130
+Underfull \vbox (badness 2073) has occurred while \output is active []
+
+ [23]
+Underfull \hbox (badness 10000) detected at line 125
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 144
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 163
-[][][]
- []
-
-[23]
-Underfull \hbox (badness 10000) detected at line 226
+Underfull \hbox (badness 10000) detected at line 138
 [][][]
  []
 
 [24]
-Underfull \vbox (badness 2173) has occurred while \output is active []
-
- [25]
-Underfull \hbox (badness 10000) detected at line 315
+Underfull \hbox (badness 10000) detected at line 156
 [][][]
  []
 
-) [26] (./refman.ind [27
 
+Overfull \hbox (27.92316pt too wide) in paragraph at lines 180--181
+|  \T1/pcr/bc/n/8 void($\OMS/cmsy/m/n/8 ^^C$\T1/pcr/bc/n/8 )([][]Switching[]Bar
+[][] $\OMS/cmsy/m/n/8 ^^C$\T1/pcr/bc/n/8 , Q[]Widget $\OMS/cmsy/m/n/8 ^^C$\T1/p
+cr/bc/n/8 ) \T1/pcr/m/sl/8 populate[]Bar = [][]([][]Switching[]Bar[][] $\OMS/cm
+sy/m/n/8 ^^C$\T1/pcr/m/sl/8 , QWidget $\OMS/cmsy/m/n/8 ^^C$\T1/pcr/m/sl/8 ) -$\
+OML/cmm/m/it/8 >$\T1/pcr/m/sl/8 void {}
+ []
+
+[25]
+Underfull \hbox (badness 10000) detected at line 212
+[][][]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [26]
+Underfull \hbox (badness 10000) detected at line 295
+[][][]
+ []
+
+) [27] [28
+
+] (./refman.ind [29
 
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 162.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 162.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 163.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 163.
  (./refman.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 162.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 162.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 163.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 163.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 8D3E16DE4DA1616B2B266F6E62BC177C;16038.
+(rerunfilecheck)             Checksum: 0DD91F47E14E4618EAA432743B7C1A37;11937.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 162.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 163.
  ) 
 Here is how much of TeX's memory you used:
- 15107 strings out of 494911
- 217467 string characters out of 6179735
- 312320 words of memory out of 5000000
- 17973 multiletter control sequences out of 15000+600000
- 63578 words of font info for 68 fonts, out of 8000000 for 9000
- 24 hyphenation exceptions out of 8191
- 53i,16n,92p,1987b,632s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 15199 strings out of 494945
+ 218876 string characters out of 6181031
+ 305932 words of memory out of 5000000
+ 18039 multiletter control sequences out of 15000+600000
+ 67655 words of font info for 86 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 53i,16n,92p,1412b,630s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
-rw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/u
-hvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8ac.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (31 pages, 202560 bytes).
+fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucr
+r8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/urw/helvetic/uhvro8a.pfb>
+Output written on refman.pdf (33 pages, 222298 bytes).
 PDF statistics:
- 994 PDF objects out of 1000 (max. 8388607)
- 886 compressed objects within 9 object streams
- 166 named destinations out of 1000 (max. 500000)
- 494 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1090 PDF objects out of 1200 (max. 8388607)
+ 961 compressed objects within 10 object streams
+ 178 named destinations out of 1000 (max. 500000)
+ 526 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -4,7 +4,9 @@ var class_blend_splitter =
     [ "addSplitter", "class_blend_splitter.html#abcee5dda4bde4fdb6fda1f3c1f5b9c9a", null ],
     [ "addWidget", "class_blend_splitter.html#a9bb010ba4ee756ca4d718acadaffb7cc", null ],
     [ "addWidget", "class_blend_splitter.html#a305c3aee946a9fb9dcd95fdc72faff8b", null ],
+    [ "addWidget", "class_blend_splitter.html#a9ea589322d7bbb3e5530ad79df18a525", null ],
     [ "insertSplitter", "class_blend_splitter.html#a5e1adaac62d47cc3815835e713373e2b", null ],
     [ "insertWidget", "class_blend_splitter.html#ac26cdfb64fb785a1983a5b7527ce5189", null ],
-    [ "insertWidget", "class_blend_splitter.html#a9c15101a7a0acb30f6cd46ff5259af79", null ]
+    [ "insertWidget", "class_blend_splitter.html#a9c15101a7a0acb30f6cd46ff5259af79", null ],
+    [ "insertWidget", "class_blend_splitter.html#a9be82fb24eb94d1b9885cca3488e47e9", null ]
 ];

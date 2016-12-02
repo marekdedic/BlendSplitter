@@ -9,34 +9,34 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 62)">
 <title>Graphical Class Hierarchy</title>
 <polygon fill="white" stroke="none" points="-4,4 -4,-62 185,-62 185,4 -4,4"/>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node3 -->
+<g id="node1" class="node"><title>Node3</title>
 <polygon fill="white" stroke="#bfbfbf" points="0,-19.5 0,-38.5 55,-38.5 55,-19.5 0,-19.5"/>
 <text text-anchor="middle" x="27.5" y="-26.5" font-family="Helvetica,sans-Serif" font-size="10.00">QSplitter</text>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
+<!-- Node0 -->
+<g id="node2" class="node"><title>Node0</title>
 <g id="a_node2"><a xlink:href="class_blend_splitter.html" target="_top" xlink:title="A user&#45;defined Splitter. ">
 <polygon fill="white" stroke="black" points="100,-38.5 100,-57.5 172,-57.5 172,-38.5 100,-38.5"/>
 <text text-anchor="middle" x="136" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">BlendSplitter</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge"><title>Node1&#45;&gt;Node2</title>
+<!-- Node3&#45;&gt;Node0 -->
+<g id="edge1" class="edge"><title>Node3&#45;&gt;Node0</title>
 <path fill="none" stroke="midnightblue" d="M65.075,-35.5251C76.349,-37.5365 88.7322,-39.7457 99.9043,-41.7388"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="65.559,-32.0563 55.0997,-33.7455 64.3296,-38.9475 65.559,-32.0563"/>
 </g>
-<!-- Node3 -->
-<g id="node3" class="node"><title>Node3</title>
+<!-- Node5 -->
+<g id="node3" class="node"><title>Node5</title>
 <g id="a_node3"><a xlink:href="class_switching_widget.html" target="_top" xlink:title="A widget whose actual content can be selected from a combo box. ">
 <polygon fill="white" stroke="black" points="91,-0.5 91,-19.5 181,-19.5 181,-0.5 91,-0.5"/>
 <text text-anchor="middle" x="136" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">SwitchingWidget</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node3 -->
-<g id="edge2" class="edge"><title>Node1&#45;&gt;Node3</title>
+<!-- Node3&#45;&gt;Node5 -->
+<g id="edge2" class="edge"><title>Node3&#45;&gt;Node5</title>
 <path fill="none" stroke="midnightblue" d="M65.2131,-22.4502C73.5027,-20.9713 82.3859,-19.3866 90.9425,-17.86"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="64.3296,-19.0525 55.0997,-24.2545 65.559,-25.9437 64.3296,-19.0525"/>
 </g>
