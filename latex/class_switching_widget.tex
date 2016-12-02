@@ -16,7 +16,7 @@ Inheritance diagram for Switching\+Widget\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=185pt]{class_switching_widget__inherit__graph}
+\includegraphics[width=188pt]{class_switching_widget__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -26,14 +26,16 @@ Collaboration diagram for Switching\+Widget\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=185pt]{class_switching_widget__coll__graph}
+\includegraphics[width=188pt]{class_switching_widget__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_switching_widget_a27023a20084bccbe3095c8a4bbed8115}{Switching\+Widget} (Q\+Widget $\ast$parent=nullptr)
-\begin{DoxyCompactList}\small\item\em A default constructor similar to that of Q\+Widget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\hyperlink{class_switching_widget_abbc74406fa04004867e2834ceb43e66e}{Switching\+Widget} (\hyperlink{class_registry_item}{Registry\+Item} $\ast$item=nullptr, Q\+Widget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em A default constructor similar to that of Q\+Widget. \end{DoxyCompactList}\item 
+void \hyperlink{class_switching_widget_ad0b143c60e046819c3ad82c5279584ba}{set\+Current\+Widget} (\hyperlink{class_registry_item}{Registry\+Item} $\ast$item=nullptr)
+\begin{DoxyCompactList}\small\item\em Set the current Widget displayed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -43,25 +45,44 @@ This widget displays a Widget with a \hyperlink{class_switching_bar}{Switching\+
 
 Note that constructing an object of this class when \hyperlink{class_widget_registry}{Widget\+Registry} is empty will cause a default \hyperlink{class_registry_item}{Registry\+Item} to be added to it. The height of the \hyperlink{class_switching_bar}{Switching\+Bar} can be modified by changing \hyperlink{class_blend_splitter_a478fa3cfcf59f76edf8f021bee297e0d}{Blend\+Splitter\+::switching\+Bar\+Height}. 
 
-Definition at line 19 of file Switching\+Widget.\+hpp.
+Definition at line 20 of file Switching\+Widget.\+hpp.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_switching_widget_abbc74406fa04004867e2834ceb43e66e}{}\label{class_switching_widget_abbc74406fa04004867e2834ceb43e66e} 
 \index{Switching\+Widget@{Switching\+Widget}!Switching\+Widget@{Switching\+Widget}}
 \index{Switching\+Widget@{Switching\+Widget}!Switching\+Widget@{Switching\+Widget}}
-\subsubsection[{\texorpdfstring{Switching\+Widget(\+Q\+Widget $\ast$parent=nullptr)}{SwitchingWidget(QWidget *parent=nullptr)}}]{\setlength{\rightskip}{0pt plus 5cm}Switching\+Widget\+::\+Switching\+Widget (
-\begin{DoxyParamCaption}
-\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr}}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{class_switching_widget_a27023a20084bccbe3095c8a4bbed8115}{}\label{class_switching_widget_a27023a20084bccbe3095c8a4bbed8115}
+\subsubsection{\texorpdfstring{Switching\+Widget()}{SwitchingWidget()}}
+{\footnotesize\ttfamily Switching\+Widget\+::\+Switching\+Widget (\begin{DoxyParamCaption}\item[{\hyperlink{class_registry_item}{Registry\+Item} $\ast$}]{item = {\ttfamily nullptr},  }\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
 
 
 A default constructor similar to that of Q\+Widget. 
 
 Creates a \hyperlink{class_switching_widget}{Switching\+Widget} containg the default widget specified in \hyperlink{class_widget_registry}{Widget\+Registry} 
 \begin{DoxyParams}{Parameters}
+{\em item} & A \hyperlink{class_registry_item}{Registry\+Item} to display in the widget. If nullptr, then \hyperlink{class_widget_registry_a0841639b77ada4dc770886fea9fef193}{Widget\+Registry\+::get\+Default()} is used. \\
+\hline
 {\em parent} & A parent widget \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_switching_widget_ad0b143c60e046819c3ad82c5279584ba}{}\label{class_switching_widget_ad0b143c60e046819c3ad82c5279584ba} 
+\index{Switching\+Widget@{Switching\+Widget}!set\+Current\+Widget@{set\+Current\+Widget}}
+\index{set\+Current\+Widget@{set\+Current\+Widget}!Switching\+Widget@{Switching\+Widget}}
+\subsubsection{\texorpdfstring{set\+Current\+Widget()}{setCurrentWidget()}}
+{\footnotesize\ttfamily void Switching\+Widget\+::set\+Current\+Widget (\begin{DoxyParamCaption}\item[{\hyperlink{class_registry_item}{Registry\+Item} $\ast$}]{item = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Set the current Widget displayed. 
+
+Sets the current widget to be the item 
+\begin{DoxyParams}{Parameters}
+{\em item} & A \hyperlink{class_registry_item}{Registry\+Item} to display in the widget. If nullptr, then \hyperlink{class_widget_registry_a0841639b77ada4dc770886fea9fef193}{Widget\+Registry\+::get\+Default()} is used. \\
 \hline
 \end{DoxyParams}
 

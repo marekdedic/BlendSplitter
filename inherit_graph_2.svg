@@ -14,16 +14,16 @@
 <polygon fill="white" stroke="#bfbfbf" points="0,-0.5 0,-19.5 55,-19.5 55,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="27.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">QWidget</text>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
+<!-- Node0 -->
+<g id="node2" class="node"><title>Node0</title>
 <g id="a_node2"><a xlink:href="class_switching_bar.html" target="_top" xlink:title="A menu bar which is always found on the bottom of SwitchingWidget. ">
 <polygon fill="white" stroke="black" points="91,-0.5 91,-19.5 165,-19.5 165,-0.5 91,-0.5"/>
 <text text-anchor="middle" x="128" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">SwitchingBar</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge"><title>Node1&#45;&gt;Node2</title>
+<!-- Node1&#45;&gt;Node0 -->
+<g id="edge1" class="edge"><title>Node1&#45;&gt;Node0</title>
 <path fill="none" stroke="midnightblue" d="M65.3228,-10C73.6235,-10 82.4281,-10 90.7069,-10"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="65.1556,-6.5001 55.1555,-10 65.1555,-13.5001 65.1556,-6.5001"/>
 </g>

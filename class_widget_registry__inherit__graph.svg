@@ -9,8 +9,8 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 288)">
 <title>WidgetRegistry</title>
 <polygon fill="white" stroke="none" points="-4,4 -4,-288 88,-288 88,4 -4,4"/>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node0 -->
+<g id="node1" class="node"><title>Node0</title>
 <polygon fill="#bfbfbf" stroke="black" points="-7.10543e-15,-0.5 -7.10543e-15,-189.5 84,-189.5 84,-0.5 -7.10543e-15,-0.5"/>
 <text text-anchor="middle" x="42" y="-177.5" font-family="Helvetica,sans-Serif" font-size="10.00">WidgetRegistry</text>
 <polyline fill="none" stroke="black" points="-7.10543e-15,-170.5 84,-170.5 "/>
@@ -30,8 +30,8 @@
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
 <text text-anchor="start" x="8" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getRegistry()</text>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
+<!-- Node1 -->
+<g id="node2" class="node"><title>Node1</title>
 <polygon fill="white" stroke="#bfbfbf" points="15.5,-226.5 15.5,-283.5 68.5,-283.5 68.5,-226.5 15.5,-226.5"/>
 <text text-anchor="middle" x="42" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00">QObject</text>
 <polyline fill="none" stroke="#bfbfbf" points="15.5,-264.5 68.5,-264.5 "/>
@@ -39,8 +39,8 @@
 <polyline fill="none" stroke="#bfbfbf" points="15.5,-245.5 68.5,-245.5 "/>
 <text text-anchor="middle" x="42" y="-233.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node1&#45;&gt;Node0 -->
+<g id="edge1" class="edge"><title>Node1&#45;&gt;Node0</title>
 <path fill="none" stroke="midnightblue" d="M42,-216.215C42,-208.012 42,-198.986 42,-189.678"/>
 <polygon fill="none" stroke="midnightblue" points="38.5001,-216.478 42,-226.479 45.5001,-216.479 38.5001,-216.478"/>
 </g>
