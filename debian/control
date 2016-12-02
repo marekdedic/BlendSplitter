@@ -2,8 +2,8 @@ Source: libblendsplitter3
 Section: libs
 Priority: optional
 Maintainer: GenaBitu <genabitu@gmail.com>
-Build-Depends: debhelper (>=9), qt5-qmake, qtbase5-dev, qtchooser, doxygen, doxygen-latex, graphviz
-Standards-Version: 3.9.7
+Build-Depends: debhelper (>=9), cmake, qtbase5-dev, doxygen, doxygen-latex, graphviz
+Standards-Version: 3.9.8
 Vcs-Git: https://github.com/GenaBitu/BlendSplitter.git
 Vcs-Browser: https://github.com/GenaBitu/BlendSplitter
 Homepage: https://github.com/GenaBitu/BlendSplitter
