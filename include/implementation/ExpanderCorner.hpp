@@ -40,7 +40,8 @@ private:
     bool isInContinuationOfSplitter(BlendSplitter *parentSplitter, int x, int y);
     bool isOnTrailingHandler(BlendSplitter *parentSplitter);
 
-    Overlay* overlay;
+    Overlay* internalOverlay;
+    Overlay* externalOverlay;
     QWidget* externalJoinWidget;
     Qt::ArrowType joinarrow;
     int pickCoordinate(int x,int y,Qt::Orientation orient);

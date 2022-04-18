@@ -9,8 +9,8 @@
 
 ExpanderCorner::ExpanderCorner(WidgetDecorator* parent,Qt::Corner location) : Expander{parent} ,
     corner{location},unitX{1},unitY{1},hotspotX{0},hotspotY{0},dragaction{undecidedDrag},
-    dragorientation{Qt::Horizontal},overlay{nullptr},externalJoinWidget{nullptr},
-    joinarrow{Qt::NoArrow}
+    dragorientation{Qt::Horizontal},internalOverlay{nullptr},externalOverlay{nullptr},
+    externalJoinWidget{nullptr},joinarrow{Qt::NoArrow}
 {
     //now do some masking and pixmap rotating depending on location
     //also set out unit steps
@@ -161,11 +161,10 @@ void ExpanderCorner::performInnerSplit(WidgetDecorator* parentDecorator, BlendSp
 
 void ExpanderCorner::setupJoiners(WidgetDecorator *parentDecorator, BlendSplitter *parentSplitter, int x, int y, Qt::Orientation /*splitorientation*/)
 {
-    if(overlay == nullptr
-       and isInContinuationOfSplitter(parentSplitter,pos().x()+x,pos().y()+y)
-
-            )
-    {
+    Q_ASSERT(dragaction ==undecidedDrag);
+    Q_ASSERT(externalOverlay == nullptr);
+    Q_ASSERT(internalOverlay == nullptr);
+    if(isInContinuationOfSplitter(parentSplitter,pos().x()+x,pos().y()+y) ){
         QWidget* wdgt = nullptr;
         if( isOnTrailingHandler(parentSplitter) and
                 parentSplitter->indexOf(parentDecorator) + 1 < parentSplitter->count()) {
@@ -174,7 +173,7 @@ void ExpanderCorner::setupJoiners(WidgetDecorator *parentDecorator, BlendSplitte
             //do not join if the target widget is also splitted
             if (!wdgt->inherits("SplitterDecorator")){
                 joinarrow=parentSplitter->orientation()==Qt::Horizontal?Qt::RightArrow:Qt::DownArrow;
-                overlay = new Overlay{wdgt,joinarrow};
+                externalOverlay = new Overlay{wdgt,joinarrow};
             }
         } else if (!isOnTrailingHandler(parentSplitter) and
                    parentSplitter->indexOf(parentDecorator) > 0) {
@@ -183,14 +182,16 @@ void ExpanderCorner::setupJoiners(WidgetDecorator *parentDecorator, BlendSplitte
             //do not join if the target widget is also splitted
             if (!wdgt->inherits("SplitterDecorator")){
                 joinarrow=parentSplitter->orientation()==Qt::Horizontal?Qt::LeftArrow:Qt::UpArrow;
-                overlay = new Overlay{wdgt,joinarrow};
+                externalOverlay = new Overlay{wdgt,joinarrow};
             }
         };
 
         //now show overlay if we started a valid joindrag
-        if (overlay){
-            overlay->show();
+        if (externalOverlay){
+            externalOverlay->show();
             externalJoinWidget=wdgt;
+            internalOverlay=new Overlay{parentDecorator,Overlay::invertArrow(joinarrow)};
+            internalOverlay->hide();
             dragaction=joinDrag;
         }
     }
@@ -212,37 +213,26 @@ void ExpanderCorner::followDragJoiners(WidgetDecorator *parentDecorator, BlendSp
 
     if (isInContinuationOfSplitter(parentSplitter,x,y)){
         // already an overlay and we are still dragging 'inside' of the splitter, so
-        overlay->show();
+        externalOverlay->show();
         // maybe we need to change direction of the join ?
-        qDebug() << "overlay->parentWidget()!=externalJoinWidget" << overlay->parentWidget() << "  " <<externalJoinWidget;
+        //qDebug() << "overlay->parentWidget()!=externalJoinWidget" << externalOverlay->parentWidget() << "  " <<externalJoinWidget;
 
         Qt::Orientation o=parentSplitter->orientation();
-//        qDebug() << "Qt::Orientation o=parentSplitter->orientation()" << o;
-//        qDebug() << "isOnTrailingHandler(parentSplitter)" << isOnTrailingHandler(parentSplitter);
-//        qDebug() << "pickCoordinate(x,y,o)" << pickCoordinate(x,y,o);
-//        qDebug() << "pickSize(parentDecorator->size(),o)" << pickSize(parentDecorator->size(),o);
-//        qDebug() << "joinarrow" << joinarrow;
         if ((isOnTrailingHandler(parentSplitter) and pickCoordinate(x,y,o)>pickSize(parentDecorator->size(),o))
                 or (!isOnTrailingHandler(parentSplitter) and pickCoordinate(x,y,o)<0)
                 ) {
-            if (overlay->parentWidget()!=externalJoinWidget){
-                overlay->setParent(externalJoinWidget);
-                overlay->setArrowshape(joinarrow);
-                overlay->reposition();
-            }
-
-        } else if ((isOnTrailingHandler(parentSplitter) and pickCoordinate(x,y,o)<pickSize(parentDecorator->size(),o))
-                   or (!isOnTrailingHandler(parentSplitter) and pickCoordinate(x,y,o)>0)
+            externalOverlay->show();
+            internalOverlay->hide();
+        } else if ((isOnTrailingHandler(parentSplitter) and pickCoordinate(x,y,o)<=pickSize(parentDecorator->size(),o))
+                   or (!isOnTrailingHandler(parentSplitter) and pickCoordinate(x,y,o)>=0)
                    ) {
-            if (overlay->parentWidget()==externalJoinWidget){
-                overlay->setParent(parentDecorator);
-                overlay->setArrowshape(Overlay::invertArrow(joinarrow));
-                overlay->reposition();
-            }
+            externalOverlay->hide();
+            internalOverlay->show();
         }
     } else {
-        // hide overlay since we dragged 'to the side' of the splitter
-        overlay->hide();
+        // hide all overlay since we dragged 'to the side' of the splitter
+        externalOverlay->hide();
+        internalOverlay->hide();
     }
 }
 
@@ -353,10 +343,31 @@ void ExpanderCorner::mousePressEvent(QMouseEvent *event)
 
 void ExpanderCorner::mouseReleaseEvent(QMouseEvent *event)
 {
-    if(event->button() != Qt::LeftButton or overlay == nullptr){
+    if(event->button() != Qt::LeftButton or dragaction != joinDrag){
         return;
     };
     //correct button and we have an overlay, so continue...
+    if(externalOverlay->isVisible() && internalOverlay->isVisible())
+    {
+        qCritical("A BlendSplitter library error occurred. Error code: 8");
+        return;
+    }
+
+
+    QWidget* widgetToRemove=nullptr; //improved readability later on
+    if (externalOverlay->isHidden()){
+        externalOverlay->deleteLater();
+    } else {
+        widgetToRemove=externalOverlay->parentWidget();
+    };
+
+    if (internalOverlay->isHidden()){
+        internalOverlay->deleteLater();
+    } else {
+        widgetToRemove=internalOverlay->parentWidget();
+    };
+
+
 
     //first get our decorator and the parent blendSplitter
     WidgetDecorator* parentDecorator{qobject_cast<WidgetDecorator*>(parentWidget())};
@@ -365,7 +376,7 @@ void ExpanderCorner::mouseReleaseEvent(QMouseEvent *event)
         qCritical("A BlendSplitter library error occurred. Error code: 1");
         return;
     }
-    BlendSplitter* parentSplitter{qobject_cast<BlendSplitter*>(overlay->parentWidget()->parentWidget())};
+    BlendSplitter* parentSplitter{qobject_cast<BlendSplitter*>(externalOverlay->parentWidget()->parentWidget())};
     if(parentSplitter == 0)
     {
         qCritical("A BlendSplitter library error occurred. Error code: 2");
@@ -373,22 +384,15 @@ void ExpanderCorner::mouseReleaseEvent(QMouseEvent *event)
     }
 
 
-    //if joinDrag....
-    //now delete the item with the overlay from the splitter if overlay is visible!!
-    if (overlay->isHidden()){
-        overlay->deleteLater();
-        overlay = nullptr;
-        externalJoinWidget = nullptr;
-        return;
-    };
+    //now delete the item with the overlay from the splitter
 
     QList<int> sizes{parentSplitter->sizes()};
     int parentIndex{parentSplitter->indexOf(parentDecorator)};
-    int overlayIndex{parentSplitter->indexOf(overlay->parentWidget())};
+    int overlayIndex{parentSplitter->indexOf(widgetToRemove)};
     sizes[parentIndex] += sizes[overlayIndex] + 1;
     sizes.removeAt(overlayIndex);
     delete parentSplitter->widget(overlayIndex);
-    overlay = nullptr;
+    externalOverlay = nullptr;
     externalJoinWidget = nullptr;
 
     // if we now have a blendSplitter with a single item, which is inside
