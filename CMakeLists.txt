@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.6)
 project(BlendSplitter)
 
 set(BLENDSPLITTER_VERSION_MAJOR 3)
-set(BLENDSPLITTER_VERSION_MINOR 1)
+set(BLENDSPLITTER_VERSION_MINOR 2)
 set(BLENDSPLITTER_VERSION_PATCH 0)
 
 add_definitions(-DBLENDSPLITTER_LIBRARY)
@@ -23,6 +23,7 @@ set(HEADER_FILES
     include/BS/SwitchingWidget.hpp
     include/BS/WidgetRegistry.hpp
     include/implementation/Expander.hpp
+    include/implementation/ExpanderCorner.hpp
     include/implementation/ExpanderBottom.hpp
     include/implementation/ExpanderTop.hpp
     include/implementation/Global.hpp
@@ -35,6 +36,7 @@ set(HEADER_FILES
 
 set(SOURCE_FILES
     src/BlendSplitter/Expander.cpp
+    src/BlendSplitter/ExpanderCorner.cpp
     src/BlendSplitter/ExpanderBottom.cpp
     src/BlendSplitter/ExpanderTop.cpp
     src/BlendSplitter/Overlay.cpp
