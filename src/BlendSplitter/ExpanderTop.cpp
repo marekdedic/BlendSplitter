@@ -77,7 +77,7 @@ void ExpanderTop::mouseMoveEvent(QMouseEvent *event)
         {
             if(overlay == nullptr and parentSplitter->indexOf(parentDecorator) + 1 < parentSplitter->count())
             {
-                overlay = new Overlay{parentSplitter->widget(parentSplitter->indexOf(parentDecorator) + 1)};
+                overlay = new Overlay{parentSplitter->widget(parentSplitter->indexOf(parentDecorator) + 1),Qt::RightArrow};
                 overlay->show();
             }
         }
@@ -85,7 +85,7 @@ void ExpanderTop::mouseMoveEvent(QMouseEvent *event)
         {
             if(overlay == nullptr and parentSplitter->indexOf(parentDecorator) > 0)
             {
-                overlay = new Overlay{parentSplitter->widget(parentSplitter->indexOf(parentDecorator) - 1)};
+                overlay = new Overlay{parentSplitter->widget(parentSplitter->indexOf(parentDecorator) - 1),Qt::UpArrow};
                 overlay->show();
             }
         }

@@ -36,7 +36,10 @@ void ExpanderBottom::mouseMoveEvent(QMouseEvent *event)
             qCritical("A BlendSplitter library error occurred. Error code: 7");
             return;
         }
-        if(parentSplitter->orientation() == Qt::Horizontal and event->x() > BlendSplitter::expanderSize and event->y() < BlendSplitter::expanderSize and event->x() > (BlendSplitter::expanderSize - event->y()))
+        if(parentSplitter->orientation() == Qt::Horizontal and
+                event->x() > BlendSplitter::expanderSize and
+                event->y() < BlendSplitter::expanderSize and
+                event->x() > (BlendSplitter::expanderSize - event->y()))
         {
             QList<int> sizes{parentSplitter->sizes()};
             int index{parentSplitter->indexOf(parentDecorator)};
@@ -80,7 +83,7 @@ void ExpanderBottom::mouseMoveEvent(QMouseEvent *event)
         {
             if(overlay == nullptr and parentSplitter->indexOf(parentDecorator) > 0)
             {
-                overlay = new Overlay{parentSplitter->widget(parentSplitter->indexOf(parentDecorator) - 1)};
+                overlay = new Overlay{parentSplitter->widget(parentSplitter->indexOf(parentDecorator) - 1),Qt::LeftArrow};
                 overlay->show();
             }
         }
@@ -88,7 +91,7 @@ void ExpanderBottom::mouseMoveEvent(QMouseEvent *event)
         {
             if(overlay == nullptr and parentSplitter->indexOf(parentDecorator) + 1 < parentSplitter->count())
             {
-                overlay = new Overlay{parentSplitter->widget(parentSplitter->indexOf(parentDecorator) + 1)};
+                overlay = new Overlay{parentSplitter->widget(parentSplitter->indexOf(parentDecorator) + 1),Qt::DownArrow};
                 overlay->show();
             }
         }
