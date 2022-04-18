@@ -1,6 +1,7 @@
 #include "include/implementation/SplitterHandle.hpp"
 #include <QAction>
 #include <QMenu>
+#include <QDebug>
 
 SplitterHandle::SplitterHandle(Qt::Orientation orientation, QSplitter* parent) : QSplitterHandle(orientation, parent)
 {
@@ -41,4 +42,10 @@ void SplitterHandle::mouseReleaseEvent(QMouseEvent* event)
 {
     QSplitterHandle::mouseReleaseEvent(event);
     releaseMouse();
+}
+
+bool SplitterHandle::event(QEvent *event)
+{
+//    qDebug() << " SplitterHandle::event " << event ;
+    return QSplitterHandle::event(event);
 }

@@ -14,6 +14,7 @@
 #include "BS/WidgetRegistry.hpp"
 
 class Expander;
+class ExpanderCorner;
 class ExpanderBottom;
 class ExpanderTop;
 class WidgetDecorator;
@@ -95,6 +96,7 @@ private:
     friend Expander;
     friend ExpanderBottom;
     friend ExpanderTop;
+    friend ExpanderCorner;
     QWidget* (*defaultWidget) ();
     virtual QSplitterHandle* createHandle() override;
     void addDecoratedWidget(WidgetDecorator* widget);

@@ -10,7 +10,6 @@ Expander::Expander(WidgetDecorator* parent) : QLabel(parent), pixmap{new QPixmap
     setPixmap(*pixmap);
     resize(BlendSplitter::expanderSize, BlendSplitter::expanderSize);
     setCursor(Qt::SizeAllCursor);
-    reposition();
 }
 
 void Expander::reposition()
@@ -78,6 +77,7 @@ Expander::~Expander()
 {
     delete pixmap;
 }
+
 
 //void Expander::enterEvent(QEvent *event)
 //{

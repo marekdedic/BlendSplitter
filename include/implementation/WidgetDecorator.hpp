@@ -5,6 +5,7 @@
 class BlendSplitter;
 class ExpanderBottom;
 class ExpanderTop;
+class ExpanderCorner;
 
 class WidgetDecorator final : public QWidget
 {
@@ -18,6 +19,24 @@ private:
     QWidget* widget;
     ExpanderBottom* expanderBottom;
     ExpanderTop* expanderTop;
+    ExpanderCorner* expanderCorner1;
+    ExpanderCorner* expanderCorner2;
+
+    enum class dropregions {
+        top=0,
+        left=1,
+        right=2,
+        bottom=3,
+        center=4
+    };
+
+    dropregions dropzone;
+
+    void determineDropZone(QPoint pos);
+
 protected slots:
     virtual void resizeEvent(QResizeEvent*) override;
+    virtual void mouseMoveEvent(QMouseEvent* event) override;
+    virtual void paintEvent(QPaintEvent* event) override;
+
 };
