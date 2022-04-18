@@ -17,10 +17,12 @@ public:
     ~WidgetDecorator();
 private:
     QWidget* widget;
-    ExpanderBottom* expanderBottom;
-    ExpanderTop* expanderTop;
+//    ExpanderBottom* expanderBottom;
+//    ExpanderTop* expanderTop;
     ExpanderCorner* expanderCorner1;
     ExpanderCorner* expanderCorner2;
+    ExpanderCorner* expanderCorner3;
+    ExpanderCorner* expanderCorner4;
 
     enum class dropregions {
         top=0,
@@ -36,7 +38,7 @@ private:
 
 protected slots:
     virtual void resizeEvent(QResizeEvent*) override;
-    virtual void mouseMoveEvent(QMouseEvent* event) override;
-    virtual void paintEvent(QPaintEvent* event) override;
+//    virtual void mouseMoveEvent(QMouseEvent* event) override;
+//    virtual void paintEvent(QPaintEvent* event) override;
 
 };

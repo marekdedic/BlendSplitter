@@ -12,9 +12,15 @@ class Overlay final : public QLabel
 public:
     Overlay() = delete;
     explicit Overlay(QWidget* parent, Qt::ArrowType direction=Qt::NoArrow);
+
+    static Qt::ArrowType invertArrow(Qt::ArrowType arrow);
+
+    void setArrowshape(Qt::ArrowType arrow);
+    Qt::ArrowType arrowshape();
+    void reposition();
+
 private:
     void makeArrowshape();
-    void reposition();
 
     QPolygon arrow;
 

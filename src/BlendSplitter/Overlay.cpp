@@ -7,7 +7,41 @@ Overlay::Overlay(QWidget* parent, Qt::ArrowType direction) : QLabel(parent),arro
 {
     move(0, 0);
     reposition();
-//    setStyleSheet("background-color: rgba(0, 0, 0, 128);");
+    //    setStyleSheet("background-color: rgba(0, 0, 0, 128);");
+}
+
+void Overlay::setArrowshape(Qt::ArrowType arrow)
+{
+    arrowtype=arrow;
+    //makeArrowshape();
+    //update();
+}
+
+Qt::ArrowType Overlay::arrowshape()
+{
+    return arrowtype;
+}
+
+Qt::ArrowType Overlay::invertArrow(Qt::ArrowType arrow)
+{
+    switch (arrow) {
+    case Qt::UpArrow:
+        return Qt::DownArrow;
+        break;
+    case Qt::DownArrow:
+        return Qt::UpArrow;
+        break;
+    case Qt::LeftArrow:
+        return Qt::RightArrow;
+        break;
+    case Qt::RightArrow:
+        return Qt::LeftArrow;
+        break;
+    case Qt::NoArrow:
+    default:
+        return Qt::NoArrow;
+        break;
+    }
 }
 
 void Overlay::reposition()
@@ -15,6 +49,7 @@ void Overlay::reposition()
     resize(parentWidget()->width(), parentWidget()->height());
     raise();
     makeArrowshape();
+    update();
 }
 
 void Overlay::makeArrowshape()

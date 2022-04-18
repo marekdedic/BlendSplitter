@@ -3,12 +3,14 @@
 #include "include/BlendSplitter.hpp"
 #include "include/implementation/Overlay.hpp"
 #include "include/implementation/WidgetDecorator.hpp"
+#include "include/implementation/SplitterDecorator.hpp"
 
 #include <QDebug>
 
 ExpanderCorner::ExpanderCorner(WidgetDecorator* parent,Qt::Corner location) : Expander{parent} ,
     corner{location},unitX{1},unitY{1},hotspotX{0},hotspotY{0},dragaction{undecidedDrag},
-    dragorientation(Qt::Horizontal)
+    dragorientation{Qt::Horizontal},overlay{nullptr},externalJoinWidget{nullptr},
+    joinarrow{Qt::NoArrow}
 {
     //now do some masking and pixmap rotating depending on location
     //also set out unit steps
@@ -23,8 +25,8 @@ ExpanderCorner::ExpanderCorner(WidgetDecorator* parent,Qt::Corner location) : Ex
              << QPoint{BlendSplitter::expanderSize / 10, BlendSplitter::expanderSize}
              << QPoint{0, BlendSplitter::expanderSize}
              << QPoint{0, 0};
-//        unitX=1;
-//        unitY=1;
+// done by constructor unitX=1;
+// done by constructor unitY=1;
             };
         break;
     case Qt::TopRightCorner: {
@@ -37,7 +39,7 @@ ExpanderCorner::ExpanderCorner(WidgetDecorator* parent,Qt::Corner location) : Ex
              << QPoint{BlendSplitter::expanderSize, BlendSplitter::expanderSize}
              << QPoint{BlendSplitter::expanderSize, 0};
         unitX=-1;
-//        unitY=1;
+// done by constructor unitY=1;
         hotspotX=BlendSplitter::expanderSize-1;
         };
         break;
@@ -50,7 +52,7 @@ ExpanderCorner::ExpanderCorner(WidgetDecorator* parent,Qt::Corner location) : Ex
              << QPoint{BlendSplitter::expanderSize, BlendSplitter::expanderSize * 9 / 10}
              << QPoint{BlendSplitter::expanderSize, BlendSplitter::expanderSize}
              << QPoint{0, BlendSplitter::expanderSize};
-//        unitX=1;
+// done by constructor unitX=1;
         unitY=-1;
         hotspotY=BlendSplitter::expanderSize-1;
         };
@@ -76,6 +78,13 @@ ExpanderCorner::ExpanderCorner(WidgetDecorator* parent,Qt::Corner location) : Ex
     setMask(QRegion{mask});
 }
 
+/**
+ * @brief ExpanderCorner::reposition
+ *
+ * If the parent WidgetDecorator/SplitterDecorator gets resized, this method
+ * makes sure that we end up in the new correct location.
+ *
+ */
 void ExpanderCorner::reposition()
 {
     switch (corner) {
@@ -86,7 +95,7 @@ void ExpanderCorner::reposition()
         move(parentWidget()->width() - width(), 0);
         break;
     case Qt::BottomLeftCorner:
-        move(parentWidget()->width() - width(), parentWidget()->height()-height());
+        move(0, parentWidget()->height()-height());
         break;
     case Qt::BottomRightCorner:
         move(parentWidget()->width() - width(), parentWidget()->height()-height());
@@ -95,6 +104,11 @@ void ExpanderCorner::reposition()
         break;
     }
     raise();
+}
+
+bool ExpanderCorner::isOnTrailingHandler(BlendSplitter* parentSplitter)
+{
+    return (parentSplitter->orientation()==Qt::Horizontal)?  unitX<0 : unitY<0;
 }
 
 /**
@@ -110,17 +124,10 @@ void ExpanderCorner::reposition()
 void ExpanderCorner::performInnerSplit(WidgetDecorator* parentDecorator, BlendSplitter* parentSplitter, Qt::Orientation splitorientation)
 {
     if (parentSplitter->orientation() == splitorientation){
-        // add a widget in current splitter
-        bool after;
-        if (parentSplitter->orientation()==Qt::Horizontal){
-            after=unitX>0;
-        } else {
-            after=unitY>0;
-        }
 
         QList<int> sizes{parentSplitter->sizes()};
         int index{parentSplitter->indexOf(parentDecorator)};
-        if (after){
+        if (!isOnTrailingHandler(parentSplitter)){
             sizes.insert(index, BlendSplitter::expanderSize);
             sizes[index + 1] -= BlendSplitter::expanderSize + 1;
             parentSplitter->insertWidget(index);
@@ -137,13 +144,9 @@ void ExpanderCorner::performInnerSplit(WidgetDecorator* parentDecorator, BlendSp
         BlendSplitter* newSplitter{new BlendSplitter{parentSplitter->defaultWidget, newOrientation}};
         QList<int> sizes{parentSplitter->sizes()};
         parentSplitter->insertSplitter(parentSplitter->indexOf(parentDecorator), newSplitter);
-        // add a widget in current splitter but on the right side
-        bool after;
-        if (newOrientation==Qt::Horizontal){
-            after=unitX>0;
-        } else {
-            after=unitY>0;
-        };
+        // add a widget in current splitter but on the correct side
+        bool after = (newOrientation==Qt::Horizontal)? unitX>0 : unitY>0;
+
         if (after){
             newSplitter->addWidget();
             newSplitter->addDecoratedWidget(parentDecorator);
@@ -158,45 +161,106 @@ void ExpanderCorner::performInnerSplit(WidgetDecorator* parentDecorator, BlendSp
 
 void ExpanderCorner::setupJoiners(WidgetDecorator *parentDecorator, BlendSplitter *parentSplitter, int x, int y, Qt::Orientation /*splitorientation*/)
 {
-    bool after;
-    if (parentSplitter->orientation()==Qt::Horizontal){
-        after=unitX>0;
-    } else {
-        after=unitY>0;
-    }
+    if(overlay == nullptr
+       and isInContinuationOfSplitter(parentSplitter,pos().x()+x,pos().y()+y)
 
-
-    if(overlay == nullptr && (
-                (   parentSplitter->orientation() == Qt::Horizontal and
-                    pos().y()+y > 0 and
-                    pos().y()+y < parentDecorator->height()
-                    )
-                or
-                (   parentSplitter->orientation() == Qt::Vertical and
-                    pos().x()+x > 0 and
-                    pos().x()+x < parentDecorator->width()
-                    )
-                )
             )
     {
-        if( !after and
-                parentSplitter->indexOf(parentDecorator) + 1 < parentSplitter->count())
-        {
-            overlay = new Overlay{parentSplitter->widget(parentSplitter->indexOf(parentDecorator) + 1),
-                    (parentSplitter->orientation()==Qt::Horizontal?Qt::RightArrow:Qt::DownArrow)};
-            overlay->show();
-            dragaction=joinDrag;
-        }
-        else if (after and
-                 parentSplitter->indexOf(parentDecorator) > 0)
-        {
-            overlay = new Overlay{parentSplitter->widget(parentSplitter->indexOf(parentDecorator) - 1),
-            (parentSplitter->orientation()==Qt::Horizontal?Qt::LeftArrow:Qt::UpArrow)};
-            overlay->show();
-            dragaction=joinDrag;
-        }
+        QWidget* wdgt = nullptr;
+        if( isOnTrailingHandler(parentSplitter) and
+                parentSplitter->indexOf(parentDecorator) + 1 < parentSplitter->count()) {
 
+            wdgt = parentSplitter->widget(parentSplitter->indexOf(parentDecorator) + 1);
+            //do not join if the target widget is also splitted
+            if (!wdgt->inherits("SplitterDecorator")){
+                joinarrow=parentSplitter->orientation()==Qt::Horizontal?Qt::RightArrow:Qt::DownArrow;
+                overlay = new Overlay{wdgt,joinarrow};
+            }
+        } else if (!isOnTrailingHandler(parentSplitter) and
+                   parentSplitter->indexOf(parentDecorator) > 0) {
+
+            wdgt = parentSplitter->widget(parentSplitter->indexOf(parentDecorator) - 1);
+            //do not join if the target widget is also splitted
+            if (!wdgt->inherits("SplitterDecorator")){
+                joinarrow=parentSplitter->orientation()==Qt::Horizontal?Qt::LeftArrow:Qt::UpArrow;
+                overlay = new Overlay{wdgt,joinarrow};
+            }
+        };
+
+        //now show overlay if we started a valid joindrag
+        if (overlay){
+            overlay->show();
+            externalJoinWidget=wdgt;
+            dragaction=joinDrag;
+        }
     }
+}
+int ExpanderCorner::pickCoordinate(int x,int y,Qt::Orientation orient)
+{
+    return orient==Qt::Horizontal?x:y;
+}
+
+int ExpanderCorner::pickSize(const QSize &size, Qt::Orientation orient)
+{
+    return (orient == Qt::Horizontal) ? size.width() : size.height();
+}
+
+void ExpanderCorner::followDragJoiners(WidgetDecorator *parentDecorator, BlendSplitter *parentSplitter, int x, int y, Qt::Orientation /*splitorientation*/)
+{
+    x=pos().x()+x;
+    y=pos().y()+y;
+
+    if (isInContinuationOfSplitter(parentSplitter,x,y)){
+        // already an overlay and we are still dragging 'inside' of the splitter, so
+        overlay->show();
+        // maybe we need to change direction of the join ?
+        qDebug() << "overlay->parentWidget()!=externalJoinWidget" << overlay->parentWidget() << "  " <<externalJoinWidget;
+
+        Qt::Orientation o=parentSplitter->orientation();
+//        qDebug() << "Qt::Orientation o=parentSplitter->orientation()" << o;
+//        qDebug() << "isOnTrailingHandler(parentSplitter)" << isOnTrailingHandler(parentSplitter);
+//        qDebug() << "pickCoordinate(x,y,o)" << pickCoordinate(x,y,o);
+//        qDebug() << "pickSize(parentDecorator->size(),o)" << pickSize(parentDecorator->size(),o);
+//        qDebug() << "joinarrow" << joinarrow;
+        if ((isOnTrailingHandler(parentSplitter) and pickCoordinate(x,y,o)>pickSize(parentDecorator->size(),o))
+                or (!isOnTrailingHandler(parentSplitter) and pickCoordinate(x,y,o)<0)
+                ) {
+            if (overlay->parentWidget()!=externalJoinWidget){
+                overlay->setParent(externalJoinWidget);
+                overlay->setArrowshape(joinarrow);
+                overlay->reposition();
+            }
+
+        } else if ((isOnTrailingHandler(parentSplitter) and pickCoordinate(x,y,o)<pickSize(parentDecorator->size(),o))
+                   or (!isOnTrailingHandler(parentSplitter) and pickCoordinate(x,y,o)>0)
+                   ) {
+            if (overlay->parentWidget()==externalJoinWidget){
+                overlay->setParent(parentDecorator);
+                overlay->setArrowshape(Overlay::invertArrow(joinarrow));
+                overlay->reposition();
+            }
+        }
+    } else {
+        // hide overlay since we dragged 'to the side' of the splitter
+        overlay->hide();
+    }
+}
+
+
+
+bool ExpanderCorner::isInContinuationOfSplitter(BlendSplitter *parentSplitter, int x, int y)
+{
+    if (parentSplitter->orientation() == Qt::Horizontal
+        and y > 0 and y < parentSplitter->height()
+        ) {
+            return true;
+    };
+    if (parentSplitter->orientation() == Qt::Vertical
+        and x > 0 and x < parentSplitter->width()
+        ) {
+            return true;
+    };
+    return false;
 }
 
 /**
@@ -264,76 +328,13 @@ void ExpanderCorner::mouseMoveEvent(QMouseEvent *event)
     {
         int x=event->x()-hotspotX;
         int y=event->y()-hotspotY;
-        setupJoiners(parentDecorator,parentSplitter,x,y,(abs(x) > abs(y)) ? Qt::Horizontal : Qt::Vertical);
+        followDragJoiners(parentDecorator,parentSplitter,x,y,(abs(x) > abs(y)) ? Qt::Horizontal : Qt::Vertical);
     };
         break;
     case splitDrag:
     default:
         break;
     }
-//        if(parentSplitter->orientation() == Qt::Horizontal
-//                and event->x() < 0 and event->y() > 0
-//                and (BlendSplitter::expanderSize - event->x()) > event->y())
-//        {
-//            QList<int> sizes{parentSplitter->sizes()};
-//            int index{parentSplitter->indexOf(parentDecorator)};
-//            sizes.insert(index + 1, BlendSplitter::expanderSize);
-//            sizes[index] -= BlendSplitter::expanderSize + 1;
-//            parentSplitter->insertWidget(index + 1);
-//            parentSplitter->setSizes(sizes);
-//            parentSplitter->handle(index + 1)->grabMouse();
-//        }
-//        else if(parentSplitter->orientation() == Qt::Vertical and event->x() < BlendSplitter::expanderSize and event->y() > BlendSplitter::expanderSize and (BlendSplitter::expanderSize - event->x()) < event->y())
-//        {
-//            QList<int> sizes{parentSplitter->sizes()};
-//            int index{parentSplitter->indexOf(parentDecorator)};
-//            sizes[index] -= BlendSplitter::expanderSize + 1;
-//            sizes.insert(index, BlendSplitter::expanderSize);
-//            parentSplitter->insertWidget(index);
-//            parentSplitter->setSizes(sizes);
-//            parentSplitter->handle(index + 1)->grabMouse();
-//        }
-//        else if(parentSplitter->orientation() == Qt::Horizontal and event->x() < BlendSplitter::expanderSize and event->y() > BlendSplitter::expanderSize and (BlendSplitter::expanderSize - event->x()) < event->y())
-//        {
-//            BlendSplitter* newSplitter{new BlendSplitter{parentSplitter->defaultWidget, Qt::Vertical}};
-//            QList<int> sizes{parentSplitter->sizes()};
-//            parentSplitter->insertSplitter(parentSplitter->indexOf(parentDecorator), newSplitter);
-//            newSplitter->addWidget();
-//            newSplitter->addDecoratedWidget(parentDecorator);
-//            parentSplitter->setSizes(sizes);
-//            newSplitter->handle(1)->grabMouse();
-//        }
-//        else if(parentSplitter->orientation() == Qt::Vertical and event->x() < 0 and event->y() > 0 and (BlendSplitter::expanderSize - event->x()) > event->y())
-//        {
-//            BlendSplitter* newSplitter{new BlendSplitter{parentSplitter->defaultWidget, Qt::Horizontal}};
-//            QList<int> sizes{parentSplitter->sizes()};
-//            parentSplitter->insertSplitter(parentSplitter->indexOf(parentDecorator), newSplitter);
-//            newSplitter->addDecoratedWidget(parentDecorator);
-//            newSplitter->addWidget();
-//            parentSplitter->setSizes(sizes);
-//            newSplitter->handle(1)->grabMouse();
-//        }
-//        if(parentSplitter->orientation() == Qt::Horizontal and event->x() > BlendSplitter::expanderSize and event->y() > 0 and event->y() < parentDecorator->height())
-//        {
-//            if(overlay == nullptr and parentSplitter->indexOf(parentDecorator) + 1 < parentSplitter->count())
-//            {
-//                overlay = new Overlay{parentSplitter->widget(parentSplitter->indexOf(parentDecorator) + 1),Qt::RightArrow};
-//                overlay->show();
-//            }
-//        }
-//        else if(parentSplitter->orientation() == Qt::Vertical and event->x() < BlendSplitter::expanderSize and event->y() < 0 and (BlendSplitter::expanderSize - event->x()) < parentDecorator->width())
-//        {
-//            if(overlay == nullptr and parentSplitter->indexOf(parentDecorator) > 0)
-//            {
-//                overlay = new Overlay{parentSplitter->widget(parentSplitter->indexOf(parentDecorator) - 1),Qt::UpArrow};
-//                overlay->show();
-//            }
-//        }
-//        else if(overlay != nullptr)
-//        {
-//            delete overlay;
-//            overlay = nullptr;
-//        }
 }
 
 void ExpanderCorner::mousePressEvent(QMouseEvent *event)
@@ -372,7 +373,15 @@ void ExpanderCorner::mouseReleaseEvent(QMouseEvent *event)
     }
 
 
-    //now delete the item with the overlay from the splitter
+    //if joinDrag....
+    //now delete the item with the overlay from the splitter if overlay is visible!!
+    if (overlay->isHidden()){
+        overlay->deleteLater();
+        overlay = nullptr;
+        externalJoinWidget = nullptr;
+        return;
+    };
+
     QList<int> sizes{parentSplitter->sizes()};
     int parentIndex{parentSplitter->indexOf(parentDecorator)};
     int overlayIndex{parentSplitter->indexOf(overlay->parentWidget())};
@@ -380,10 +389,12 @@ void ExpanderCorner::mouseReleaseEvent(QMouseEvent *event)
     sizes.removeAt(overlayIndex);
     delete parentSplitter->widget(overlayIndex);
     overlay = nullptr;
+    externalJoinWidget = nullptr;
 
-
-    //if we now have a blendSplitter with a single item, which is inside another blendSplitter then we remove this singular-item splitter
-    if(parentSplitter->count() == 1 and parentSplitter->parentWidget()->inherits("SplitterDecorator"))
+    // if we now have a blendSplitter with a single item, which is inside
+    // another blendSplitter then we remove this singular-item splitter
+    if(parentSplitter->count() == 1 and
+    parentSplitter->parentWidget()->inherits("SplitterDecorator"))
     {
         BlendSplitter* newParent{qobject_cast<BlendSplitter*>(parentSplitter->parentWidget()->parentWidget())};
         if(newParent == nullptr)

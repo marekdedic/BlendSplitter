@@ -36,4 +36,13 @@ private:
     void decideDragAction(QMouseEvent *event, WidgetDecorator *parentDecorator, BlendSplitter *parentSplitter);
     void performInnerSplit(WidgetDecorator *parentDecorator, BlendSplitter *parentSplitter, Qt::Orientation splitorientation);
     void setupJoiners(WidgetDecorator *parentDecorator, BlendSplitter *parentSplitter, int x, int y, Qt::Orientation splitorientation);
+    void followDragJoiners(WidgetDecorator *parentDecorator, BlendSplitter *parentSplitter, int x, int y, Qt::Orientation splitorientation);
+    bool isInContinuationOfSplitter(BlendSplitter *parentSplitter, int x, int y);
+    bool isOnTrailingHandler(BlendSplitter *parentSplitter);
+
+    Overlay* overlay;
+    QWidget* externalJoinWidget;
+    Qt::ArrowType joinarrow;
+    int pickCoordinate(int x,int y,Qt::Orientation orient);
+    int pickSize(const QSize &size, Qt::Orientation orient);
 };

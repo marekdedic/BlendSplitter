@@ -8,10 +8,13 @@
 #include <QPoint>
 #include <QDebug>
 
-WidgetDecorator::WidgetDecorator(QWidget* widget) : QWidget{}, widget{widget}, expanderBottom{new ExpanderBottom{this}},
-    expanderTop{new ExpanderTop{this}},
+WidgetDecorator::WidgetDecorator(QWidget* widget) : QWidget{}, widget{widget},
+//    expanderBottom{new ExpanderBottom{this}},
+//    expanderTop{new ExpanderTop{this}},
     expanderCorner1{new ExpanderCorner{this,Qt::TopLeftCorner}},
     expanderCorner2{new ExpanderCorner{this,Qt::BottomRightCorner}},
+    expanderCorner3{new ExpanderCorner{this,Qt::TopRightCorner}},
+    expanderCorner4{new ExpanderCorner{this,Qt::BottomLeftCorner}},
     dropzone(dropregions::center)
 {
     QHBoxLayout* layout{new QHBoxLayout{}};
@@ -29,17 +32,19 @@ WidgetDecorator::~WidgetDecorator()
 
 void WidgetDecorator::resizeEvent(QResizeEvent*)
 {
-    expanderBottom->reposition();
-    expanderTop->reposition();
+//    expanderBottom->reposition();
+//    expanderTop->reposition();
     expanderCorner1->reposition();
     expanderCorner2->reposition();
+    expanderCorner3->reposition();
+    expanderCorner4->reposition();
 }
 
-void WidgetDecorator::mouseMoveEvent(QMouseEvent* event)
-{
-    determineDropZone(event->pos());
-    update();
-}
+//void WidgetDecorator::mouseMoveEvent(QMouseEvent* event)
+//{
+//    determineDropZone(event->pos());
+//    update();
+//}
 
 void WidgetDecorator::determineDropZone(QPoint pos)
 {
@@ -65,41 +70,41 @@ void WidgetDecorator::determineDropZone(QPoint pos)
     dropzone=static_cast<dropregions>(side);
 }
 
-void WidgetDecorator::paintEvent(QPaintEvent *event)
-{
-    QWidget::paintEvent(event);
+//void WidgetDecorator::paintEvent(QPaintEvent *event)
+//{
+//    QWidget::paintEvent(event);
 
-//    qDebug() << "WidgetDecorator::paintEvent";
+////    qDebug() << "WidgetDecorator::paintEvent";
 
-    QPainter painter(this);
-    painter.setPen(Qt::black);
-    painter.setBrush(Qt::NoBrush);
-    int x=width()/3;
-    int y=height()/3;
-    painter.drawLine(0,0,x,y);
-    painter.drawLine(width(),0,width()-x,y);
-    painter.drawLine(0,height(),x,height()-y);
-    painter.drawLine(width(),height(),width()-x,height()-y);
-    painter.drawRect(x,y,x,y);
+//    QPainter painter(this);
+//    painter.setPen(Qt::black);
+//    painter.setBrush(Qt::NoBrush);
+//    int x=width()/3;
+//    int y=height()/3;
+//    painter.drawLine(0,0,x,y);
+//    painter.drawLine(width(),0,width()-x,y);
+//    painter.drawLine(0,height(),x,height()-y);
+//    painter.drawLine(width(),height(),width()-x,height()-y);
+//    painter.drawRect(x,y,x,y);
 
-    switch (dropzone) {
-    case dropregions::top:
-        painter.drawText(QRect(x,0,x,y),Qt::AlignCenter,"top");
-        break;
-    case dropregions::left:
-        painter.drawText(QRect(0,y,x,y),Qt::AlignCenter,"left");
-        break;
-    case dropregions::right:
-        painter.drawText(QRect(width()-x,y,x,y),Qt::AlignCenter,"right");
-        break;
-    case dropregions::bottom:
-        painter.drawText(QRect(x,height()-y,x,y),Qt::AlignCenter,"bottom");
-        break;
-    case dropregions::center:
-        painter.drawText(QRect(x,y,x,y),Qt::AlignCenter,"center");
-        break;
-    default:
-        break;
-    }
-    setMouseTracking(true);
-}
+//    switch (dropzone) {
+//    case dropregions::top:
+//        painter.drawText(QRect(x,0,x,y),Qt::AlignCenter,"top");
+//        break;
+//    case dropregions::left:
+//        painter.drawText(QRect(0,y,x,y),Qt::AlignCenter,"left");
+//        break;
+//    case dropregions::right:
+//        painter.drawText(QRect(width()-x,y,x,y),Qt::AlignCenter,"right");
+//        break;
+//    case dropregions::bottom:
+//        painter.drawText(QRect(x,height()-y,x,y),Qt::AlignCenter,"bottom");
+//        break;
+//    case dropregions::center:
+//        painter.drawText(QRect(x,y,x,y),Qt::AlignCenter,"center");
+//        break;
+//    default:
+//        break;
+//    }
+//    setMouseTracking(true);
+//}
